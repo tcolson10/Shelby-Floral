@@ -175,7 +175,7 @@ h2, h3 {
 .site-footer {
   display: flex;
   justify-content: space-around; /* Distributes content closer to the center */
-  padding: 40px 10%; /* Increases padding for more white space and a larger footer */
+  padding: 80px 10%; /* Increases padding for more white space and a larger footer */
   background-color: white;
   align-items: center; /* Ensures vertical alignment among footer items */
 }
@@ -323,55 +323,79 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 200px; /* Adjust padding as needed */
-  /* Other styling rules for the container */
-  font-weight: 10;
+  padding: 150px;
+  font-weight: 400;
 }
 
-.contact-container h1 {
-  margin-bottom: 10px; /* Space between the heading and the form */
-  /* Additional styling for the heading */
-}
-.contact-form label {
-  font-weight: 5;
-  
+.contact-container h1,
+.contact-container h3 {
+  text-align: center; /* Center the heading and subheading */
+  width: 100%;
+  font-weight: 300;
 }
 
+.contact-container h3 {
+  margin-top: 0px; /* Spacing after the heading */
+  margin-bottom: 50px; /* Spacing before the form */
+}
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Spacing between form elements */
-  max-width: 400px; /* Adjust based on preference */
+  gap: 15px;
+  max-width: 400px;
   width: 100%;
-  margin-top: 50PX;
 }
 
 .contact-form label {
-  font-weight: bold;
+  font-weight: 300;
+  margin-bottom: 5px;
+  text-align: left; /* Aligns the label text to the start */
+  margin-left: 15px; /* Aligns label text with the input text */
 }
 
 .contact-form input[type="text"],
-.contact-form input[type="email"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px; /* Rounded corners */
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="date"],
+.contact-form input[type="url"],
+.contact-form textarea {
+  padding: 10px 15px;
+  background-color: #f9f9f9; /* Very light gray background */
+  border: none; /* No border */
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Your font family', sans-serif; /* Replace with your font family */
+  box-shadow: inset 0 0 0 1px #ddd; /* Optional: subtle definition for the input field */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form input[type="date"]:focus,
+.contact-form input[type="url"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #9CAD86; /* Highlighting the field when focused */
 }
 
 .submit-button {
   background-color: #9CAD86; /* Green background */
   color: white;
-  padding: 10px 15px;
+  padding: 12px 20px; /* Padding inside the button */
   border: none;
-  border-radius: 4px;
+  border-radius: 4px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s;
+  display: inline-block; /* This will make the button only as wide as its content */
+  text-align: center; /* To ensure the text is centered within the button */
+  margin: 0 auto; /* This centers the button in its parent container */
 }
 
 .submit-button:hover {
-  background-color: #78866B; /* Darker shade of green */
+  background-color: #78866B; /* Darker shade of green for hover state */
 }
+
 
 .portfolio-page-container {
   display: flex;

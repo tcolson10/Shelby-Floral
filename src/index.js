@@ -9,6 +9,7 @@ import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
+import Testimonials from './pages/Testimonials';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,8 @@ ReactDOM.render(
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="pricing" element={<Pricing />} />
+          <Route path="testimonials" element={<Testimonials />} />
+
         </Route>
       </Routes>
     </Router>
