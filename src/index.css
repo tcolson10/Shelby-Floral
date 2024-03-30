@@ -1,13 +1,401 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Pacifico';
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.HomePageImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
+
+.app-container {
+  position: relative;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.navTitle {
+  color: black;
+  font-size: 55px;
+  font-weight: 100;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navTitle:hover {
+  color: #78866B;
+  font-size: 56px;
+}
+
+nav {
+  z-index: 2;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 200;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #78866B;
+  font-size: 31px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.webTitle {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Pacifico';
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2, h3 {
+  font-weight: 400;
+}
+
+.content-container {
+  position: relative;
+  min-height: 500px;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  color: black;
+  background-color: white; /* Adjusted for transparency */
+  padding: 5px;
+  width: 600px;
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.button-link {
+  display: inline-block;
+  background-color: #9CAD86;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+
+.button-link:hover {
+  background-color: #78866B;
+}
+
+.split-section {
+  display: flex;
+  margin-top: 20px;
+}
+
+.left-side, .right-side {
+  flex: 1;
+}
+
+.left-side img, .HomePageImage {
+  max-width: 100%;
+  display: block;
+}
+
+.right-side {
+  padding-left: 20px;
+  padding: 20px;
+  background-color: rgba(156, 173, 134, 0.1); /* More transparent */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .navTitle, nav ul li a {
+    font-size: smaller; /* Adjust font sizes for smaller screens */
+  }
+
+  .text-overlay, .split-section {
+    width: auto; /* Allow text overlay and split section to adjust to screen size */
+    padding: 10px; /* Reduce padding on smaller screens */
+    top: auto; /* Adjust text overlay positioning */
+    bottom: 20px; /* Move text overlay towards the bottom on smaller screens */
+  }
+
+  .split-section {
+    flex-direction: column; /* Stack split sections vertically on smaller screens */
+  }
+}
+.site-footer {
+  display: flex;
+  justify-content: space-around; /* Distributes content closer to the center */
+  padding: 40px 10%; /* Increases padding for more white space and a larger footer */
+  background-color: white;
+  align-items: center; /* Ensures vertical alignment among footer items */
+}
+
+.footer-email, .footer-instagram {
+  font-size: 25px; /* Font size for visibility */
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+}
+
+.footer-email a, .footer-instagram a {
+  color: #333;
+  text-decoration: none;
+  display: flex; /* Ensures flex alignment for links and their content */
+  align-items: center; /* Corrects vertical alignment issue */
+  gap: 8px; /* Consistent spacing between text and logo */
+}
+
+.instagram-logo {
+  width: 50px; /* Logo size */
+  height: 50px; /* Maintains aspect ratio */
+  align-self: center; /* Ensures the logo is centered with the text */
+}
+
+.center-image{
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  height: 100%; /* Sets the height to fill the parent */
+}
+
+.center-image img {
+  max-width: 100%; /* Ensures the image is responsive and fits within the container */
+  max-height: 100%; /* Optional: Adjusts the image's height to fit within the container, maintaining aspect ratio */
+}
+
+
+
+
+.center-image {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  margin-top: 20px; /* Adds space above the image container */
+  margin-bottom: 20px; /* Adds some space between the image and the text */
+}
+
+.center-image img {
+  max-width: 100%; /* Ensures the image is responsive */
+  height: auto; /* Maintains the image's aspect ratio */
+}
+
+
+.about-content-container {
+  display: flex;
+  align-items: flex-start; /* Keeps items aligned at their top edge */
+  justify-content: space-between; /* Spaces the image and text apart */
+  padding-top: 150px; /* Increased top padding to push content lower */
+  gap: 20px; /* Space between the image and text sections */
+}
+
+.about-image-container {
+  flex-basis: 50%; /* Assigns half the width to the image container */
+  padding: 20px; /* Padding around the image */
+}
+
+.about-page-image {
+  max-width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.about-text-container {
+  flex-basis: 50%; /* Assigns the other half of the width to the text container */
+  padding: 20px; /* Padding around the text */
+}
+
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 20px; /* Space between images */
+  padding: 150px; /* Padding around the grid container */
+}
+
+.portfolio-image-container {
+  /* Additional styling as needed, like borders or shadows */
+}
+
+.portfolio-image {
+  width: 100%; /* Ensures images are fully responsive and fit their containers */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.pricing-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 200px 175px 30px; /* Adjust top padding as needed */
+}
+
+.pricing-header h1 {
+  margin: 0;
+  font-size: 3rem; /* Adjust font size as needed */
+}
+
+.pricing-header p {
+  font-size: 1.4rem; /* Adjust font size as needed */
+  margin-bottom: 40px;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: space-around; /* Evenly spaces items within the container */
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  width: 100%; /* Full width to accommodate all items */
+  max-width: 1200px; /* Adjust to fit your layout; ensures container doesn't get too wide */
+  gap: 20px; /* Space between items */
+}
+
+.pricing-photo-container {
+  width: calc(33.333% - 20px); /* Explicitly sets width for 3 items per row considering gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content */
+  text-align: center; /* Ensures text is centered */
+}
+
+.pricing-photo {
+  width: 100%; /* Ensures image fills the container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.pricing-photo-text {
+  margin-top: 40px; /* Space between the image and its description */
+}
+
+@media (max-width: 768px) {
+  .pricing-photo-container {
+    width: 100%; /* Full width on smaller screens for a single column layout */
+    margin-bottom: 20px; /* Adds spacing between items when stacked */
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 200px; /* Adjust padding as needed */
+  /* Other styling rules for the container */
+  font-weight: 10;
+}
+
+.contact-container h1 {
+  margin-bottom: 10px; /* Space between the heading and the form */
+  /* Additional styling for the heading */
+}
+.contact-form label {
+  font-weight: 5;
+  
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Spacing between form elements */
+  max-width: 400px; /* Adjust based on preference */
+  width: 100%;
+  margin-top: 50PX;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.submit-button {
+  background-color: #9CAD86; /* Green background */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #78866B; /* Darker shade of green */
+}
+
+.portfolio-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 200px 175px 30px; /* Adjust top padding as needed */
+}
+
+.portfolio-header h1 {
+  margin: 0;
+  font-size: 3rem; /* Adjust font size as needed */
+}
+
+.portfolio-header p {
+  font-size: 1.4rem; /* Adjust font size as needed */
+}
+
+.portfolio-container {
+  display: grid;
+  padding-top: 50px;
+  grid-template-columns: repeat(2, 1fr); /* Or however you've set it up */
+  gap: 40px;
+  width: 100%; /* Ensures the grid takes full width of its container */
+  /* Continue with your existing styles */
+}
+
