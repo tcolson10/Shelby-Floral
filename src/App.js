@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 import './index.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="app-container">
       <header>
-        <a href="/" className="webTitle">
+        <Link to="/" className="webTitle">
           <h1 className='navTitle'>Shelby Floral</h1>
-        </a>
-        <nav>
+        </Link>
+        <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {/* Hamburger Icon */}
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+        <nav className={isMenuOpen ? 'nav-active' : ''}>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/testimonials">Testimonials</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+            <li><Link to="/portfolio" onClick={() => setIsMenuOpen(false)}>Portfolio</Link></li>
+            <li><Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link></li>
+            <li><Link to="/testimonials" onClick={() => setIsMenuOpen(false)}>Testimonials</Link></li>
+            <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
           </ul>
         </nav>
       </header>
       <main>
-        <Outlet />  {/* This renders the current route's component */}
+        <Outlet />
       </main>
-      {/* Updated Footer */}
       <footer className="site-footer">
-        <div className="footer-email">
-          Email:<a href="mailto:shelbyfloral@gmail.com">shelbyfloral@gmail.com</a>
-        </div>
         <div className="footer-instagram">
           <a href="https://www.instagram.com/shelby_floral/" target="_blank" rel="noopener noreferrer">
             <img src="/images/IG.png" alt="Instagram" className="instagram-logo" /> Instagram
           </a>
         </div>
+        <div className="footer-email">
+          Email:<a href="mailto:shelbyfloral@gmail.com">shelbyfloralcompany@gmail.com</a>
+        </div>
+
       </footer>
     </div>
   );

@@ -1,118 +1,262 @@
 body {
   margin: 0;
-  font-family: 'Pacifico';
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 100;
-}
-
-.HomePageImage {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.app-container {
-  position: relative;
+  min-width: 320px;
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  padding: 20px;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+/* General style for all main titles */
+.page-title {
+  font-size: 45px; /* Example base font size */
+  color: #78866B; /* Example color */
+  font-weight: 800;
+  text-align: center;
+  margin-top: 150px; /* Adjust based on header size and desired spacing */
+  margin-bottom: 40px; /* Space below the title */
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 35px; /* Smaller font size for mobile */
+    margin-top: 100px; /* Adjusted top margin for mobile header and spacing */
+    margin-bottom: 20px; /* Adjusted space below the title for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    width: 100%; /* This will make the text container take full width */
+    padding: 5px 10px; /* Adjust horizontal padding here */
+  }
 }
 
 .navTitle {
-  color: black;
-  font-size: 55px;
-  font-weight: 100;
-  transition: color 0.3s ease, font-size 0.3s ease;
+  text-decoration: none; /* Removes underline */
+  color: black; /* Or any color you've defined */
+  font-size: 3.2rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  margin-left: 50px; /* Corrected to include 'px' */
+  margin-right: auto;
 }
 
 .navTitle:hover {
   color: #78866B;
-  font-size: 56px;
+  text-decoration: none;
 }
 
-nav {
-  z-index: 2;
+/* Ensures link within .navTitle has no underline and inherits color */
+.webTitle, .webTitle:visited, .webTitle:hover, .webTitle:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hamburger {
+  display: flex;
+  cursor: pointer;
+  order: 2;
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background: black;
+  transition: all 0.3s ease;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-left: 20px;
+  display: flex;
+  gap: 20px;
+  padding-right: 50px; /* Pushes the menu to the left */
+  align-items: flex-start;
 }
 
 nav ul li a {
   color: black;
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 200;
-  transition: color 0.3s ease, font-size 0.3s ease;
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #78866B;
-  font-size: 31px;
 }
 
-.background-image {
+/* Correcting nested media query */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    order: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none; /* Hidden by default */
+  }
+
+  .nav-active ul {
+    display: flex;
+  }
+
+  .navTitle {
+    margin-left: 0; /* Resets margin for mobile */
+    font-size: 1.8rem; /* Adjusts size for readability */
+    order: -1;
+  }
+
+  nav ul {
+    padding-right: 0; /* Resets padding for mobile */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0; /* Adjusts padding for a stacked layout */
+  }
+}
+
+@media (max-width: 480px) {
+  .navTitle, nav ul li a {
+    font-size: 1.5rem; /* Further adjust for smaller devices */
+  }
+
+}
+.webTitle, .webTitle:visited, .webTitle:hover, .webTitle:active {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits the color from the parent, if desirable */
+}
+
+
+.HomePageImage {
+  width: 100%;
+  height: 80vh; /* Keeps the desktop dimension */
+  object-fit: cover;
+  
+}
+.HomePageImage::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 1; /* Ensure text remains visible on top */
 }
 
-.webTitle {
-  text-decoration: none;
+.secondHomePageImage {
+  width: 100%;
+  height: 80vh; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures cover fit without distorting aspect ratio */
 }
 
-h1, h2, h3 {
-  text-align: center;
-  font-weight: 300;
-  font-family: 'Pacifico';
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+.app-container {
+  position: relative;
 }
 
-h1 {
-  font-size: 50px;
-}
-
-h2, h3 {
-  font-weight: 400;
+/* Content container adjustments */
+.content-container, .text-overlay {
+  padding: 10px;
 }
 
 .content-container {
   position: relative;
-  min-height: 500px;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: block;
+  flex-direction: column; /* Align items in a column */
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* No additional padding */
+  max-width: auto;
+  margin: 0 auto;
+  box-sizing: border-box; /* Includes padding in the width calculation */
+  margin-bottom: -100px;
+  
+  
+}
+.content-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2); /* This is a white overlay with 20% opacity */
+  height: 80vh;
+  z-index: 1;}
+
+.content-container h1 {
+  font-size: clamp(3rem, 10vw, 6rem); /* Responsive font sizing */
+  font-weight: 700; /* Bold */
+  color: white;
+  text-align: center;
+}
+
+.content-container h2 {
+  font-size: clamp(1.2rem, 3.5vw, 2rem); /* Responsive font sizing */
+  color: white;
+  text-align: center;
 }
 
 .text-overlay {
   position: absolute;
-  top: 300px;
-  left: 100px;
-  color: black;
-  background-color: white; /* Adjusted for transparency */
-  padding: 5px;
-  width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* Keeps a margin from the edges on larger screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
   text-align: center;
+  padding: 10px; /* Initial padding */
+  box-sizing: border-box;
+  z-index: 2;
 }
+
+/* Adjust for mobile screens to make text boxes wider */
+@media (max-width: 768px) {
+  .text-overlay {
+    width: 98%; /* Increases the width for mobile devices */
+    padding: 5px 10px; /* Reduces padding to allow more text space */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .text-overlay {
+    width: 98%; /* Utilizes almost the entire screen width */
+    padding: 5px 10px; /* Maintains minimal padding */
+  }
+}
+
+
 
 .button-container {
   text-align: center;
@@ -128,7 +272,8 @@ h2, h3 {
   cursor: pointer;
   margin-top: 20px;
   text-decoration: none;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease ;
+  font-weight: 600;
 }
 
 .button-link:hover {
@@ -138,12 +283,16 @@ h2, h3 {
 .split-section {
   display: flex;
   margin-top: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
+  
 }
 
 .left-side, .right-side {
   flex: 1;
+   /* Apply consistent padding to both sides */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
-
 .left-side img, .HomePageImage {
   max-width: 100%;
   display: block;
@@ -158,7 +307,7 @@ h2, h3 {
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   .navTitle, nav ul li a {
-    font-size: smaller; /* Adjust font sizes for smaller screens */
+    font-size: 1.8rem; /* Adjust font sizes for smaller screens */
   }
 
   .text-overlay, .split-section {
@@ -170,29 +319,53 @@ h2, h3 {
 
   .split-section {
     flex-direction: column; /* Stack split sections vertically on smaller screens */
+    max-width: 1200px; /* Example max-width, adjust as necessary */
+    width: 100%;
+    margin: 0 auto; /* Centers the containers */
+    padding: 0 20px; /* Apply consistent side paddings */
+    box-sizing: border-box; /* Includes padding in the width calculation */
   }
 }
 .site-footer {
   display: flex;
-  justify-content: space-around; /* Distributes content closer to the center */
-  padding: 80px 10%; /* Increases padding for more white space and a larger footer */
+  justify-content: space-around;
+  padding: 80px 10%;
   background-color: white;
-  align-items: center; /* Ensures vertical alignment among footer items */
+  align-items: center;
 }
 
 .footer-email, .footer-instagram {
-  font-size: 25px; /* Font size for visibility */
+  font-size: 25px;
   display: flex;
-  align-items: center; /* Aligns items vertically */
+  align-items: center;
+}
+
+.footer-email a:hover, .footer-instagram a:hover {
+  color: #9CAD86; /* Adjusts the hover state color */
 }
 
 .footer-email a, .footer-instagram a {
   color: #333;
   text-decoration: none;
-  display: flex; /* Ensures flex alignment for links and their content */
-  align-items: center; /* Corrects vertical alignment issue */
-  gap: 8px; /* Consistent spacing between text and logo */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column; /* Stacks footer items vertically */
+    padding: 40px 20px; /* Adjusts padding for a smaller viewport */
+  }
+
+  .footer-email, .footer-instagram {
+    justify-content: center; /* Centers the content horizontally */
+    font-size: 20px; /* Optionally adjust font size for smaller screens */
+  }
+}
+
 
 .instagram-logo {
   width: 50px; /* Logo size */
@@ -200,72 +373,74 @@ h2, h3 {
   align-self: center; /* Ensures the logo is centered with the text */
 }
 
-.center-image{
-  display: flex; /* Enables flexbox layout */
-  justify-content: center; /* Centers children horizontally */
-  align-items: center; /* Centers children vertically */
-  height: 100%; /* Sets the height to fill the parent */
-}
-
-.center-image img {
-  max-width: 100%; /* Ensures the image is responsive and fits within the container */
-  max-height: 100%; /* Optional: Adjusts the image's height to fit within the container, maintaining aspect ratio */
-}
-
-
-
-
-.center-image {
-  display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  margin-top: 20px; /* Adds space above the image container */
-  margin-bottom: 20px; /* Adds some space between the image and the text */
-}
-
-.center-image img {
-  max-width: 100%; /* Ensures the image is responsive */
-  height: auto; /* Maintains the image's aspect ratio */
-}
-
 
 .about-content-container {
   display: flex;
-  align-items: flex-start; /* Keeps items aligned at their top edge */
-  justify-content: space-between; /* Spaces the image and text apart */
-  padding-top: 150px; /* Increased top padding to push content lower */
-  gap: 20px; /* Space between the image and text sections */
+  flex-direction: row; /* Default layout for larger screens */
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 150px;
+  gap: 20px;
 }
 
 .about-image-container {
-  flex-basis: 50%; /* Assigns half the width to the image container */
-  padding: 20px; /* Padding around the image */
+  flex-basis: 50%;
+  padding: 20px;
 }
 
 .about-page-image {
-  max-width: 100%; /* Makes the image responsive */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 100%;
+  height: auto;
 }
 
 .about-text-container {
-  flex-basis: 50%; /* Assigns the other half of the width to the text container */
-  padding: 20px; /* Padding around the text */
+  flex-basis: 50%;
+  padding: 20px;
 }
 
-
-.portfolio-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
-  gap: 20px; /* Space between images */
-  padding: 150px; /* Padding around the grid container */
+.about-text-container h1 {
+  font-weight: 350;
+  font-size: 60px; /* Consider using clamp for responsiveness */
+  color: #78866B;
+  text-align: center;
 }
 
-.portfolio-image-container {
-  /* Additional styling as needed, like borders or shadows */
+.about-text-container h2 {
+  font-weight: 400;
+  font-size: 40px; /* Consider using clamp for responsiveness */
 }
 
-.portfolio-image {
-  width: 100%; /* Ensures images are fully responsive and fit their containers */
-  height: auto; /* Maintains aspect ratio */
+.about-text-container h3 {
+  font-weight: 200;
+  font-size: 30px; /* Consider using clamp for responsiveness */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-content-container {
+    flex-direction: column;
+    padding-top: 100px; /* Slightly reduce top padding on smaller screens */
+    align-items: center; /* Ensure centered alignment when stacked */
+  }
+
+  .about-image-container, .about-text-container {
+    flex-basis: auto; /* Allow containers to adjust based on content */
+    padding: 10px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center-align the text for mobile */
+  }
+
+  /* Responsive font sizing using clamp */
+  .about-text-container h1 {
+    font-size: clamp(2rem, 8vw, 3.25rem); /* Adjusts dynamically */
+  }
+
+  .about-text-container h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .about-text-container h3 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
 }
 
 .pricing-page-container {
@@ -273,49 +448,54 @@ h2, h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 200px 175px 30px; /* Adjust top padding as needed */
+  padding: 90px;
+  margin-top: 40px;
 }
 
 .pricing-header h1 {
   margin: 0;
-  font-size: 3rem; /* Adjust font size as needed */
+  font-size: 45px; /* More responsive font size */
+  color: #78866B;
+  font-weight: 350;
+  margin-top: 10px;
 }
 
 .pricing-header p {
-  font-size: 1.4rem; /* Adjust font size as needed */
+  font-size: 1.2rem; /* Adjusted for readability on smaller screens */
   margin-bottom: 40px;
 }
 
 .pricing-container {
   display: flex;
-  justify-content: space-around; /* Evenly spaces items within the container */
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  width: 100%; /* Full width to accommodate all items */
-  max-width: 1200px; /* Adjust to fit your layout; ensures container doesn't get too wide */
-  gap: 20px; /* Space between items */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
 }
 
 .pricing-photo-container {
-  width: calc(33.333% - 20px); /* Explicitly sets width for 3 items per row considering gap */
+  width: calc(33.333% - 20px); /* Adjusts to 3 items per row for larger screens */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content */
-  text-align: center; /* Ensures text is centered */
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Adds spacing between items */
 }
 
 .pricing-photo {
-  width: 100%; /* Ensures image fills the container */
-  height: auto; /* Maintains aspect ratio */
+  width: 100%;
+  height: auto;
 }
 
 .pricing-photo-text {
-  margin-top: 40px; /* Space between the image and its description */
+  margin-top: 20px; /* Adjusted spacing */
 }
 
+/* Responsive adjustments for very small screens */
 @media (max-width: 768px) {
   .pricing-photo-container {
-    width: 100%; /* Full width on smaller screens for a single column layout */
-    margin-bottom: 20px; /* Adds spacing between items when stacked */
+    width: 100%; /* Single column layout */
   }
 }
 
@@ -323,35 +503,38 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px;
+  padding: 50px 20px; /* Adjusted padding for better responsiveness */
   font-weight: 400;
+ 
 }
 
-.contact-container h1,
+.contact-container h1 {
+  font-size: 45px;
+  color: #78866B;
+  font-weight: 350;
+}
+
 .contact-container h3 {
-  text-align: center; /* Center the heading and subheading */
-  width: 100%;
+  text-align: center;
+  width: 80%; /* Adjusted width for better text alignment */
+  margin-top: 0;
+  margin-bottom: 30px; /* Adjusted spacing before the form starts */
   font-weight: 300;
-}
-
-.contact-container h3 {
-  margin-top: 0px; /* Spacing after the heading */
-  margin-bottom: 50px; /* Spacing before the form */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px;
+  max-width: 400px; /* Ensures form doesn't stretch too wide on larger screens */
   width: 100%;
+  margin-top: 20px; /* Added space between text and form */
 }
 
 .contact-form label {
   font-weight: 300;
   margin-bottom: 5px;
-  text-align: left; /* Aligns the label text to the start */
-  margin-left: 15px; /* Aligns label text with the input text */
+  text-align: left;
 }
 
 .contact-form input[type="text"],
@@ -361,39 +544,52 @@ h2, h3 {
 .contact-form input[type="url"],
 .contact-form textarea {
   padding: 10px 15px;
-  background-color: #f9f9f9; /* Very light gray background */
-  border: none; /* No border */
+  background-color: #f9f9f9;
+  border: none;
   border-radius: 4px;
   font-size: 16px;
-  font-family: 'Your font family', sans-serif; /* Replace with your font family */
-  box-shadow: inset 0 0 0 1px #ddd; /* Optional: subtle definition for the input field */
+  box-shadow: inset 0 0 0 1px #ddd;
+  font-family: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form input[type="tel"]:focus,
-.contact-form input[type="date"]:focus,
-.contact-form input[type="url"]:focus,
+.contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  box-shadow: inset 0 0 0 2px #9CAD86; /* Highlighting the field when focused */
+  box-shadow: inset 0 0 0 2px #9CAD86; /* Focus state */
 }
 
 .submit-button {
-  background-color: #9CAD86; /* Green background */
+  display: inline-block;
+  background-color: #9CAD86;
   color: white;
-  padding: 12px 20px; /* Padding inside the button */
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  display: inline-block; /* This will make the button only as wide as its content */
-  text-align: center; /* To ensure the text is centered within the button */
-  margin: 0 auto; /* This centers the button in its parent container */
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background-color 0.5s ease ;
+  font-weight: 600;
 }
 
 .submit-button:hover {
-  background-color: #78866B; /* Darker shade of green for hover state */
+  background-color: #78866B;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 50px 20px; /* Reduced padding for smaller devices */
+  }
+
+  .contact-container h1 {
+    font-size: 35px; /* Smaller font size for compact appearance */
+  }
+
+  .contact-container h3 {
+    font-size: 1.2rem; /* Adjusted font size for readability */
+    width: 90%; /* Allows the text to breathe on smaller screens */
+  }
 }
 
 
@@ -402,24 +598,165 @@ h2, h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 200px 175px 30px; /* Adjust top padding as needed */
+  padding: 200px 175px 30px; /* Adjust padding as needed */
+  
 }
 
 .portfolio-header h1 {
   margin: 0;
-  font-size: 3rem; /* Adjust font size as needed */
+  font-size: 45px;
+  color: #78866B;
+  font-weight: 350;
 }
 
 .portfolio-header p {
-  font-size: 1.4rem; /* Adjust font size as needed */
+  font-size: 1.4rem;
+  margin-bottom: 50px; /* Provides space between the header and the grid */
 }
 
 .portfolio-container {
   display: grid;
-  padding-top: 50px;
-  grid-template-columns: repeat(2, 1fr); /* Or however you've set it up */
-  gap: 40px;
-  width: 100%; /* Ensures the grid takes full width of its container */
-  /* Continue with your existing styles */
+  grid-template-columns: repeat(3, 1fr); /* Adjust based on your preference */
+  gap: 20px; /* Space between items */
+  width: 100%;
+  padding: 0 50px; /* Adjust padding to ensure grid does not touch screen edges */
+  
+}
+
+.portfolio-image {
+  width: 100%; /* Ensures images are fully responsive within their grid item */
+  height: auto; /* Maintains aspect ratio */
+  transition: transform 0.3s ease; /* Optional: Adds a zoom effect on hover */
+}
+
+.portfolio-image:hover {
+  transform: scale(1.03); /* Optional: Zoom effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-page-container {
+    padding: 100px 20px; /* Reduced padding for smaller screens */
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 columns for tablets and large phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-container {
+    grid-template-columns: 1fr; /* Single column layout for small devices */
+    padding: 0 10px; /* Adjust padding for very small screens */
+  }
+
+  .portfolio-header h1 {
+    font-size: 2.5rem; /* Smaller font size for small devices */
+    margin-top: 20px;
+  }
+
+  .portfolio-header p {
+    font-size: 1.2rem; /* Smaller font size for the description */
+  }
+}
+
+
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  gap: 4px; /* Space between lines */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.hamburger-line {
+  width: 25px; /* Width of the hamburger lines */
+  height: 3px; /* Height of the hamburger lines */
+  background-color: #333; /* Color of the hamburger lines */
+}
+
+/* Show the hamburger menu in mobile view */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .nav-active {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  padding: 100px;
+}
+.testimonials-header h1 {
+  margin: 0;
+  font-size: 45px; /* Adjusted for mobile */
+  color: #78866B;
+  font-weight: 350; /* Made the weight heavier for consistency */
+}
+
+.testimonials-header p {
+  font-size: 1rem; /* Adjusted for mobile */
+  margin-bottom: 20px; /* Reduced bottom margin */
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align testimonials */
+  width: 100%;
+  gap: 20px;
+}
+
+.testimonial-item {
+  background-color: #f0f0f0;
+  border-left: 5px solid #78866B;
+  padding: 15px; /* Adjusted padding for more space */
+  text-align: center; /* Centered text */
+  width: 90%; /* Utilize more screen width */
+  margin: 0 auto; /* Center the item */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: added a subtle shadow */
+}
+
+.client-name {
+  text-align: center; /* Centered client name */
+  margin-top: 10px;
+  font-weight: 600; /* Adjusted for visibility */
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 50px 15px; /* Reduced padding for tighter layout */
+  }
+
+  .testimonial-item {
+    padding: 10px; /* Reduced padding inside testimonial items */
+    font-size: 0.9rem; /* Smaller font size for content */
+  }
 }
 
