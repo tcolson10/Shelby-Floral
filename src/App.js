@@ -40,7 +40,7 @@ function App() {
           </a>
         </div>
         <div className="footer-email">
-          Email:<a href="mailto:shelbyfloralcompany@gmail.com">shelbyfloralcompany@gmail.com</a>
+          Email:<a href="mailto:shelbyfloralcompany@gmail.com" target="_blank">shelbyfloralcompany@gmail.com</a>
         </div>
 
       </footer>

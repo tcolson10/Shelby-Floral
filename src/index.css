@@ -417,7 +417,7 @@ nav li a:hover {
 .about-page-image {
   max-width: 100%;
   height: auto;
-  margin-top: -80px;
+  margin-top: -80px; /* Ensure this doesn't cause content shifting or overlap issues */
 }
 
 .about-text-container {
@@ -425,50 +425,50 @@ nav li a:hover {
   padding: 20px;
 }
 
+.about-text-container h1, .about-text-container h2, .about-text-container h3 {
+  text-align: center; /* Consistent alignment for titles */
+}
+
 .about-text-container h1 {
   font-weight: 350;
-  font-size: 60px; /* Consider using clamp for responsiveness */
+  font-size: clamp(2.5rem, 5vw, 3.25rem); /* Dynamic adjustment */
   color: #78866B;
-  text-align: center;
 }
 
 .about-text-container h2 {
   font-weight: 400;
-  font-size: 40px; /* Consider using clamp for responsiveness */
+  font-size: clamp(2rem, 4vw, 2.5rem); /* Dynamic adjustment */
 }
 
 .about-text-container h3 {
   font-weight: 200;
-  font-size: 30px; /* Consider using clamp for responsiveness */
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Dynamic adjustment */
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .about-content-container {
     flex-direction: column;
-    padding-top: 100px; /* Slightly reduce top padding on smaller screens */
     align-items: center; /* Ensure centered alignment when stacked */
+    padding-top: 50px; /* Adjusted for better spacing */
   }
 
   .about-image-container, .about-text-container {
-    flex-basis: auto; /* Allow containers to adjust based on content */
-    padding: 10px; /* Adjust padding for smaller screens */
+    flex-basis: 100%; /* Utilize full width for a stacked layout */
+    padding: 15px; /* Slightly larger padding for better spacing */
     text-align: center; /* Center-align the text for mobile */
   }
 
-  /* Responsive font sizing using clamp */
-  .about-text-container h1 {
-    font-size: clamp(2rem, 8vw, 3.25rem); /* Adjusts dynamically */
+  .about-page-image {
+    margin-top: 0; /* Adjust if necessary for mobile layout */
   }
 
-  .about-text-container h2 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
-  }
-
-  .about-text-container h3 {
-    font-size: clamp(1.25rem, 5vw, 2rem);
+  /* Bring the photo closer to the header on mobile */
+  .about-image-container {
+    margin-top: -20px; /* Pulls the image closer to the content above it */
+    padding-top: 0; /* Optionally reduce padding to bring it even closer */
   }
 }
+
 
 .pricing-page-container {
   display: flex;
@@ -477,20 +477,17 @@ nav li a:hover {
   text-align: center;
   margin-top: 20px;
   padding-top: 30px;
- 
 }
 
 .pricing-header h1 {
   margin: 0;
-  font-size: 45px; /* More responsive font size */
+  font-size: 45px; /* Consider using vw or clamp for scalability */
   color: #78866B;
   font-weight: 350;
-  
- 
 }
 
 .pricing-header p {
-  font-size: 1.2rem; /* Adjusted for readability on smaller screens */
+  font-size: 1.2rem; /* This is fine, but consider using em for scalability */
   margin-bottom: 40px;
 }
 
@@ -504,12 +501,12 @@ nav li a:hover {
 }
 
 .pricing-photo-container {
-  width: calc(33.333% - 20px); /* Adjusts to 3 items per row for larger screens */
+  width: calc(33.333% - 20px); /* Good for larger screens, but consider more breakpoints */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px; /* Adds spacing between items */
+  margin-bottom: 20px;
 }
 
 .pricing-photo {
@@ -520,28 +517,32 @@ nav li a:hover {
 }
 
 .pricing-photo-text {
-  margin-top: 20px; /* Adjusted spacing */
+  margin-top: 20px;
 }
 
-/* Responsive adjustments for very small screens */
+/* Adjust for medium screens - Single column layout */
 @media (max-width: 768px) {
   .pricing-photo-container {
-    width: 100%; /* Single column layout */
-  }
-}
-@media (max-width: 768px) {
-  .pricing-photo {
-    height: 200px; /* Optional: adjust height for smaller screens if 300px is too tall */
+    width: 100%; /* Adjust to 100% for better use of space */
   }
 }
 
+/* Adjustments for small screens */
 @media (max-width: 480px) {
+  .pricing-header h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Use clamp for dynamic scaling */
+  }
+
+  .pricing-header p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Dynamic scaling for readability */
+  }
+  
   .pricing-photo-container {
-    width: 100%; /* Full width on very small screens */
+    width: 100%; /* Ensure full width usage on very small screens */
   }
 
   .pricing-photo {
-    height: 200px; /* Further adjusted height for very small screens */
+    height: auto; /* Consider auto to maintain aspect ratio */
   }
 }
 
@@ -549,23 +550,22 @@ nav li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px; /* Adjusted padding for better responsiveness */
+  padding: 50px 20px; /* Good initial padding */
   font-weight: 400;
-  margin-top: -30px;
- 
+  margin-top: -30px; /* Be cautious with negative margins to avoid content overlap */
 }
 
 .contact-container h1 {
-  font-size: 45px;
+  font-size: clamp(2rem, 5vw, 45px); /* Responsive font size using clamp */
   color: #78866B;
   font-weight: 350;
 }
 
 .contact-container h3 {
   text-align: center;
-  width: 80%; /* Adjusted width for better text alignment */
+  width: 80%; /* Good for larger screens, might want to adjust for very small screens */
   margin-top: 0;
-  margin-bottom: 30px; /* Adjusted spacing before the form starts */
+  margin-bottom: 30px;
   font-weight: 300;
 }
 
@@ -573,17 +573,12 @@ nav li a:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px; /* Ensures form doesn't stretch too wide on larger screens */
+  max-width: 400px; /* Consider using percentage for smaller screens */
   width: 100%;
-  margin-top: 20px; /* Added space between text and form */
+  margin-top: 20px;
 }
 
-.contact-form label {
-  font-weight: 300;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
+/* Adjust form input and textarea styles for better accessibility */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
@@ -592,21 +587,19 @@ nav li a:hover {
 .contact-form textarea {
   padding: 10px 15px;
   background-color: #f9f9f9;
-  border: none;
+  border: 1px solid #ddd; /* Adjusted for consistency */
   border-radius: 4px;
-  font-size: 16px;
-  box-shadow: inset 0 0 0 1px #ddd;
-  font-family: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 16px; /* Good for readability */
+  font-family: inherit; /* Ensures font consistency across all form elements */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  box-shadow: inset 0 0 0 2px #9CAD86; /* Focus state */
+  box-shadow: inset 0 0 0 2px #9CAD86; /* Enhances focus state for accessibility */
 }
 
 .submit-button {
-  display: inline-block;
   background-color: #9CAD86;
   color: white;
   padding: 10px 20px;
@@ -614,30 +607,31 @@ nav li a:hover {
   border-radius: 10px;
   cursor: pointer;
   margin-top: 20px;
-  text-decoration: none;
-  transition: background-color 0.5s ease ;
+  transition: background-color 0.5s ease;
   font-weight: 600;
+  width: auto; /* Ensures button width is based on content */
 }
 
 .submit-button:hover {
   background-color: #78866B;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Additional responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .contact-container {
-    padding: 50px 20px; /* Reduced padding for smaller devices */
+    padding: 30px 15px; /* Slightly reduce padding for a tighter layout */
   }
 
-  .contact-container h1 {
-    font-size: 35px; /* Smaller font size for compact appearance */
+  .contact-container h1, .contact-container h3 {
+    width: 90%; /* Increase width to allow text more room */
+    text-align: center;
   }
 
-  .contact-container h3 {
-    font-size: 1.2rem; /* Adjusted font size for readability */
-    width: 90%; /* Allows the text to breathe on smaller screens */
+  .contact-form {
+    max-width: 100%; /* Allow the form to use full available width */
   }
 }
+
 
 
 .portfolio-page-container {
@@ -645,66 +639,69 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 200px 175px 30px; /* Adjust padding as needed */
-  margin-top: -150px;
+  padding: 100px 50px 30px; /* Optimized padding for all screen sizes */
+  margin-top: 0; /* Adjusted to remove negative margin */
   
 }
 
 .portfolio-header h1 {
   margin: 0;
-  font-size: 45px;
+  font-size: clamp(2.5rem, 5vw, 45px); /* Responsive font size using clamp */
   color: #78866B;
   font-weight: 350;
+  margin-top: -20px;
 }
 
 .portfolio-header p {
-  font-size: 1.4rem;
-  margin-bottom: 50px; /* Provides space between the header and the grid */
+  font-size: clamp(1rem, 2.5vw, 1.4rem); /* Responsive font size for description */
+  margin-bottom: 50px;
 }
 
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust based on your preference */
-  gap: 20px; /* Space between items */
+  grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+  gap: 20px;
   width: 100%;
-  padding: 0 50px; /* Adjust padding to ensure grid does not touch screen edges */
-  
+  padding: 0 20px; /* Adjusted padding for consistency */
 }
 
 .portfolio-image {
-  width: 100%; /* Ensures images are fully responsive within their grid item */
-  height: auto; /* Maintains aspect ratio */
-  transition: transform 0.3s ease; /* Optional: Adds a zoom effect on hover */
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .portfolio-image:hover {
-  transform: scale(1.03); /* Optional: Zoom effect on hover */
+  transform: scale(1.03);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for medium screens */
 @media (max-width: 768px) {
   .portfolio-page-container {
-    padding: 100px 0px; /* Reduced padding for smaller screens */
+    padding: 50px 20px; /* Reduced padding for medium screens */
   }
 
   .portfolio-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 columns for tablets and large phones */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
   }
 }
 
+/* Responsive adjustments for small screens */
 @media (max-width: 480px) {
+  .portfolio-page-container {
+    padding: 30px 10px; /* Further reduced padding for small screens */
+  }
+
   .portfolio-container {
     grid-template-columns: 1fr; /* Single column layout for small devices */
-    padding: 0 10px; /* Adjust padding for very small screens */
   }
 
   .portfolio-header h1 {
-    font-size: 2.5rem; /* Smaller font size for small devices */
-    margin-top: 60px;
+    font-size: clamp(2rem, 8vw, 2.5rem); /* Smaller, dynamic font size */
   }
 
   .portfolio-header p {
-    font-size: 1.2rem; /* Smaller font size for the description */
+    font-size: clamp(1rem, 5vw, 1.2rem); /* Smaller, dynamic font size for description */
   }
 }
 
@@ -757,25 +754,25 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
-  padding: 50px;
+  padding: 50px; /* Consistent padding, consider responsiveness */
 }
+
 .testimonials-header h1 {
   margin: 0;
-  font-size: 45px; /* Adjusted for mobile */
+  font-size: clamp(2rem, 5vw, 45px); /* Responsive font size using clamp for better adaptability */
   color: #78866B;
-  font-weight: 350; /* Made the weight heavier for consistency */
+  font-weight: 350;
 }
 
 .testimonials-header p {
-  font-size: 1rem; /* Adjusted for mobile */
-  margin-bottom: 20px; /* Reduced bottom margin */
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size for paragraph */
+  margin-bottom: 20px;
 }
 
 .testimonials-list {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align testimonials */
+  align-items: center; /* Ensures center alignment */
   width: 100%;
   gap: 20px;
 }
@@ -783,29 +780,40 @@ nav li a:hover {
 .testimonial-item {
   background-color: #f0f0f0;
   border-left: 5px solid #78866B;
-  padding: 15px; /* Adjusted padding for more space */
-  text-align: center; /* Centered text */
-  width: 90%; /* Utilize more screen width */
-  margin: 0 auto; /* Center the item */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: added a subtle shadow */
+  padding: 15px;
+  text-align: center;
+  width: 90%; /* Adjust based on design preference */
+  margin: 0 auto; /* Ensures centering */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .client-name {
-  text-align: center; /* Centered client name */
+  text-align: center;
   margin-top: 10px;
-  font-weight: 600; /* Adjusted for visibility */
+  font-weight: 600;
 }
 
-/* Responsive adjustments for very small screens */
-@media (max-width: 480px) {
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
   .testimonials-container {
-    padding: 50px 15px; /* Reduced padding for tighter layout */
+    padding: 30px; /* Adjust padding for medium screens */
   }
 
   .testimonial-item {
-    padding: 10px; /* Reduced padding inside testimonial items */
-    font-size: 0.9rem; /* Smaller font size for content */
+    width: 100%; /* Full width for better space utilization on smaller screens */
   }
 }
+
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 30px 15px; /* Further reduced padding for very small screens */
+  }
+
+  .testimonial-item {
+    padding: 10px; /* Reduced padding for a more compact layout */
+    font-size: 0.9rem; /* Adjust font size for better readability */
+  }
+}
+
 
 
