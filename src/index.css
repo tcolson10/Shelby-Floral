@@ -31,6 +31,7 @@ header {
   background: transparent;
   border: none;
   cursor: pointer;
+  padding-right: 20px;
 }
 
 .hamburger-line {
@@ -107,7 +108,7 @@ nav li a:hover {
 .content-container {
   position: relative;
   width: 100%; /* This keeps the container spanning full width */
-  height: 75vh; /* Example height: 50% of the viewport height, adjust as needed */
+  height: 80vh; /* Example height: 50% of the viewport height, adjust as needed */
   overflow: hidden; /* Ensures the image does not exceed the container's bounds */
   text-align: center;
   display: flex;
@@ -138,7 +139,7 @@ nav li a:hover {
   
 }
 .text-overlay h1 {
-  font-size: 9vh; /* Adjusts size based on the viewport */
+  font-size: 11vh; /* Adjusts size based on the viewport */
   font-weight: 700;
   color: white;
   margin: 0;
