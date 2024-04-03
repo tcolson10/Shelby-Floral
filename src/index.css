@@ -114,7 +114,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    display: none; /* Hidden by default */
+    display: flex; /* Hidden by default */
   }
 
   .nav-active ul {
