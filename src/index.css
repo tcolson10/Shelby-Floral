@@ -7,145 +7,97 @@ body {
   min-width: 320px;
 }
 
+/* General styling for the header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  background-color: white;
-  transition: all 0.3s ease;
-}
-/* General style for all main titles */
-.page-title {
-  font-size: 45px; /* Example base font size */
-  color: #78866B; /* Example color */
-  font-weight: 800;
-  text-align: center;
-  margin-top: 150px; /* Adjust based on header size and desired spacing */
-  margin-bottom: 40px; /* Space below the title */
+  padding: 0 20px;
+  background-color: #fff; /* Adjust the background color as needed */
 }
 
-/* Adjustments for mobile */
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 35px; /* Smaller font size for mobile */
-    margin-top: 100px; /* Adjusted top margin for mobile header and spacing */
-    margin-bottom: 20px; /* Adjusted space below the title for mobile */
-  }
+/* Logo styling */
+.navLogo {
+  height: 80px; /* Adjust the size as needed */
 }
 
-@media (max-width: 768px) {
-  .text-overlay {
-    width: 100%; /* This will make the text container take full width */
-    padding: 5px 10px; /* Adjust horizontal padding here */
-  }
-}
-
-.navTitle {
-  text-decoration: none; /* Removes underline */
-  color: black; /* Or any color you've defined */
-  font-size: 3.2rem;
-  font-weight: 300;
-  transition: color 0.3s ease;
-  margin-left: 50px; /* Corrected to include 'px' */
-  margin-right: auto;
-  order: 1; /* Move the title to the left */
-}
-
-.navTitle:hover {
-  color: #78866B;
-  text-decoration: none;
-}
-
-/* Ensures link within .navTitle has no underline and inherits color */
-.webTitle, .webTitle:visited, .webTitle:hover, .webTitle:active {
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Hamburger menu styling */
 .hamburger {
-  display: flex;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  order: 2;
 }
 
 .hamburger-line {
   width: 30px;
   height: 3px;
-  background: black;
-  transition: all 0.3s ease;
+  background-color: #78866B; /* Adjust the color as needed */
 }
 
+/* Navigation menu styling */
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 20px;
-  padding-right: 50px; /* Pushes the menu to the left */
-  align-items: flex-start;
-  order: 3;
+  gap: 20px; /* Adjust the space between menu items as needed */
+  font-size: 35px;
 }
 
-nav ul li a {
-  color: black;
+nav li {
+  padding: 10px 0;
+}
+
+nav li a {
   text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 300;
-  padding: 10px 15px;
-  transition: color 0.3s ease;
+  color: #333; /* Adjust the link color as needed */
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+nav li a:hover {
+  color: #78866B; /* Dark sage green */
 }
 
-nav ul li a:hover {
-  color: #78866B;
-}
 
-/* Correcting nested media query */
+/* Responsive styling */
 @media (max-width: 768px) {
+  /* Show the hamburger icon */
   .hamburger {
     display: flex;
-    order: 1;
   }
 
+  /* Hide the menu by default */
+  nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px; /* Adjust based on the header's height */
+    background-color: #fff;
+    width: 100%; /* Full width */
+    text-align: right;
+    padding: 20px;
+    z-index: 100;
+  }
+
+  /* Show the menu when active */
+  .nav-active {
+    display: block;
+  }
+
+  /* Stack the menu items vertically */
   nav ul {
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    display: flex; /* Hidden by default */
+    align-items: flex-end;
   }
 
-  .nav-active ul {
-    display: flex;
-  }
-
-  .navTitle {
-    margin-left: 0; /* Resets margin for mobile */
-    font-size: 1.8rem; /* Adjusts size for readability */
-    order: -1;
-  }
-
-  nav ul {
-    padding-right: 0; /* Resets padding for mobile */
-  }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0; /* Adjusts padding for a stacked layout */
+  nav li {
+    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  .navTitle, nav ul li a {
-    font-size: 1.5rem; /* Further adjust for smaller devices */
-  }
 
-}
 .webTitle, .webTitle:visited, .webTitle:hover, .webTitle:active {
   text-decoration: none; /* Removes underline */
   color: inherit; /* Inherits the color from the parent, if desirable */
@@ -221,7 +173,11 @@ nav ul li a:hover {
 
 }
   
-  
+@media (max-width: 1024px) {
+  .text-overlay h2 {
+    font-size: 1.5rem; /* Larger for devices with high DPI screens */
+  }
+}
 
 
   /* Additional mobile-specific styles here */

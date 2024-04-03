@@ -10,8 +10,9 @@ function App() {
     <div className="app-container">
       <header>
         <Link to="/" className="webTitle">
-          <h1 className='navTitle'>Shelby Floral</h1>
+          <img src="/images/portfolio/shelby-floral-logo-crop.jpg" alt="Shelby Floral Logo" className='navLogo' />
         </Link>
+
         <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {/* Hamburger Icon */}
           <span className="hamburger-line"></span>
@@ -39,7 +40,7 @@ function App() {
           </a>
         </div>
         <div className="footer-email">
-          Email:<a href="mailto:shelbyfloral@gmail.com">shelbyfloralcompany@gmail.com</a>
+          Email:<a href="mailto:shelbyfloralcompany@gmail.com">shelbyfloralcompany@gmail.com</a>
         </div>
 
       </footer>
