@@ -514,6 +514,7 @@ nav ul li a:hover {
 .pricing-photo {
   width: 100%;
   height: auto;
+  max-height: 550px;
 }
 
 .pricing-photo-text {
