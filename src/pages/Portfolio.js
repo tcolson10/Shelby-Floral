@@ -7,7 +7,7 @@ const imageData = [
     { src: "/images/portfolio/ceremony.JPG", alt: "Ceremony image" },
     { src: "/images/portfolio/Kylie2.JPG", alt: "Image of Kylie 2" },
     { src: "/images/portfolio/kylieFlowers.JPG", alt: "Image of Kylie 1" },
-    { src: "/images/portfolio/treeNew.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/treeNew.jpg" },
     { src: "/images/portfolio/treeFarAway.jpg", alt: "Kenzie" },
     { src: "/images/portfolio/kenzie.jpg", alt: "Kenzie" },
     { src: "/images/portfolio/grace-and-blake1.JPG", alt: "Carter and Kenzie" },

@@ -3,7 +3,7 @@ import React from 'react';
 // Updated array of pricing details
 const pricingData = [
     {
-        src: "/images/portfolio/kylie2.JPG",
+        src: "/images/portfolio/kylie1.JPG",
         alt: "Bridal Party",
         description: ["Bridal Bouquet $175-250", "Bridesmaid Bouquet $65+", "Boutonniere $18", "Corsage $20", "", "For other contact me for price"]
     },
@@ -22,26 +22,24 @@ const pricingData = [
 function Pricing() {
     return (
         <div className="pricing-page-container">
-            {/* Header Section */}
             <div className="pricing-header" style={{ textAlign: 'center' }}>
                 <h1 className='page-title'>Pricing</h1>
-                <p>Pricing varies based upon the types of flowers <br></br>To get an exact quote please contact me</p>
+                <p>Pricing varies based upon the types of flowers <br />To get an exact quote please contact me</p>
             </div>
 
-            {/* Pricing Section */}
             <div className="pricing-container">
                 {pricingData.map((item, index) => (
                     <div key={index} className="pricing-photo-container">
                         <img src={item.src} alt={item.alt} className="pricing-photo" />
-                        {/* Title from the alt attribute */}
-                        <h3>{item.alt}</h3>
-                        {/* Description */}
-                        {item.description.map((line, lineIndex) => (
-                            <React.Fragment key={lineIndex}>
-                                {lineIndex > 0 && <br />} {/* Adds breaks between lines */}
-                                {line}
-                            </React.Fragment>
-                        ))}
+                        <div className="pricing-text-content"> {/* Additional div for text content if needed */}
+                            <h3>{item.alt}</h3>
+                            {item.description.map((line, lineIndex) => (
+                                <React.Fragment key={lineIndex}>
+                                    {lineIndex > 0 && <br />} {/* Adds breaks between lines */}
+                                    {line}
+                                </React.Fragment>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>
