@@ -5,25 +5,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 100;
   min-width: 320px;
+  box-sizing: border-box; 
+  max-width: 100vw;
+  
 }
 
-/* General styling for the header */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: #fff; /* Adjust the background color as needed */
+  background-color: #fff; 
+  position: relative;
+}
+img, iframe, video, .wide-element {
+  max-width: 100%;
+  height: auto; 
 }
 
-/* Logo styling */
+
 .navLogo {
-  height: 80px; /* Adjust the size as needed */
+  height: 80px; 
 }
 
-/* Hamburger menu styling */
+Hamburger menu styling
 .hamburger {
-  display: none; /* Hidden by default */
+  display: none; 
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -37,14 +45,14 @@ header {
 .hamburger-line {
   width: 30px;
   height: 3px;
-  background-color: #78866B; /* Adjust the color as needed */
+  background-color: #78866B; 
 }
 
-/* Navigation menu styling */
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px; /* Adjust the space between menu items as needed */
+  gap: 20px;
   font-size: 20px;
 }
 
@@ -54,40 +62,49 @@ nav li {
 
 nav li a {
   text-decoration: none;
-  color: #333; /* Adjust the link color as needed */
+  color: #333;
   transition: color 0.3s ease, font-size 0.3s ease;
 }
 nav li a:hover {
-  color: #78866B; /* Dark sage green */
+  color: #78866B; 
+}
+
+@media (max-width: 768px) {
+  .element {
+    padding: 0 15px;
+  }
+  .wide-element {
+    width: auto; 
+  }
 }
 
 
-/* Responsive styling */
+
 @media (max-width: 768px) {
-  /* Show the hamburger icon */
+ 
   .hamburger {
     display: flex;
   }
 
-  /* Hide the menu by default */
+ 
   nav {
     display: none;
     position: absolute;
     right: 0;
-    top: 60px; /* Adjust based on the header's height */
+    top: 60px; 
     background-color: #fff;
-    width: 100%; /* Full width */
+    width: 100%; 
     text-align: right;
     padding: 20px;
     z-index: 100;
   }
 
-  /* Show the menu when active */
+ 
   .nav-active {
     display: block;
   }
 
-  /* Stack the menu items vertically */
+ 
   nav ul {
     flex-direction: column;
     align-items: flex-end;
@@ -349,7 +366,7 @@ nav li a:hover {
 }
 
 .footer-email a:hover, .footer-instagram a:hover {
-  color: #9CAD86; /* Adjusts the hover state color */
+  color: #9CAD86; 
 }
 
 .footer-email a, .footer-instagram a {
@@ -361,24 +378,24 @@ nav li a:hover {
   transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 768px) {
   .site-footer {
-    flex-direction: column; /* Stacks footer items vertically */
-    padding: 40px 20px; /* Adjusts padding for a smaller viewport */
+    flex-direction: column; 
+    padding: 40px 20px; 
   }
 
   .footer-email, .footer-instagram {
-    justify-content: center; /* Centers the content horizontally */
-    font-size: 20px; /* Optionally adjust font size for smaller screens */
+    justify-content: center; 
+    font-size: 20px; 
   }
 }
 
 
 .instagram-logo {
-  width: 50px; /* Logo size */
-  height: 50px; /* Maintains aspect ratio */
-  align-self: center; /* Ensures the logo is centered with the text */
+  width: 50px; 
+  height: 50px; 
+  align-self: center; 
 }
 
 
@@ -387,7 +404,6 @@ nav li a:hover {
   flex-direction: row; /* Default layout for larger screens */
   align-items: flex-start;
   justify-content: space-between;
-  padding-top: 150px;
   gap: 20px;
 }
 
@@ -399,6 +415,7 @@ nav li a:hover {
 .about-page-image {
   max-width: 100%;
   height: auto;
+  margin-top: -80px;
 }
 
 .about-text-container {
@@ -456,8 +473,9 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 90px;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding-top: 30px;
+ 
 }
 
 .pricing-header h1 {
@@ -465,7 +483,8 @@ nav li a:hover {
   font-size: 45px; /* More responsive font size */
   color: #78866B;
   font-weight: 350;
-  margin-top: 10px;
+  
+ 
 }
 
 .pricing-header p {
@@ -530,6 +549,7 @@ nav li a:hover {
   align-items: center;
   padding: 50px 20px; /* Adjusted padding for better responsiveness */
   font-weight: 400;
+  margin-top: -30px;
  
 }
 
@@ -624,6 +644,7 @@ nav li a:hover {
   align-items: center;
   text-align: center;
   padding: 200px 175px 30px; /* Adjust padding as needed */
+  margin-top: -150px;
   
 }
 
@@ -661,7 +682,7 @@ nav li a:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .portfolio-page-container {
-    padding: 100px 20px; /* Reduced padding for smaller screens */
+    padding: 100px 0px; /* Reduced padding for smaller screens */
   }
 
   .portfolio-container {
@@ -677,7 +698,7 @@ nav li a:hover {
 
   .portfolio-header h1 {
     font-size: 2.5rem; /* Smaller font size for small devices */
-    margin-top: 20px;
+    margin-top: 60px;
   }
 
   .portfolio-header p {
@@ -734,8 +755,8 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 100px;
-  padding: 100px;
+  
+  padding: 50px;
 }
 .testimonials-header h1 {
   margin: 0;
@@ -784,4 +805,5 @@ nav li a:hover {
     font-size: 0.9rem; /* Smaller font size for content */
   }
 }
+
 
