@@ -3,17 +3,17 @@ import React from 'react';
 // Updated array of pricing details
 const pricingData = [
     {
-        src: "/images/portfolio/kylieGood.JPG",
+        src: "/images/portfolio/kylie2.JPG",
         alt: "Bridal Party",
         description: ["Bridal Bouquet $175-250", "Bridesmaid Bouquet $65+", "Boutonniere $18", "Corsage $20", "", "For other contact me for price"]
     },
     {
-        src: "/images/portfolio/treeCrop3.JPG",
+        src: "/images/portfolio/tree.JPG",
         alt: "Installations",
         description: ["Arch Piece $350+", "Full Arch $1,000+", "Broken Arch $1,000+", "Aisle Florals $100+", "", "For other contact me for price"]
     },
     {
-        src: "/images/portfolio/cakeGood.JPG",
+        src: "/images/portfolio/ceremony.JPG",
         alt: "Reception",
         description: ["Centerpieces $50+", "Welcome Sign Florals $40+", "Cake florals $25+", "Cake meadow $75+", "Bud Vases $7 with rented vases $5 without vase", "", "For other please contact me"]
     }

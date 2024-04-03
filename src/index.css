@@ -177,6 +177,7 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   padding: 0 20px;
+  
 }
 .text-overlay h1 {
   font-size: clamp(2rem, 5vw, 7rem); /* Adjusts size based on the viewport */
@@ -202,6 +203,13 @@ nav ul li a:hover {
   .text-overlay h1 {
     font-size: 3.5rem; /* Smaller size for mobile */
   }
+  @media (max-width: 768px) {
+    .text-overlay h1, .text-overlay h2 {
+      margin: 0;
+      padding: 0; /* Reset or adjust as necessary */
+    }
+  }
+  
   
   .text-overlay h2 {
     font-size: 1.5rem; /* Adjust accordingly for mobile */
