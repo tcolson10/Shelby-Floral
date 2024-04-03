@@ -54,6 +54,7 @@ header {
   transition: color 0.3s ease;
   margin-left: 50px; /* Corrected to include 'px' */
   margin-right: auto;
+  order: 1; /* Move the title to the left */
 }
 
 .navTitle:hover {
@@ -88,6 +89,7 @@ nav ul {
   gap: 20px;
   padding-right: 50px; /* Pushes the menu to the left */
   align-items: flex-start;
+  order: 3;
 }
 
 nav ul li a {
@@ -155,6 +157,8 @@ nav ul li a:hover {
   width: 100%; /* This keeps the container spanning full width */
   height: 75vh; /* Example height: 50% of the viewport height, adjust as needed */
   overflow: hidden; /* Ensures the image does not exceed the container's bounds */
+  text-align: center;
+  display: flex;
 }
 
 .HomePageImage {
@@ -162,6 +166,7 @@ nav ul li a:hover {
   height: 100%; /* Make the image cover the height of the container */
   object-fit: cover; /* Ensures the image covers the container without distorting aspect ratio */
   object-position: center; /* Adjusts the position of the image within the container to focus on the center */
+  background: rgba(0, 0, 0, 0.2); 
 }
 
 .text-overlay {
@@ -177,10 +182,11 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   padding: 0 20px;
+  text-align: center;
   
 }
 .text-overlay h1 {
-  font-size: clamp(2rem, 5vw, 7rem); /* Adjusts size based on the viewport */
+  font-size: 9vh; /* Adjusts size based on the viewport */
   font-weight: 700;
   color: white;
   margin: 0;
@@ -202,25 +208,28 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .text-overlay h1 {
     font-size: 3.5rem; /* Smaller size for mobile */
+    margin: 0;
+      padding: 500; /* Reset or adjust as necessary */
   }
   @media (max-width: 768px) {
-    .text-overlay h1, .text-overlay h2 {
+    .text-overlay h2 {
+      font-size: 1rem;
       margin: 0;
-      padding: 0; /* Reset or adjust as necessary */
+      padding: 500; /* Reset or adjust as necessary */
     }
   }
+
+}
   
   
-  .text-overlay h2 {
-    font-size: 1.5rem; /* Adjust accordingly for mobile */
-  }
+
 
   /* Additional mobile-specific styles here */
   /* Example: Adjust padding or margins for smaller screens */
   .text-overlay {
     padding: 0 15px;
   }
-}
+
 @media (max-width: 375px) {
   .text-overlay h1 {
     font-size: 3rem; /* Adjust font size */
@@ -251,25 +260,24 @@ nav ul li a:hover {
       font-size: 4rem; /* Adjust for 12.9" iPad Pro in portrait */
     }
 
-    .text-overlay h2 {
-      font-size: 1.5rem;
-    }
+    
 }
 
-/* Consider Landscape Orientations */
-@media only screen 
-  and (min-device-width: 1024px) /* This covers the width of iPad Pro in landscape */
-  and (orientation: landscape) {
-  .text-overlay h1 {
-    /* Adjust the font size for landscape orientation if necessary */
+
+@media (max-width: 768px) {
+  .content-container{
+    text-align: center;
+  }
+  .text-overlay {
+    padding: 20% 0; /* Increase padding for smaller screens */
   }
   
-  .text-overlay h2 {
-    /* Adjust the font size for landscape orientation if necessary */
+  /* Adjust text size for smaller screens if necessary */
+  .text-overlay h1 {
+    font-size: 50px; /* Adjust as needed */
+    margin-top: 160px;
   }
 }
-
-
 
 /* Continue with the rest of your CSS */
 
@@ -282,8 +290,6 @@ nav ul li a:hover {
   border-radius: 5px; /* Optional: rounded corners for the button */
   margin-top: 20px; /* Space above the button */
 }
-
-
 
 
 .button-container {
@@ -303,6 +309,23 @@ nav ul li a:hover {
   transition: background-color 0.5s ease ;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .button-link {
+    padding: 8px 16px; /* Slightly smaller padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+}
+
+/* Adjustments for smaller mobile devices */
+@media (max-width: 480px) {
+  .button-link {
+    padding: 6px 12px; /* Even smaller padding for small devices */
+    font-size: 0.8rem; /* Further reduce font size for small screens */
+  }
+}
+
+
+
 
 .button-link:hover {
   background-color: #78866B;
@@ -526,6 +549,21 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .pricing-photo-container {
     width: 100%; /* Single column layout */
+  }
+}
+@media (max-width: 768px) {
+  .pricing-photo {
+    height: 200px; /* Optional: adjust height for smaller screens if 300px is too tall */
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-photo-container {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .pricing-photo {
+    height: 200px; /* Further adjusted height for very small screens */
   }
 }
 
