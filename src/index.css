@@ -44,7 +44,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px; /* Adjust the space between menu items as needed */
-  font-size: 35px;
+  font-size: 20px;
 }
 
 nav li {
