@@ -5,12 +5,12 @@ const pricingData = [
     {
         src: "/images/portfolio/Kylie2.JPG",
         alt: "Bridal Party",
-        description: ["Bridal Bouquet $175-250", "Bridesmaid Bouquet $65+", "Boutonniere $18", "Corsage $20", "", "For other contact me for price"]
+        description: ["Bridal Bouquet $175-250+", "Bridesmaid Bouquet $65+", "Boutonniere $18", "Corsage $20", "", "For other contact me for price"]
     },
     {
         src: "/images/portfolio/treeCrop2.jpg",
         alt: "Installations",
-        description: ["Arch Piece $350+", "Full Arch $1,000+", "Broken Arch $1,000+", "Aisle Florals $100+", "", "For other contact me for price"]
+        description: ["Arch Piece $350+", "Full Arch $1,000+", "Broken Arch $1,000+", "Aisle Florals $75+", "", "For other contact me for price"]
     },
     {
         src: "/images/portfolio/cakeCrop.jpg",
