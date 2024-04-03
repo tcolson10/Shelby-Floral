@@ -35,7 +35,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-instagram">
           <a href="https://www.instagram.com/shelby_floral/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/IG.png" alt="Instagram" className="instagram-logo" /> Instagram
+            <img src="/images/portfolio/IG.png" alt="Instagram" className="instagram-logo" /> Instagram
           </a>
         </div>
         <div className="footer-email">

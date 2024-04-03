@@ -3,22 +3,22 @@ import React from 'react';
 
 // Array of image details
 const imageData = [
-    { src: "/images/brideLooking.JPG", alt: "Bride image" },
-    { src: "/images/ceremony.JPG", alt: "Ceremony image" },
-    { src: "/images/Kylie2.JPG", alt: "Image of Kylie 2" },
-    { src: "/images/kylieFlowers.JPG", alt: "Image of Kylie 1" },
-    { src: "/images/treeNew.jpg", alt: "Kenzie" },
-    { src: "/images/treeFarAway.jpg", alt: "Kenzie" },
-    { src: "/images/kenzie.jpg", alt: "Kenzie" },
-    { src: "/images/grace-and-blake1.JPG", alt: "Carter and Kenzie" },
-    { src: "/images/brideWBridesmaids.jpg", alt: "Kenzie" },
-    { src: "/images/sandCouple.jpg", alt: "Kenzie" },
-    { src: "/images/archCody.jpg", alt: "Kenzie" },
-    { src: "/images/laceeWGroom.jpg", alt: "Lacee with Groom" },
-    { src: "/images/shelBridesmaids.jpg", alt: "Lacee with Groom" },
-    { src: "/images/BrideAndGroomClose.JPG", alt: "Bride and Groom Close-up" },
-    { src: "/images/cakeCrop.jpg", alt: "Kenzie" },
-    { src: "/images/carterAndKenzie.JPG", alt: "Carter and Kenzie" },
+    { src: "/images/portfolio/brideLooking.JPG", alt: "Bride image" },
+    { src: "/images/portfolio/ceremony.JPG", alt: "Ceremony image" },
+    { src: "/images/portfolio/Kylie2.JPG", alt: "Image of Kylie 2" },
+    { src: "/images/portfolio/kylieFlowers.JPG", alt: "Image of Kylie 1" },
+    { src: "/images/portfolio/treeNew.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/treeFarAway.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/kenzie.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/grace-and-blake1.JPG", alt: "Carter and Kenzie" },
+    { src: "/images/portfolio/brideWBridesmaids.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/sandCouple.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/archCody.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/laceeWGroom.jpg", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/shelBridesmaids.jpg", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/BrideAndGroomClose.JPG", alt: "Bride and Groom Close-up" },
+    { src: "/images/portfolio/cakeCrop.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/carterAndKenzie.JPG", alt: "Carter and Kenzie" },
 
 ];
 

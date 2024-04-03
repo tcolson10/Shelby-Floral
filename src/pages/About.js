@@ -5,7 +5,7 @@ function About() {
     return (
         <div className='about-content-container'>
             <div className='about-image-container'>
-                <img src="/images/shelStandFlowers.JPG" alt="Shelby standing with flowers" className='about-page-image' />
+                <img src="/images/portfolio/shelStandFlowers.JPG" alt="Shelby standing with flowers" className='about-page-image' />
             </div>
             <div className='about-text-container'>
                 <h1>Hi, my name is Shelby Colson.</h1>
