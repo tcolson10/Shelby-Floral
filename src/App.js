@@ -36,13 +36,15 @@ function App() {
       <footer className="site-footer">
         <div className="footer-instagram">
           <a href="https://www.instagram.com/shelby_floral/" target="_blank" rel="noopener noreferrer">
-            <img src="/images/portfolio/IG.png" alt="Instagram" className="instagram-logo" /> Instagram
+            <img src="/images/portfolio/IG.png" alt="Instagram" className="instagram-logo" /> {' '}
+            <span style={{ fontWeight: 'normal' }}>Instagram</span>
           </a>
         </div>
         <div className="footer-email">
-          Email:<a href="mailto:shelbyfloralcompany@gmail.com" target="_blank">shelbyfloralcompany@gmail.com</a>
+          Email:{' '}<a href="mailto:shelbyfloralcompany@gmail.com" target="_blank" rel="noopener noreferrer">
+            <span style={{ fontWeight: 'normal' }}>shelbyfloralcompany@gmail.com</span>
+          </a>
         </div>
-
       </footer>
     </div>
   );
