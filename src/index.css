@@ -26,7 +26,9 @@ img, iframe, video, .wide-element {
 
 
 .navLogo {
-  height: 80px; 
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 Hamburger menu styling
