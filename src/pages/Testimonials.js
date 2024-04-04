@@ -21,8 +21,8 @@ const testimonialsData = [
     },
     {
         text:
-            "Shelby was a dream to work with for our wedding florals! From the beginning, she captured our vision perfectly, bringing it to life with stunning arrangements that exceeded our expectations. Her professionalism and creativity were evident, making our venue look like a fairytale. The flowers were not only beautiful but also delivered on time, allowing us to relax and enjoy our day. Shelby's passion and talent made our wedding unforgettable, and I can't recommend her enough!",
-        name: "Emma T."
+            "Shelby was amazing to work with! I showed her all of my inspo pics and she made all of my wedding flower dreams come true. She made sure I had flowers everywhere I wanted and my bouquet was gorgeous! She also did all the flowers and table settings for my baby shower a year later and it was to die for. She really listened to what I wanted and brought it to life! I can’t wait to keep using her for all my future events. Absolutely recommend to anyone and everyone!",
+        name: "Michelle C. "
     },
 
 ];
