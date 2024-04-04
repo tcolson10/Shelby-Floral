@@ -11,8 +11,8 @@ const testimonialsData = [
         name: "Kensie W."
     },
     {
-        text: "Working with Shelby for our wedding florals was an absolute joy. She took our ideas and transformed them into breathtaking arrangements that complemented our theme flawlessly. Her attention to detail and professionalism made everything seamless, from the gorgeous bouquets to the elegant centerpieces. Shelby's work added a magical touch to our day, leaving us and our guests in awe. If you're looking for floral designs that truly stand out, Shelby is your go-to!",
-        name: "Sophie R."
+        text: "Shelby is an absolute dream to work with!! She was able to understand and execute my wedding floral vision perfectly. She is SO knowledgeable and made the planning so much fun, instead of stressful. I strongly recommend her to everyone I know ",
+        name: "Grace G."
     },
 
     {
