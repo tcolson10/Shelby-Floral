@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 function Home() {
     return (
-        <>
+        <CSSTransition in={true} appear={true} timeout={300} classNames="page-transition">
             <div className='content-container'>
                 <img src="/images/portfolio/rosesCloseUp.JPG" alt="Shelby home" className='HomePageImage' />
                 <div className='text-overlay'>
@@ -12,8 +13,9 @@ function Home() {
                     <Link to="/about" className="button-link">About Me</Link>
                 </div>
             </div>
-        </>
+        </CSSTransition>
     );
 }
+
 
 export default Home;

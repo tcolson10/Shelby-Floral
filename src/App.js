@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import './App.css';
 import './index.css';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Location hook from react-router-dom to detect route changes
+  const location = useLocation();
+
+  // Initialize Google Analytics and track page views
+  useEffect(() => {
+    ReactGA.initialize('G-9P0D4PPB65'); // Replace YOUR_TRACKING_ID with your Google Analytics tracking ID
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]); // This will trigger the effect every time the location changes
 
   return (
     <div className="app-container">
@@ -12,7 +22,6 @@ function App() {
         <Link to="/" className="webTitle">
           <img src="/images/portfolio/shelby-floral-logo-crop.jpg" alt="Shelby Floral Logo" className='navLogo' />
         </Link>
-
         <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {/* Hamburger Icon */}
           <span className="hamburger-line"></span>

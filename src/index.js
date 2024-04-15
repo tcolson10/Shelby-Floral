@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
 import Testimonials from './pages/Testimonials';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
