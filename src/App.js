@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import ReactGA from 'react-ga4';
+import ReactGA4 from 'react-ga4'; // Import the default export
 import './App.css';
 import './index.css';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Location hook from react-router-dom to detect route changes
   const location = useLocation();
 
-  // Initialize Google Analytics and track page views
   useEffect(() => {
-    ReactGA.initialize('G-9P0D4PPB65'); // Replace YOUR_TRACKING_ID with your Google Analytics tracking ID
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location]); // This will trigger the effect every time the location changes
+    // Initialize Google Analytics 4
+    ReactGA4.initialize('G-9P0D4PPB65'); // Use your Measurement ID here
+
+    // Send a page view for GA4
+    ReactGA4.send({
+      hitType: 'pageview',
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: location.pathname + location.search
+    });
+  }, [location]); // This effect will trigger on route changes
 
   return (
     <div className="app-container">
@@ -60,3 +65,4 @@ function App() {
 }
 
 export default App;
+
