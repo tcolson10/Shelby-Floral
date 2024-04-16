@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 
 // Array of image details
 const imageData = [
@@ -18,11 +17,13 @@ const imageData = [
     { src: "/images/portfolio/BrideAndGroomClose.JPG", alt: "Bride and Groom Close-up" },
     { src: "/images/portfolio/cakeCrop.jpg", alt: "Kenzie" },
     { src: "/images/portfolio/carterAndKenzie.JPG", alt: "Carter and Kenzie" },
-
 ];
 
+function PortfolioFull() {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the window on component mount
+    }, []); // Empty dependency array ensures it runs only once after the initial render
 
-function Portfolio() {
     return (
         <div className="portfolio-page-container">
             <div className="portfolio-header">
@@ -38,4 +39,4 @@ function Portfolio() {
     );
 }
 
-export default Portfolio;
+export default PortfolioFull;

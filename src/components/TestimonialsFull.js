@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 
 const testimonialsData = [
     {
@@ -14,20 +13,21 @@ const testimonialsData = [
         text: "Shelby is an absolute dream to work with!! She was able to understand and execute my wedding floral vision perfectly. She is SO knowledgeable and made the planning so much fun, instead of stressful. I strongly recommend her to everyone I know ",
         name: "Grace G."
     },
-
     {
-        text: "Shelby was incredible! I feel like the vision I had was kind of scattered, but she executed it perfectly and exceeded any expectations I had. I still get so many compliment on the florals from my wedding!",
+        text: "Shelby was incredible! I feel like the vision I had was kind of scattered, but she executed it perfectly and exceeded any expectations I had. I still get so many compliments on the florals from my wedding!",
         name: "Lacee J."
     },
     {
-        text:
-            "Shelby was amazing to work with! I showed her all of my inspo pics and she made all of my wedding flower dreams come true. She made sure I had flowers everywhere I wanted and my bouquet was gorgeous! She also did all the flowers and table settings for my baby shower a year later and it was to die for. She really listened to what I wanted and brought it to life! I can’t wait to keep using her for all my future events. Absolutely recommend to anyone and everyone!",
+        text: "Shelby was amazing to work with! I showed her all of my inspo pics and she made all of my wedding flower dreams come true. She made sure I had flowers everywhere I wanted and my bouquet was gorgeous! She also did all the flowers and table settings for my baby shower a year later and it was to die for. She really listened to what I wanted and brought it to life! I can’t wait to keep using her for all my future events. Absolutely recommend to anyone and everyone!",
         name: "Michelle C. "
     },
-
 ];
 
-function Testimonials() {
+function TestimonialsFull() {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+    }, []); // Empty dependency array ensures this runs only once on mount
+
     return (
         <div className="testimonials-container">
             <div className="testimonials-header">
@@ -46,4 +46,4 @@ function Testimonials() {
     );
 }
 
-export default Testimonials;
+export default TestimonialsFull;
