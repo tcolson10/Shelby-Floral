@@ -514,7 +514,7 @@ nav li a:hover {
 }
 
 .pricing-header p {
-  font-size: 1.2rem; /* This is fine, but consider using em for scalability */
+  font-size: 1.3rem; /* This is fine, but consider using em for scalability */
   margin-bottom: 40px;
 }
 
@@ -626,22 +626,8 @@ nav li a:hover {
   box-shadow: inset 0 0 0 2px #9CAD86; /* Enhances focus state for accessibility */
 }
 
-.submit-button {
-  background-color: #9CAD86;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.5s ease;
-  font-weight: 600;
-  width: auto; /* Ensures button width is based on content */
-}
 
-.submit-button:hover {
-  background-color: #78866B;
-}
+
 
 /* Additional responsive adjustments for smaller screens */
 @media (max-width: 768px) {
@@ -873,7 +859,7 @@ nav li a:hover {
   width: 80%; /* Adjust width as needed */
   margin: 0 auto 20px; /* Space between items */
   box-shadow: none; /* No shadow */
-  font-size: 1.2rem; /* Larger font size for readability */
+  font-size: 1.5rem; /* Larger font size for readability */
   color: white; /* Dark text color for readability */
 }
 
@@ -885,9 +871,16 @@ nav li a:hover {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .testimonial-item {
-    width: 90%; /* Slightly wider on smaller screens */
+    width: 100%; /* Slightly wider on smaller screens */
   }
 }
+
+
+
+
+
+
+
 
 .content-container {
   height: 70vh; /* Full height of the viewport */
@@ -962,3 +955,26 @@ nav li a:hover {
 .portfolio-button:hover {
   background-color: #78866B;
 }
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #9CAD86;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.5s ease;
+}
+
+.submit-button:hover {
+  background-color: #78866B;
+}
+
+

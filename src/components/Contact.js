@@ -5,7 +5,6 @@ function Contact() {
         <div className='contact-container'>
             <h1 className='page-title'>Let's Chat!</h1>
             <h3>Planning an event and wanting to get more info? Fill out the fields below to get connected with us - we can't wait to hear from you.</h3>
-            {/* Update the form element with the action and method attributes */}
             <form className='contact-form' action="https://formspree.io/f/mwkgrzrd" method="POST">
                 <label htmlFor="fullName">Your name & your partner's name (if applicable)</label>
                 <input type="text" id="fullName" name="fullName" />
@@ -37,10 +36,13 @@ function Contact() {
                 <label htmlFor="pinterestLink">Link to Pinterest Board/Inspiration</label>
                 <input type="url" id="pinterestLink" name="pinterestLink" />
 
-                <button type="submit" className="submit-button">Send</button>
+                <div className="submit-button-container">
+                    <button type="submit" className="submit-button">Send</button>
+                </div>
             </form>
         </div>
     );
 }
 
 export default Contact;
+
