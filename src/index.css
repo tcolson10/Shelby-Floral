@@ -241,14 +241,15 @@ nav li a:hover {
   object-fit: cover; /* Covers the area without distorting but could clip */
   object-position: center; /* Center the focus of the image */
 }
-
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw; /* This ensures the image width exactly matches the viewport width */
-    height: auto; /* Adapts the height to maintain the image's aspect ratio */
-    object-fit: contain; /* Change to 'contain' to see full image without clipping */
+    width: 105vw; /* Slightly larger than the viewport width */
+    height: 105vh; /* Slightly larger than the viewport height */
+    object-fit: cover;
+    object-position: center center;
   }
 }
+
 
 
 
