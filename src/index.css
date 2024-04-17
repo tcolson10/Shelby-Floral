@@ -231,10 +231,8 @@ nav li a:hover {
   }
 }
 
-
 .OverlayImage {
   position: absolute;
-  padding-top: 100px;
   top: 0;
   left: 0;
   right: 0; /* Ensures the right edge is also aligned */
@@ -251,6 +249,7 @@ nav li a:hover {
     object-fit: contain; /* Change to 'contain' to see full image without clipping */
   }
 }
+
 
 
 .button-container {
