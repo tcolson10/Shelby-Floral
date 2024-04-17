@@ -42,7 +42,7 @@ function App() {
     <div className="app-container">
       <header>
         <Link to="/" className="webTitle" onClick={() => setIsMenuOpen(false)}>
-          <img src="/images/portfolio/shelby-floral-logo-crop.jpg" alt="Shelby Floral Logo" className='navLogo' />
+          <img src="/images/portfolio/flower-logo.png" alt="Shelby Floral Logo" className='navLogo' />
         </Link>
         <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className="hamburger-line"></span>

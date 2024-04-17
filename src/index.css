@@ -137,7 +137,7 @@ nav li a:hover {
 .content-container {
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   overflow: hidden;
   text-align: center;
   display: flex;
@@ -159,7 +159,7 @@ nav li a:hover {
 
 .text-overlay {
   position: absolute;
-  top: 60%; /* Center vertically */
+  top: 50%; /* Center vertically */
   left: 0;
   width: 100%;
   height: 100%;
@@ -204,7 +204,7 @@ nav li a:hover {
 /* Adjust for mobile devices */
 @media (max-width: 768px) {
   .content-container {
-    height: 60vh;
+    height: 100vh;
     background-attachment: scroll;
   }
 
@@ -237,7 +237,7 @@ nav li a:hover {
   top: 0; /* Adjust as needed, based on where the text was */
   left: 0; /* Align to the container edge */
   width: 100%; /* Match the dimensions of the underlying image */
-  height: 75vh; /* This could be adjusted based on your design needs */
+  height: 100vh; /* This could be adjusted based on your design needs */
   object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
 }
 
@@ -330,9 +330,6 @@ nav li a:hover {
   align-self: center; 
 }
 
-
-
-
 .about-content-container {
   display: flex;
   flex-direction: row; /* Default layout for larger screens */
@@ -345,37 +342,38 @@ nav li a:hover {
 .about-image-container {
   flex-basis: 50%; /* Half of the screen width */
   padding: 20px;
-  height: 800px; /* Adjust the height as needed */
+  height: 600px; /* Height set to match the text container */
   overflow: hidden; /* Cut off any content that overflows the container */
 }
 
 .about-page-image {
   width: 100%; /* Maintain full width */
-  height: 100%; /* Maintain full height */
+  height: 100%; /* Adjust to new container height */
   object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
 .about-text-container {
   flex-basis: 50%; /* Half of the screen width */
-  padding: 40px;
+  padding: 20px;
+  height: 600px; /* Same height as the image container */
+  overflow: auto; /* Allows scrolling within the container if content overflows */
 }
-
 
 .about-text-container h1, .about-text-container h2, .about-text-container h3 {
   text-align: center; /* Consistent alignment for titles */
 }
 .about-text-container h1 {
   font-weight: 350;
-  font-size: clamp(2.5rem, 5vw, 3.25rem); /* Dynamic adjustment */
+  font-size: clamp(2rem, 4.5vw, 2.7rem); /* Smaller dynamic adjustment */
   color: #78866B;
 }
 .about-text-container h2 {
   font-weight: 400;
-  font-size: clamp(2rem, 4vw, 2.5rem); /* Dynamic adjustment */
+  font-size: clamp(1.6rem, 3.6vw, 1.9rem); /* Smaller dynamic adjustment */
 }
 .about-text-container h3 {
   font-weight: 200;
-  font-size: clamp(1.5rem, 3vw, 2rem); /* Dynamic adjustment */
+  font-size: clamp(1.2rem, 2.7vw, 1.4rem); /* Smaller dynamic adjustment */
 }
 @media (max-width: 768px) {
   .about-content-container {
@@ -387,18 +385,16 @@ nav li a:hover {
     flex-basis: 100%; /* Utilize full width for a stacked layout */
     padding: 15px; /* Slightly larger padding for better spacing */
     text-align: center; /* Center-align the text for mobile */
+    height: auto; /* Auto-adjust height on smaller screens */
   }
   .about-page-image {
     margin-top: 0; /* Adjust if necessary for mobile layout */
   }
-  /* Bring the photo closer to the header on mobile */
   .about-image-container {
     margin-top: -20px; /* Pulls the image closer to the content above it */
     padding-top: 0; /* Optionally reduce padding to bring it even closer */
   }
 }
-
-
 
 
 .pricing-page-container {
