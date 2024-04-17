@@ -16,31 +16,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  background-color: #fff; 
-  position: relative;
+  background-color: #fff;
+  position: fixed; /* Changed from 'relative' to 'fixed' */
+  width: 100%; /* Ensures it spans the full width */
+  top: 0; /* Aligns the header at the top */
+  z-index: 1000; /* Ensures the header stays above other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow for better visibility over the page content */
 }
 
 :target::before {
   content: "";
   display: block;
-  height: 100px;  /* Same as the header height */
+  height: 100px;  /* Adjust this if your header height changes */
   margin-top: -100px; /* Negative margin equal to the height */
 }
 
-
-
-
 img, iframe, video, .wide-element {
   max-width: 100%;
-  height: auto; 
+  height: auto;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
-
 
 .navLogo {
   height: 70px;
@@ -49,9 +47,9 @@ html {
   cursor: pointer;
 }
 
-Hamburger menu styling
+/* Hamburger menu styling */
 .hamburger {
-  display: none; 
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -60,14 +58,17 @@ Hamburger menu styling
   border: none;
   cursor: pointer;
   padding-right: 20px;
+  position: absolute; /* Position it absolutely within the header */
+  right: 20px; /* Adjust this value if it's too far to the right */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%);
 }
 
 .hamburger-line {
   width: 30px;
   height: 3px;
-  background-color: #78866B; 
+  background-color: #78866B;
 }
-
 
 nav ul {
   list-style: none;
@@ -85,8 +86,9 @@ nav li a {
   color: #333;
   transition: color 0.3s ease, font-size 0.3s ease;
 }
+
 nav li a:hover {
-  color: #78866B; 
+  color: #78866B;
 }
 
 @media (max-width: 768px) {
@@ -94,37 +96,29 @@ nav li a:hover {
     padding: 0 15px;
   }
   .wide-element {
-    width: auto; 
+    width: auto;
   }
-}
 
-
-
-@media (max-width: 768px) {
- 
   .hamburger {
     display: flex;
   }
 
- 
   nav {
     display: none;
     position: absolute;
     right: 0;
-    top: 60px; 
+    top: 60px;
     background-color: #fff;
-    width: 100%; 
+    width: 100%;
     text-align: right;
     padding: 20px;
     z-index: 100;
   }
 
- 
   .nav-active {
     display: block;
   }
 
- 
   nav ul {
     flex-direction: column;
     align-items: flex-end;
@@ -135,34 +129,33 @@ nav li a:hover {
   }
 }
 
-
 .webTitle, .webTitle:visited, .webTitle:hover, .webTitle:active {
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Inherits the color from the parent, if desirable */
+  text-decoration: none;
+  color: inherit;
 }
 
 
 .content-container {
   position: relative;
-  width: 100%; /* This keeps the container spanning full width */
-  height: 80vh; /* Example height: 50% of the viewport height, adjust as needed */
-  overflow: hidden; /* Ensures the image does not exceed the container's bounds */
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
-  background-size: cover; /* Cover ensures the background image covers the entire container */
-  background-position: center; /* Centers the background image */
-  background-attachment: fixed; /* Keeps the background image fixed during scroll */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .HomePageImage {
-  width: 100%; /* Ensures the image spans the full width of its container */
-  height: 100%; /* Make the image cover the height of the container */
-  object-fit: cover; /* Ensures the image covers the container without distorting aspect ratio */
-  object-position: center; /* Adjusts the position of the image within the container to focus on the center */
-  background: rgba(0, 0, 0, 0.2); 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .text-overlay {
@@ -176,124 +169,67 @@ nav li a:hover {
   justify-content: center;
   align-items: center;
   color: white;
-  text-align: center;
   padding: 0 20px;
-  text-align: center;
-  
-  
 }
+
 .text-overlay h1 {
-  font-size: 11vh; /* Adjusts size based on the viewport */
+  font-size: 11vh;
   font-weight: 700;
   color: white;
   margin: 0;
   padding: 0;
-  line-height: 1.2; /* Adjust based on your design */
+  line-height: 1.2;
 }
 
 .text-overlay h2 {
-  font-size: 1.5vw; /* Maintains a proportional relationship to h1 */
+  font-size: 1.5vw;
   font-weight: 700;
   color: white;
   margin: 0;
   padding: 0;
-  line-height: 1.2; /* Adjust based on your design */
+  line-height: 1.2;
 }
-
 
 /* Adjust for tablets */
-@media (max-width: 768px) {
-  .text-overlay h1 {
-    font-size: 3.5rem; /* Smaller size for mobile */
-    margin: 0;
-      padding: 500; /* Reset or adjust as necessary */
-  }
-  @media (max-width: 768px) {
-    .text-overlay h2 {
-      font-size: 1rem;
-      margin: 0;
-      padding: 500; /* Reset or adjust as necessary */
-    }
-  }
-
-}
-  
 @media (max-width: 1024px) {
+  .text-overlay h1 {
+    font-size: 5rem; /* Consistent size for main title on tablets */
+  }
+
   .text-overlay h2 {
-    font-size: 1.5rem; /* Larger for devices with high DPI screens */
+    font-size: 1.5rem; /* Smaller for tablets */
   }
 }
 
-
-  /* Additional mobile-specific styles here */
-  /* Example: Adjust padding or margins for smaller screens */
-  .text-overlay {
-    padding: 0 15px;
-  }
-
-@media (max-width: 375px) {
-  .text-overlay h1 {
-    font-size: 3rem; /* Adjust font size */
-  }}
-  @media (max-width: 375px) {
-    .text-overlay h2 {
-      font-size: 1rem; /* Adjust font size */
-    }}
-    @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 834px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .text-overlay h1 {
-      font-size: 3.5rem; /* Smaller for iPad Air & 11" iPad Pro in portrait */
-    }
-
-    .text-overlay h2 {
-      font-size: 1.25rem;
-    }
-}
-
-/* Adjustments for 12.9-inch iPad Pro (Portrait) */
-@media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1366px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .text-overlay h1 {
-      font-size: 4rem; /* Adjust for 12.9" iPad Pro in portrait */
-    }
-
-    
-}
-
-
+/* Adjust for mobile devices */
 @media (max-width: 768px) {
-  .content-container{
-    text-align: center;
-    height: 60vh; /* Adjust height on smaller devices */
-    background-attachment: scroll; /* Changes attachment to scroll on smaller devices if fixed is problematic */
+  .content-container {
+    height: 60vh;
+    background-attachment: scroll;
   }
+
   .text-overlay {
-    padding: 20% 0; /* Increase padding for smaller screens */
+    padding: 20px 0;
   }
-  
-  /* Adjust text size for smaller screens if necessary */
+
   .text-overlay h1 {
-    font-size: 50px; /* Adjust as needed */
-    margin-top: 160px;
+    font-size: 5rem; /* Keep main title size */
+  }
+
+  .text-overlay h2 {
+    font-size: 1.2rem; /* Smaller for mobile */
   }
 }
 
-/* Continue with the rest of your CSS */
+@media (max-width: 480px) {
+  .text-overlay h1 {
+    font-size: 5rem; /* Keep main title size */
+  }
 
-
-.button-link {
-  background-color: #fff; /* Button background */
-  color: #000; /* Button text color */
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px; /* Optional: rounded corners for the button */
-  margin-top: 20px; /* Space above the button */
+  .text-overlay h2 {
+    font-size: 1rem; /* Even smaller for very small screens */
+  }
 }
-
 
 .button-container {
   text-align: center;
@@ -309,29 +245,26 @@ nav li a:hover {
   cursor: pointer;
   margin-top: 20px;
   text-decoration: none;
-  transition: background-color 0.5s ease ;
+  transition: background-color 0.5s ease;
   font-weight: 600;
 }
-@media (max-width: 768px) {
-  .button-link {
-    padding: 8px 16px; /* Slightly smaller padding */
-    font-size: 0.9rem; /* Smaller font size */
-  }
-}
-
-/* Adjustments for smaller mobile devices */
-@media (max-width: 480px) {
-  .button-link {
-    padding: 6px 12px; /* Even smaller padding for small devices */
-    font-size: 0.8rem; /* Further reduce font size for small screens */
-  }
-}
-
-
-
 
 .button-link:hover {
   background-color: #78866B;
+}
+
+@media (max-width: 768px) {
+  .button-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
 
 .split-section {
@@ -763,104 +696,49 @@ nav li a:hover {
     margin: 10px 0;
   }
 }
-
-
 .testimonials-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0px; /* Consistent padding, consider responsiveness */
+  background-color: #9CAD86; /* Green background for the whole container */
+  padding-top: 50px;
+  padding-left: 15px; /* Consistent padding on all sides */
+  padding-right: 15px;
   width: 100%;
-
+  box-sizing: border-box; /* Includes padding in the width calculation */
+  color: white; /* White text for the entire container */
 }
 
 .testimonials-header h1 {
-  font-size: clamp(2rem, 5vw, 45px); /* Responsive font size using clamp for better adaptability */
-  color: white;
-  font-weight: 350;
-  width: 100%;
+  font-size: clamp(2rem, 5vw, 45px);
   margin-top: 3px;
-  text-align: center;
 }
 
 .testimonials-header p {
-  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size for paragraph */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .testimonials-list {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures center alignment */
+  align-items: center;
   width: 100%;
   gap: 20px;
 }
 
 .testimonial-item {
-  background-color: #f0f0f0;
-  border-left: 5px solid #78866B;
+  background-color: transparent; /* No background color, inherits from the container */
+  border-left: 5px solid #78866B; /* Stylish border on the left */
   padding: 15px;
   text-align: center;
-  /* Adjust based on design preference */
-  margin: 0 auto; /* Ensures centering */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  box-sizing: border-box; /* Include padding and borders in the element's total width */
-  width: 100%; /* Adjust this if you are using padding or borders */
-  max-width: 100%; /* Prevents it from extending beyond its container */
-  margin: 0 auto;
-}
-
-.client-name {
-  text-align: center;
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .testimonials-container {
-    padding: 30px; /* Adjust padding for medium screens */
-  }
-
-  .testimonial-item {
-    width: 100%; /* Full width for better space utilization on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonials-container {
-    padding: 30px 15px; /* Further reduced padding for very small screens */
-  }
-
-  .testimonial-item {
-    padding: 10px; /* Reduced padding for a more compact layout */
-    font-size: 0.9rem; /* Adjust font size for better readability */
-  }
-}
-
-.testimonials-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #9CAD86;
-  padding-top: 50px; /* Adjust padding as needed */
-  width: 100%;
-  color: white;
-  
-}
-
-.testimonial-item {
-  background: none; /* No background for individual items */
-  padding: 15px;
-  text-align: center;
-  width: 80%; /* Adjust width as needed */
-  margin: 0 auto 20px; /* Space between items */
-  box-shadow: none; /* No shadow */
-  font-size: 1.5rem; /* Larger font size for readability */
-  color: white; /* Dark text color for readability */
+  width: 100%; /* Ensures full width within container */
+  max-width: 100%;
+  box-sizing: border-box; /* Important for correct width calculation */
+  margin: 0 auto 20px;
+  font-size: 1rem; /* Suitable font size for readability */
+  color: white; /* Ensures text is white */
 }
 
 .client-name {
@@ -868,32 +746,17 @@ nav li a:hover {
   margin-top: 10px;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .testimonial-item {
-    width: 100%; /* Slightly wider on smaller screens */
+    padding: 10px; /* Adjusted padding for smaller screens */
   }
 }
 
-
-
-
-
-
-
-
-.content-container {
-  height: 70vh; /* Full height of the viewport */
-  background-attachment: fixed; /* This creates the parallax effect */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center; /* Centers the text overlay vertically */
-  justify-content: center; /* Centers the text overlay horizontally */
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 15px; /* Uniform padding for very small screens */
+  }
 }
-
-
 
 .button-link {
   background-color: #9CAD86; /* Button background */
@@ -976,5 +839,4 @@ nav li a:hover {
 .submit-button:hover {
   background-color: #78866B;
 }
-
 
