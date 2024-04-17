@@ -244,8 +244,8 @@ nav li a:hover {
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 110vw; /* Slightly larger than the viewport width */
-    height: 110vh; /* Slightly larger than the viewport height */
+    width: 150vw; /* Slightly larger than the viewport width */
+    height: 150vh; /* Slightly larger than the viewport height */
     object-fit: contain; /* Keeps the entire image visible */
   }
 }
