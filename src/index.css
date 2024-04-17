@@ -234,12 +234,24 @@ nav li a:hover {
 
 .OverlayImage {
   position: absolute;
-  top: 0; /* Adjust as needed, based on where the text was */
-  left: 0; /* Align to the container edge */
-  width: 100%; /* Match the dimensions of the underlying image */
-  height: 100vh; /* This could be adjusted based on your design needs */
-  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+  padding-top: 100px;
+  top: 0;
+  left: 0;
+  right: 0; /* Ensures the right edge is also aligned */
+  width: 100%; /* Ensures the image is not wider than the screen */
+  height: 100vh; /* Maintains the full height visibility */
+  object-fit: cover; /* Covers the area without distorting but could clip */
+  object-position: center; /* Center the focus of the image */
 }
+
+@media (max-width: 768px) {
+  .OverlayImage {
+    width: 100vw; /* This ensures the image width exactly matches the viewport width */
+    height: auto; /* Adapts the height to maintain the image's aspect ratio */
+    object-fit: contain; /* Change to 'contain' to see full image without clipping */
+  }
+}
+
 
 .button-container {
   text-align: center;
@@ -330,32 +342,34 @@ nav li a:hover {
   align-self: center; 
 }
 
+
+/* General desktop styles */
 .about-content-container {
   display: flex;
   flex-direction: row; /* Default layout for larger screens */
   align-items: center; /* Center vertically */
   justify-content: space-between;
   gap: 20px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .about-image-container {
   flex-basis: 50%; /* Half of the screen width */
   padding: 20px;
-  height: 600px; /* Height set to match the text container */
+  height: 600px; /* Fixed height */
   overflow: hidden; /* Cut off any content that overflows the container */
 }
 
 .about-page-image {
   width: 100%; /* Maintain full width */
-  height: 100%; /* Adjust to new container height */
-  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  height: 100%; /* Maintain full height */
+  object-fit: cover; /* Ensures image covers the container while maintaining aspect ratio */
 }
 
 .about-text-container {
   flex-basis: 50%; /* Half of the screen width */
   padding: 20px;
-  height: 600px; /* Same height as the image container */
+  height: 600px; /* Fixed height to match the image container */
   overflow: auto; /* Allows scrolling within the container if content overflows */
 }
 
@@ -375,26 +389,31 @@ nav li a:hover {
   font-weight: 200;
   font-size: clamp(1.2rem, 2.7vw, 1.4rem); /* Smaller dynamic adjustment */
 }
+
+/* Adjustments for mobile */
 @media (max-width: 768px) {
   .about-content-container {
     flex-direction: column;
     align-items: center; /* Ensure centered alignment when stacked */
-    padding-top: 50px; /* Adjusted for better spacing */
-  }
-  .about-image-container, .about-text-container {
-    flex-basis: 100%; /* Utilize full width for a stacked layout */
-    padding: 15px; /* Slightly larger padding for better spacing */
-    text-align: center; /* Center-align the text for mobile */
-    height: auto; /* Auto-adjust height on smaller screens */
-  }
-  .about-page-image {
-    margin-top: 0; /* Adjust if necessary for mobile layout */
+    padding-top: 20px; /* Adjusted for better spacing */
   }
   .about-image-container {
-    margin-top: -20px; /* Pulls the image closer to the content above it */
-    padding-top: 0; /* Optionally reduce padding to bring it even closer */
+    flex-basis: 100%; /* Full width on mobile */
+    padding: 15px; /* Slightly larger padding for better spacing */
+    text-align: center; /* Center-align the image for mobile */
+    height: 600px; /* Ensure fixed height */
+    order: 2; /* The image will be below the text */
+  }
+  .about-text-container {
+    flex-basis: 100%; /* Full width on mobile */
+    padding: 15px; /* Slightly larger padding for better spacing */
+    text-align: center; /* Center-align the text for mobile */
+    height: 600px; /* Ensure fixed height */
+    order: 1; /* The text will be above the image */
   }
 }
+
+
 
 
 .pricing-page-container {
@@ -857,4 +876,3 @@ nav li a:hover {
   transform: translate(-50%, -50%);
   z-index: 10; /* Ensure it stays on top */
 }
-
