@@ -27,25 +27,76 @@
 
 
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import { CSSTransition } from 'react-transition-group';
+
+// function Home() {
+//     return (
+//         <CSSTransition in={true} appear={true} timeout={300} classNames="page-transition">
+//             <>
+//                 <div className='content-container'>
+//                     <img src="/images/portfolio/rosesCloseUp.JPG" alt="Shelby home" className='HomePageImage' />
+//                     <div className='text-overlay'>
+//                         <h1 >SHELBY FLORAL</h1>
+//                         <h2>Creating beautiful, bright, romantic florals that make your moments unforgettable.</h2>
+//                         <Link to="/about" className="button-link">About Me</Link>
+//                     </div>
+//                 </div>
+//             </>
+//         </CSSTransition>
+//     );
+// }
+
+// export default Home;
+
+// import React from 'react';
+// import { CSSTransition } from 'react-transition-group';
+
+// function Home() {
+//     return (
+//         <CSSTransition in={true} appear={true} timeout={300} classNames="page-transition">
+//             <div className='content-container'>
+//                 <img src="/images/portfolio/rosesCloseUp.JPG" alt="Shelby home" className='HomePageImage' />
+//                 <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Decorative overlay" className='OverlayImage' />
+//             </div>
+//         </CSSTransition>
+//     );
+// }
+
+// export default Home;
+
+import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 function Home() {
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => setOffset(window.pageYOffset);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <CSSTransition in={true} appear={true} timeout={300} classNames="page-transition">
-            <>
-                <div className='content-container'>
-                    <img src="/images/portfolio/rosesCloseUp.JPG" alt="Shelby home" className='HomePageImage' />
-                    <div className='text-overlay'>
-                        <h1 >SHELBY FLORAL</h1>
-                        <h2>Creating beautiful, bright, romantic florals that make your moments unforgettable.</h2>
-                        <Link to="/about" className="button-link">About Me</Link>
-                    </div>
-                </div>
-            </>
+            <div className='content-container'>
+                <img
+                    src="/images/portfolio/rosesCloseUp.JPG"
+                    alt="Shelby home"
+                    className='HomePageImage'
+                    style={{ transform: `translateY(${offset * 0.5}px)` }}
+                />
+                <img
+                    src="/images/portfolio/shelby-floral-logo-white.png"
+                    alt="Decorative overlay"
+                    className='OverlayImage'
+                />
+            </div>
         </CSSTransition>
     );
 }
 
 export default Home;
+
+

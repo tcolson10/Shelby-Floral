@@ -231,6 +231,16 @@ nav li a:hover {
   }
 }
 
+
+.OverlayImage {
+  position: absolute;
+  top: 0; /* Adjust as needed, based on where the text was */
+  left: 0; /* Align to the container edge */
+  width: 100%; /* Match the dimensions of the underlying image */
+  height: 75vh; /* This could be adjusted based on your design needs */
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+}
+
 .button-container {
   text-align: center;
 }
@@ -321,74 +331,74 @@ nav li a:hover {
 }
 
 
+
+
 .about-content-container {
   display: flex;
   flex-direction: row; /* Default layout for larger screens */
-  align-items: flex-start;
+  align-items: center; /* Center vertically */
   justify-content: space-between;
   gap: 20px;
   margin-top: 50px;
 }
 
 .about-image-container {
-  flex-basis: 50%;
+  flex-basis: 50%; /* Half of the screen width */
   padding: 20px;
+  height: 800px; /* Adjust the height as needed */
+  overflow: hidden; /* Cut off any content that overflows the container */
 }
 
 .about-page-image {
-  max-width: 100%;
-  height: auto;
-  margin-top: -80px; /* Ensure this doesn't cause content shifting or overlap issues */
+  width: 100%; /* Maintain full width */
+  height: 100%; /* Maintain full height */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
 .about-text-container {
-  flex-basis: 50%;
-  padding: 20px;
+  flex-basis: 50%; /* Half of the screen width */
+  padding: 40px;
 }
+
 
 .about-text-container h1, .about-text-container h2, .about-text-container h3 {
   text-align: center; /* Consistent alignment for titles */
 }
-
 .about-text-container h1 {
   font-weight: 350;
   font-size: clamp(2.5rem, 5vw, 3.25rem); /* Dynamic adjustment */
   color: #78866B;
 }
-
 .about-text-container h2 {
   font-weight: 400;
   font-size: clamp(2rem, 4vw, 2.5rem); /* Dynamic adjustment */
 }
-
 .about-text-container h3 {
   font-weight: 200;
   font-size: clamp(1.5rem, 3vw, 2rem); /* Dynamic adjustment */
 }
-
 @media (max-width: 768px) {
   .about-content-container {
     flex-direction: column;
     align-items: center; /* Ensure centered alignment when stacked */
     padding-top: 50px; /* Adjusted for better spacing */
   }
-
   .about-image-container, .about-text-container {
     flex-basis: 100%; /* Utilize full width for a stacked layout */
     padding: 15px; /* Slightly larger padding for better spacing */
     text-align: center; /* Center-align the text for mobile */
   }
-
   .about-page-image {
     margin-top: 0; /* Adjust if necessary for mobile layout */
   }
-
   /* Bring the photo closer to the header on mobile */
   .about-image-container {
     margin-top: -20px; /* Pulls the image closer to the content above it */
     padding-top: 0; /* Optionally reduce padding to bring it even closer */
   }
 }
+
+
 
 
 .pricing-page-container {
@@ -678,7 +688,7 @@ nav li a:hover {
 }
 
 .testimonials-header p {
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.5rem);
   margin-bottom: 20px;
 }
 
@@ -699,7 +709,7 @@ nav li a:hover {
   max-width: 100%;
   box-sizing: border-box; /* Important for correct width calculation */
   margin: 0 auto 20px;
-  font-size: 1rem; /* Suitable font size for readability */
+  font-size: 1.5rem; /* Suitable font size for readability */
   color: white; /* Ensures text is white */
 }
 
@@ -829,4 +839,26 @@ nav li a:hover {
   padding-right: 80px; /* Check if this padding is too much on smaller screens */
 }
 
+
+
+.content-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.HomePageImage {
+  width: 100%;
+  height: auto;
+  position: relative; /* Adjust positioning as needed */
+  display: block; /* Remove any extra space below the image */
+}
+
+.OverlayImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure it stays on top */
+}
 

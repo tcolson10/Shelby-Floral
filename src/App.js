@@ -15,7 +15,7 @@ function App() {
   const handleNavigation = (path) => {
     setIsMenuOpen(false);
     // Check if path is part of the home page for smooth scroll
-    if (['home', 'portfolio', 'pricing', 'testimonials', 'contact'].includes(path)) {
+    if (['home', 'about', 'portfolio', 'pricing', 'testimonials', 'contact'].includes(path)) {
       if (window.location.pathname !== '/') {
         // Navigate to home then scroll
         navigate('/');
@@ -52,6 +52,7 @@ function App() {
         <nav className={isMenuOpen ? 'nav-active' : ''}>
           <ul>
             <li onClick={() => handleNavigation('home')}>Home</li>
+            <li onClick={() => handleNavigation('about')}>About</li>
             <li onClick={() => handleNavigation('pricing')}>Pricing</li>
             <li onClick={() => handleNavigation('portfolio')}>Portfolio</li>
             <li onClick={() => handleNavigation('testimonials')}>Testimonials</li>
