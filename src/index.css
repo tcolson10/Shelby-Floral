@@ -436,7 +436,7 @@ nav li a:hover {
   align-items: center;
   text-align: center;
   margin-top: 20px;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .pricing-header h1 {
@@ -512,13 +512,14 @@ nav li a:hover {
   align-items: center;
   padding: 50px 20px; /* Good initial padding */
   font-weight: 400;
-  margin-top: -30px; /* Be cautious with negative margins to avoid content overlap */
 }
 
 .contact-container h1 {
   font-size: clamp(2rem, 5vw, 45px); /* Responsive font size using clamp */
   color: #78866B;
   font-weight: 350;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .contact-container h3 {
@@ -595,7 +596,7 @@ nav li a:hover {
   font-size: clamp(2.5rem, 5vw, 45px); /* Responsive font size using clamp */
   color: #78866B;
   font-weight: 350;
-  margin-top: -20px;
+  margin-top: 30px;
 }
 
 .portfolio-header p {
@@ -712,7 +713,7 @@ nav li a:hover {
 
 .testimonials-header h1 {
   font-size: clamp(2rem, 5vw, 45px);
-  margin-top: 3px;
+  margin-top: 50px;
 }
 
 .testimonials-header p {
