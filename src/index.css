@@ -231,29 +231,6 @@ nav li a:hover {
   }
 }
 
-.OverlayImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0; /* Ensures the right edge is also aligned */
-  width: 100%; /* Ensures the image is not wider than the screen */
-  height: 100vh; /* Maintains the full height visibility */
-  object-fit: cover; /* Covers the area without distorting but could clip */
-  object-position: center; /* Center the focus of the image */
-}
-
-@media (max-width: 768px) {
-  .OverlayImage {
-    width: 150vw; /* Slightly larger than the viewport width */
-    height: 150vh; /* Slightly larger than the viewport height */
-    object-fit: contain; /* Keeps the entire image visible */
-  }
-}
-
-
-
-
-
 
 .button-container {
   text-align: center;
@@ -878,3 +855,22 @@ nav li a:hover {
   transform: translate(-50%, -50%);
   z-index: 10; /* Ensure it stays on top */
 }
+.OverlayImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the image is not wider than the screen */
+  height: 100vh; /* Maintains the full height visibility */
+  object-fit: cover; /* Covers the area, potentially clipping parts of the image */
+  object-position: center; /* Center the focus of the image */
+}
+
+@media (max-width: 768px) {
+  .OverlayImage {
+    width: 100vw; /* This ensures the image width exactly matches the viewport width */
+    height: 100vh; /* Keeps the height consistent with the viewport height */
+    object-fit: cover; /* Ensures the image covers the entire area, focusing on central parts */
+    object-position: center center; /* Adjust this to target the most visually important area */
+  }
+}
+
