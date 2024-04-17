@@ -243,8 +243,8 @@ nav li a:hover {
 }
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw; /* Slightly larger than the viewport width */
-    height: 100vh; /* Slightly larger than the viewport height */
+    width: 95vw; /* Slightly larger than the viewport width */
+    height: 95vh; /* Slightly larger than the viewport height */
     object-fit: cover;
     object-position: center center;
   }
