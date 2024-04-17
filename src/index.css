@@ -244,7 +244,7 @@ nav li a:hover {
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw; /* This ensures the image width exactly matches the viewport width */
+    width: auto; /* This ensures the image width exactly matches the viewport width */
     height: auto; /* Adapts the height to maintain the image's aspect ratio */
     object-fit: contain; /* Change to 'contain' to see full image without clipping */
   }
