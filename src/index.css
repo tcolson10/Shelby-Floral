@@ -170,6 +170,11 @@ nav li a:hover {
   align-items: center;
   color: white;
   padding: 0 20px;
+  margin-top: 80vh;
+  width: auto; /* Allow text overlay and split section to adjust to screen size */
+  padding: 100px; /* Reduce padding on smaller screens */
+  top: auto; /* Adjust text overlay positioning */
+  bottom: -50px;
 }
 
 .text-overlay h1 {
@@ -297,7 +302,7 @@ nav li a:hover {
     font-size: 1.8rem; /* Adjust font sizes for smaller screens */
   }
 
-  .text-overlay, .split-section {
+  .split-section {
     width: auto; /* Allow text overlay and split section to adjust to screen size */
     padding: 10px; /* Reduce padding on smaller screens */
     top: auto; /* Adjust text overlay positioning */
@@ -840,4 +845,32 @@ nav li a:hover {
 .submit-button:hover {
   background-color: #78866B;
 }
+
+:target::before {
+  content: "";
+  display: block;
+  height: 100px; /* Adjust this value to match your header height */
+  margin-top: -100px; /* This should be the negative value of the height */
+}
+@media (max-width: 768px) {
+  :target::before {
+    height: 60px; /* Example: smaller header height on smaller screens */
+    margin-top: -60px; /* Negative value of the adjusted height */
+  }
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+
+.hamburger {
+  padding-right: 20px; /* Ensure this padding isn't causing the element to shift too far */
+}
+
+.split-section {
+  padding-left: 80px;
+  padding-right: 80px; /* Check if this padding is too much on smaller screens */
+}
+
 
