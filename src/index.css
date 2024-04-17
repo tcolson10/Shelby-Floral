@@ -236,15 +236,15 @@ nav li a:hover {
   top: 0;
   left: 0;
   right: 0; /* Ensures the right edge is also aligned */
-  width: 100%; /* Ensures the image is not wider than the screen */
+  width: 95%; /* Ensures the image is not wider than the screen */
   height: 100vh; /* Maintains the full height visibility */
   object-fit: cover; /* Covers the area without distorting but could clip */
   object-position: center; /* Center the focus of the image */
 }
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 95vw; /* Slightly larger than the viewport width */
-    height: 95vh; /* Slightly larger than the viewport height */
+    width: 100vw; /* Slightly larger than the viewport width */
+    height: 100vh; /* Slightly larger than the viewport height */
     object-fit: cover;
     object-position: center center;
   }
