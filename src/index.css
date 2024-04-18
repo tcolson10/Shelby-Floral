@@ -862,13 +862,4 @@ nav li a:hover {
   transform: translateY(5%); /* Moves the image down a bit */
 }
 
-@media (max-width: 768px) {
-  .OverlayImage {
-    width: 120vw; /* Slightly larger than the viewport width to increase image size */
-    height: 120vh; /* Slightly larger than the viewport height to increase image size */
-    object-fit: contain; /* Change to 'contain' to see full image without clipping */
-    left: 50%; /* Horizontally center the image */
-    top: 50%; /* Vertically center the image */
-    transform: translate(-50%, -50%); /* Adjust position to ensure it's centered after resizing */
-  }
-}
+
