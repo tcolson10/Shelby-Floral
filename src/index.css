@@ -739,7 +739,7 @@ nav li a:hover {
 
 .OverlayImage {
   position: absolute;
-  top: 0;
+  top: 6%;
   left: 0;
   width: 100%;  /* Default settings for desktop */
   height: 100vh; /* Default settings for desktop */
