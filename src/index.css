@@ -723,7 +723,6 @@ nav li a:hover {
 }
 
 
-
 .content-container {
   position: relative;
   overflow: hidden;
@@ -732,33 +731,29 @@ nav li a:hover {
 
 .HomePageImage {
   width: 100%;
-  height: auto;
-  position: relative; /* Adjust positioning as needed */
-  display: block; /* Remove any extra space below the image */
+  height: auto;  /* Adjusts the height automatically to maintain the image's aspect ratio */
+  position: relative;  /* Keeps the image in the normal document flow */
+  display: block;  /* Removes any extra space below the image */
 }
 
 .OverlayImage {
   position: absolute;
-  top: 6%;
+  top: -10%;  /* Aligns the overlay at the top of the container */
   left: 0;
-  width: 100%;  /* Default settings for desktop */
-  height: 100vh; /* Default settings for desktop */
-  object-fit: cover; /* Ensures image covers the area */
-  transition: all 0.3s ease; /* Smooth transition for debugging */
+  width: 100%;  /* Ensures the overlay spans the full width of the container */
+  height: 100vh;  /* Sets the height to fill the viewport vertically */
+  object-fit: cover;  /* Ensures the overlay image covers the designated area properly */
+  transition: all 0.3s ease;  /* Smooth transition effect for any dynamic changes */
 }
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw;  /* Matches the viewport width exactly */
+    width: 100vw;  /* Ensures the overlay matches the viewport width exactly */
     height: auto;  /* Adjusts the height automatically to maintain the image's aspect ratio */
-    object-fit: contain;  /* Ensures the entire logo is visible */
-    left: 50%;  /* Centers the image horizontally */
-    top: 50%;  /* Centers the image vertically */
-    transform: translate(-50%, -50%) scale(1.5);  /* Adjusts the position and scales up the image */
-    transition: all 0.3s ease;  /* Smooth transitions for debugging visual changes */
+    object-fit: contain;  /* Changes to ensure the entire logo is visible */
+    left: 50%;  /* Horizontally centers the overlay */
+    top: 50%;  /* Vertically centers the overlay */
+    transform: translate(-50%, -50%) scale(1.5);  /* Centers and scales up the image for better visibility */
+    transition: all 0.3s ease;  /* Maintains smooth transitions */
   }
 }
-
-
-
-

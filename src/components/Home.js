@@ -65,11 +65,17 @@
 // }
 
 // export default Home;
+
+
+
+
+
 import React from 'react';
 
 function Home() {
     return (
-        <div className="content-container" style={{ backgroundImage: 'url(/images/portfolio/rosesCloseUp.JPG)' }}>
+        <div className="content-container">
+            <img src="/images/portfolio/rosesCloseUp.JPG" alt="Roses close-up" className="HomePageImage" />
             <div className="OverlayImage">
                 <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Decorative overlay" />
             </div>
