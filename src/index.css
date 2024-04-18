@@ -360,64 +360,40 @@ nav li a:hover {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 .contact-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Set the height to match the viewport */
-  overflow: hidden; /* Hides anything outside this container */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centers the form-content vertically and horizontally */
-}
-
-.background-container {
-  position: absolute;
-  width: 100%;
-  height: 100%; /* Full container size */
-  top: 0;
-  left: 0;
-  z-index: -1; /* Ensure it stays behind the form content */
-}
-
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-  transition: transform 0.2s ease-out; /* Smooths the background movement on scroll */
-}
-
-.form-content {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px; /* Maximum width of the form */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
-  z-index: 2; /* Ensures form content is above the background */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  text-align: center; /* Centers text within each element */
+  align-items: center;
+  padding: 50px 20px; /* Good initial padding */
+  font-weight: 400;
+}
+
+.contact-container h1 {
+  font-size: clamp(2rem, 5vw, 45px); /* Responsive font size using clamp */
+  color: #78866B;
+  font-weight: 350;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.contact-container h3 {
+  text-align: center;
+  width: 80%; /* Good for larger screens, might want to adjust for very small screens */
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-weight: 300;
 }
 
 .contact-form {
-  width: 100%; /* Form takes full width of its container */
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 400px; /* Consider using percentage for smaller screens */
+  width: 100%;
+  margin-top: 20px;
 }
 
+/* Adjust form input and textarea styles for better accessibility */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
@@ -425,35 +401,37 @@ nav li a:hover {
 .contact-form input[type="url"],
 .contact-form textarea {
   padding: 10px 15px;
-  background-color: #f9f9f9; /* Light gray background for inputs and textarea */
-  border: 1px solid #ddd; /* Uniform border */
-  border-radius: 4px; /* Rounded corners for aesthetic */
-  font-size: 16px; /* Readable font size */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd; /* Adjusted for consistency */
+  border-radius: 4px;
+  font-size: 16px; /* Good for readability */
+  font-family: inherit; /* Ensures font consistency across all form elements */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  box-shadow: inset 0 0 0 2px #9CAD86; /* Green shadow to indicate focus */
+  box-shadow: inset 0 0 0 2px #9CAD86; /* Enhances focus state for accessibility */
 }
 
+
+
+
+/* Additional responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .form-content {
-    padding: 10px;
-    margin: 20px; /* Provides a margin around the form on smaller screens */
+  .contact-container {
+    padding: 30px 15px; /* Slightly reduce padding for a tighter layout */
+  }
+
+  .contact-container h1, .contact-container h3 {
+    width: 90%; /* Increase width to allow text more room */
+    text-align: center;
   }
 
   .contact-form {
-    width: 90%; /* Allows a bit of margin on the sides in small screens */
+    max-width: 100%; /* Allow the form to use full available width */
   }
 }
-
-
-
-
-
-
-
 
 
 
@@ -745,44 +723,42 @@ nav li a:hover {
 }
 
 
+
 .content-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100vh; /* Height is limited to viewport height */
 }
 
 .HomePageImage {
-  position: absolute; /* Changed from 'fixed' to 'absolute' */
   width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Stays behind the content */
-  object-fit: cover; /* Ensures the image covers the full container */
-  pointer-events: none; /* Prevents image from capturing mouse events */
+  height: auto;
+  position: relative; /* Adjust positioning as needed */
+  display: block; /* Remove any extra space below the image */
 }
 
 .OverlayImage {
-  position: relative;
-  z-index: 1; /* Ensures it's above the background */
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  transition: all 0.3s ease;
+  position: absolute;
+  top: 6%;
+  left: 0;
+  width: 100%;  /* Default settings for desktop */
+  height: 100vh; /* Default settings for desktop */
+  object-fit: cover; /* Ensures image covers the area */
+  transition: all 0.3s ease; /* Smooth transition for debugging */
 }
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw;
-    height: auto;
-    object-fit: contain;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1.5);
-    transition: all 0.3s ease;
+    width: 100vw;  /* Matches the viewport width exactly */
+    height: auto;  /* Adjusts the height automatically to maintain the image's aspect ratio */
+    object-fit: contain;  /* Ensures the entire logo is visible */
+    left: 50%;  /* Centers the image horizontally */
+    top: 50%;  /* Centers the image vertically */
+    transform: translate(-50%, -50%) scale(1.5);  /* Adjusts the position and scales up the image */
+    transition: all 0.3s ease;  /* Smooth transitions for debugging visual changes */
   }
 }
+
 
 
 
