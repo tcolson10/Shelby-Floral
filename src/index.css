@@ -232,6 +232,7 @@ nav li a:hover {
 }
 
 
+
 .button-container {
   text-align: center;
 }
@@ -850,27 +851,24 @@ nav li a:hover {
 
 .OverlayImage {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10; /* Ensure it stays on top */
-}
-.OverlayImage {
-  position: absolute;
-  top: 0;
+  top: 5%; /* Adjusted to move the image down a bit */
   left: 0;
+  right: 0; /* Ensures the right edge is also aligned */
   width: 100%; /* Ensures the image is not wider than the screen */
   height: 100vh; /* Maintains the full height visibility */
-  object-fit: cover; /* Covers the area, potentially clipping parts of the image */
+  object-fit: cover; /* Covers the area without distorting but could clip */
   object-position: center; /* Center the focus of the image */
+  z-index: 10; /* Ensure it stays on top */
+  transform: translateY(5%); /* Moves the image down a bit */
 }
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 100vw; /* This ensures the image width exactly matches the viewport width */
-    height: 100vh; /* Keeps the height consistent with the viewport height */
-    object-fit: cover; /* Ensures the image covers the entire area, focusing on central parts */
-    object-position: center center; /* Adjust this to target the most visually important area */
+    width: 120vw; /* Slightly larger than the viewport width to increase image size */
+    height: 120vh; /* Slightly larger than the viewport height to increase image size */
+    object-fit: contain; /* Change to 'contain' to see full image without clipping */
+    left: 50%; /* Horizontally center the image */
+    top: 50%; /* Vertically center the image */
+    transform: translate(-50%, -50%); /* Adjust position to ensure it's centered after resizing */
   }
 }
-
