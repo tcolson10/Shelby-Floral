@@ -754,7 +754,7 @@ nav li a:hover {
     object-fit: contain;  /* Ensures the entire logo is visible */
     left: 50%;  /* Centers the image horizontally */
     top: 50%;  /* Centers the image vertically */
-    transform: translate(-50%, -50%) scale(1.1);  /* Adjusts the position and scales up the image */
+    transform: translate(-50%, -50%) scale(1.5);  /* Adjusts the position and scales up the image */
     transition: all 0.3s ease;  /* Smooth transitions for debugging visual changes */
   }
 }
