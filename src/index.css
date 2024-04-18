@@ -861,13 +861,16 @@ nav li a:hover {
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 110vw; /* Incrementally adjusting width */
-    height: 110vh; /* Incrementally adjusting height */
-    object-fit: cover; /* Cover might clip, but ensures filling area */
-    transform: translate(-5%, -5%); /* Minor adjustment to center */
-    transition: width 0.3s ease, height 0.3s ease; /* Add transitions for visual debugging */
+    width: 100vw;  /* Matches the viewport width exactly */
+    height: auto;  /* Adjusts the height automatically to maintain the image's aspect ratio */
+    object-fit: contain;  /* Ensures the entire logo is visible */
+    left: 50%;  /* Centers the image horizontally */
+    top: 50%;  /* Centers the image vertically */
+    transform: translate(-50%, -50%);  /* Adjusts the position to truly center the image */
+    transition: all 0.3s ease;  /* Smooth transitions for debugging visual changes */
   }
 }
+
 
 
 
