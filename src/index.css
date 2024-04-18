@@ -851,25 +851,23 @@ nav li a:hover {
 
 .OverlayImage {
   position: absolute;
-  top: 5%; /* Adjusted to move the image down a bit */
+  top: 0;
   left: 0;
-  right: 0; /* Ensures the right edge is also aligned */
-  width: 100%; /* Ensures the image is not wider than the screen */
-  height: 100vh; /* Maintains the full height visibility */
-  object-fit: cover; /* Covers the area without distorting but could clip */
-  object-position: center; /* Center the focus of the image */
-  z-index: 10; /* Ensure it stays on top */
-  transform: translateY(5%); /* Moves the image down a bit */
+  width: 100%;  /* Default settings for desktop */
+  height: 100vh; /* Default settings for desktop */
+  object-fit: cover; /* Ensures image covers the area */
+  transition: all 0.3s ease; /* Smooth transition for debugging */
 }
 
 @media (max-width: 768px) {
   .OverlayImage {
-    width: 150vw; /* Slightly larger than the viewport width */
-    height: 150vh; /* Slightly larger than the viewport height */
-    object-fit: contain; /* Change to 'contain' to see full image without clipping */
-    left: 50%; /* Horizontally center the image */
-    top: 50%; /* Vertically center the image */
-    transform: translate(-50%, -50%); /* Center the image after resizing */
+    width: 110vw; /* Incrementally adjusting width */
+    height: 110vh; /* Incrementally adjusting height */
+    object-fit: cover; /* Cover might clip, but ensures filling area */
+    transform: translate(-5%, -5%); /* Minor adjustment to center */
+    transition: width 0.3s ease, height 0.3s ease; /* Add transitions for visual debugging */
   }
 }
+
+
 
