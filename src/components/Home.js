@@ -65,38 +65,16 @@
 // }
 
 // export default Home;
-
-import React, { useEffect, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React from 'react';
 
 function Home() {
-    const [offset, setOffset] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => setOffset(window.pageYOffset);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
-        <CSSTransition in={true} appear={true} timeout={300} classNames="page-transition">
-            <div className='content-container'>
-                <img
-                    src="/images/portfolio/rosesCloseUp.JPG"
-                    alt="Shelby home"
-                    className='HomePageImage'
-                    style={{ transform: `translateY(${offset * 0.5}px)` }}
-                />
-                <img
-                    src="/images/portfolio/shelby-floral-logo-white.png"
-                    alt="Decorative overlay"
-                    className='OverlayImage'
-                />
+        <div className="content-container" style={{ backgroundImage: 'url(/images/portfolio/rosesCloseUp.JPG)' }}>
+            <div className="OverlayImage">
+                <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Decorative overlay" />
             </div>
-        </CSSTransition>
+        </div>
     );
 }
 
 export default Home;
-
-
