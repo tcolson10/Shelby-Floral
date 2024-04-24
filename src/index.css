@@ -725,7 +725,7 @@ nav li a:hover {
 @media (max-width: 768px) {
   .content-container {
     background-size: 200% auto; /* Zooms in the background image on mobile */
-    background-position: center 80%;
+    background-position: center 50%;
     background-image: url('/public/images/portfolio/rosesCloseUp.JPG');
   }
 }
