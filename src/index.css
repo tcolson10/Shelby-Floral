@@ -72,8 +72,9 @@ html {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   font-size: 20px;
+  margin-right: 20px;
 }
 
 nav li {
