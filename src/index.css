@@ -728,6 +728,7 @@ nav li a:hover {
     background-size: 200% auto; /* Zooms in the background image on mobile */
     background-position: center 50%;
     background-image: url('/public/images/portfolio/rosesCloseUp.JPG');
+    background-attachment: scroll;
   }
 }
 
