@@ -6,8 +6,15 @@ import Portfolio from './Portfolio';
 import Pricing from './Pricing';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
+import { useEffect } from 'react';
 
 const LandingPage = () => {
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the window on component mount
+    }, []); // Empty dependency array ensures it runs only once after the initial render
+
     return (
         <div>
             <section id="home">
