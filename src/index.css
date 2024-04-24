@@ -358,7 +358,7 @@ nav li a:hover {
   color: #78866B;
   font-weight: 350;
   margin-bottom: 20px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .contact-container h3 {
@@ -425,8 +425,7 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 100px 50px 30px; /* Optimized padding for all screen sizes */
-  margin-top: 0; /* Adjusted to remove negative margin */
+  padding-top: 50px;
   
 }
 
@@ -709,7 +708,6 @@ nav li a:hover {
 
 
 
-
 .content-container {
   position: relative;
   width: 100%;
@@ -720,7 +718,7 @@ nav li a:hover {
   background-image: url('/public/images/portfolio/rosesCloseUp.JPG'); /* Adjust as necessary */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* This keeps the background image fixed during scroll */
+  /* background-attachment: fixed; This keeps the background image fixed during scroll */
   background-repeat: no-repeat;
   text-align: center;
 }
