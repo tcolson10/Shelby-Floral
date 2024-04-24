@@ -73,14 +73,16 @@
 import React from 'react';
 
 function Home() {
-    return (
+    return (<div className="component-container">
+        <div className="fixed-background"></div>
         <div className="content-container">
-            {/* Content that scrolls over the background */}
-            <div className="scroll-content">
-                <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Shelby Floral logo" className="OverlayImage" />
-                {/* Additional content can go here */}
+            <div className="OverlayImage">
+                <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Shelby Floral logo" />
             </div>
+            {/* More content can be added here if necessary */}
         </div>
+    </div>
+
     );
 }
 
