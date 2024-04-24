@@ -75,12 +75,14 @@ import React from 'react';
 function Home() {
     return (
         <div className="content-container">
-            <img src="/images/portfolio/rosesCloseUp.JPG" alt="Roses close-up" className="HomePageImage" />
-            <div className="OverlayImage">
-                <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Decorative overlay" />
+            {/* Content that scrolls over the background */}
+            <div className="scroll-content">
+                <img src="/images/portfolio/shelby-floral-logo-white.png" alt="Shelby Floral logo" className="OverlayImage" />
+                {/* Additional content can go here */}
             </div>
         </div>
     );
 }
 
 export default Home;
+

@@ -11,34 +11,33 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Adjusted navigation function to handle both in-page navigation and route changes
+  // Function to handle smooth scrolling with an offset
+  const scrollIfNeeded = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    const offset = 80; // Adjust this value based on your fixed header's height or any other elements
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+    }
+  };
+
+  // Adjusted navigation function to handle both in-page navigation and route changes with better handling of timing
   const handleNavigation = (path) => {
     setIsMenuOpen(false);
-    // Check if path is part of the home page for smooth scroll
     if (['home', 'about', 'portfolio', 'pricing', 'testimonials', 'contact'].includes(path)) {
       if (window.location.pathname !== '/') {
-        // Navigate to home then scroll
-        navigate('/');
-        setTimeout(() => scrollIfNeeded(path), 100);
+        navigate('/').then(() => { // Ensure navigation completes before scrolling
+          setTimeout(() => scrollIfNeeded(path), 100); // Adjust timeout as needed
+        });
       } else {
-        scrollIfNeeded(path);
+        setTimeout(() => scrollIfNeeded(path), 0); // Immediate scroll if already on the page
       }
     } else {
-      // Navigate to a different route normally
       navigate('/' + path);
     }
   };
 
-  // Function to handle smooth scrolling
-  const scrollIfNeeded = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-
     <div className="app-container">
       <header>
         <Link to="/" className="webTitle" onClick={() => setIsMenuOpen(false)}>
@@ -83,7 +82,6 @@ function App() {
         </div>
       </footer>
     </div>
-
   );
 }
 
