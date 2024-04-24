@@ -203,7 +203,7 @@ nav li a:hover {
   align-items: center; /* Center vertically */
   justify-content: space-between;
   gap: 20px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .about-image-container {
@@ -722,6 +722,7 @@ nav li a:hover {
   background-repeat: no-repeat;
   text-align: center;
 }
+
 @media (max-width: 768px) {
   .content-container {
     background-size: 200% auto; /* Zooms in the background image on mobile */
@@ -732,7 +733,7 @@ nav li a:hover {
 
 .OverlayImage {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%); /* Center the overlay */
   width: 80%; /* Adjust width as necessary */
