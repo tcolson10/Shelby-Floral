@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import ReactGA4 from 'react-ga4';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import About from './components/About';
@@ -10,8 +11,23 @@ import Contact from './components/Contact';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Function to handle smooth scrolling with an offset
+  // Initialize Google Analytics 4 and track page views
+  useEffect(() => {
+    // Initialize GA4 with your Measurement ID
+    ReactGA4.initialize('G-9P0D4PPB65'); // Replace 'G-9P0D4PPB65' with your actual GA4 Measurement ID
+
+    // Send page view whenever the location changes
+    ReactGA4.send({
+      hitType: 'pageview',
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: location.pathname + location.search
+    });
+  }, [location]); // Dependency on location ensures effect runs on route changes
+
+  // Function to handle smooth scrolling and navigation
   const scrollIfNeeded = (sectionId) => {
     const section = document.getElementById(sectionId);
     const offset = 80; // Adjust this value based on your fixed header's height or any other elements
