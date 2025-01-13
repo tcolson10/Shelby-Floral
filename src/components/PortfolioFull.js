@@ -14,13 +14,14 @@ const imageData = [
     { src: "/images/portfolio/treeFarAway.jpg", alt: "Kenzie" },
     { src: "/images/portfolio/IMG_1634.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/IMG_7329.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/sneak-1.jpeg", alt: "Lacee with Groom" },
     { src: "/images/portfolio/IMG_8955.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/IMG_4006.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/C8484553-D2B5-4270-AFCC-A00506B5CC09.JPG", alt: "Lacee with Groom" },
-    { src: "/images/portfolio/IMG_9453.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/laceeWGroom.jpg", alt: "Lacee with Groom" },
     { src: "/images/portfolio/IMG_2952.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/closeUpGirl.JPG", alt: "Lacee with Groom" },
+
 
 
 
