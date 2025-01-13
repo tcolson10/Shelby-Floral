@@ -298,6 +298,7 @@ nav li a:hover {
   width: 100%;
   max-width: 1200px;
   gap: 20px;
+  
 }
 
 .pricing-photo-container {
@@ -318,6 +319,10 @@ nav li a:hover {
 
 .pricing-photo-text {
   margin-top: 20px;
+}
+
+.pricing-text-content h3 {
+color:#78866B;
 }
 
 /* Adjust for medium screens - Single column layout */
