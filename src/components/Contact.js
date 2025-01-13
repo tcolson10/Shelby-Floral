@@ -4,7 +4,7 @@ function Contact() {
     return (
         <div className='contact-container'>
             <h1 className='page-title'>Let's Chat!</h1>
-            <h3>Planning an event and wanting to get more info? Fill out the fields below to get connected with us - we can't wait to hear from you.</h3>
+            <h3>Fill out the form and we will get back to you ASAP</h3>
             <form className='contact-form' action="https://formspree.io/f/mwkgrzrd" method="POST">
                 <label htmlFor="fullName">Your name & your partner's name (if applicable)</label>
                 <input type="text" id="fullName" name="fullName" />
@@ -24,7 +24,13 @@ function Contact() {
                 <label htmlFor="eventType">Type of Event (Wedding, Shower, etc.)</label>
                 <input type="text" id="eventType" name="eventType" />
 
-                <label htmlFor="budget">Your Floral Budget $</label>
+                <label htmlFor="budget">Your Floral Budget ($1500 minimum)</label>
+                <input type="text" id="budget" name="budget" />
+
+                <label htmlFor="budget">What are your colors?</label>
+                <input type="text" id="budget" name="colors" />
+
+                <label htmlFor="budget">Specific flowers you want included (if applicable)</label>
                 <input type="text" id="budget" name="budget" />
 
                 <label htmlFor="description">Tell us a little bit more about what you are wanting (include quantities)</label>

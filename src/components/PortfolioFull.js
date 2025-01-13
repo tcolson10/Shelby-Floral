@@ -2,21 +2,29 @@ import React, { useEffect } from 'react';
 
 // Array of image details
 const imageData = [
-    { src: "/images/portfolio/brideLooking.JPG", alt: "Bride image" },
-    { src: "/images/portfolio/ceremony.JPG", alt: "Ceremony image" },
-    { src: "/images/portfolio/Kylie2.JPG", alt: "Image of Kylie 2" },
-    { src: "/images/portfolio/kylieFlowers.JPG", alt: "Image of Kylie 1" },
-    { src: "/images/portfolio/treeNew.JPG" },
+
+    { src: "/images/portfolio/Kiana Corri Photography- Brooke and Jackson Wedding Day-792_Original.jpg", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_6645.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_3110.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_1690.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_8252.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_9441.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_4007.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_1362.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/treeFarAway.jpg", alt: "Kenzie" },
-    { src: "/images/portfolio/kenzie.jpg", alt: "Kenzie" },
-    { src: "/images/portfolio/brideWBridesmaids.JPG", alt: "Kenzie" },
-    { src: "/images/portfolio/sandCouple.JPG", alt: "Kenzie" },
-    { src: "/images/portfolio/archCody.jpg", alt: "Kenzie" },
+    { src: "/images/portfolio/IMG_1634.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_7329.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_8955.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_4006.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/C8484553-D2B5-4270-AFCC-A00506B5CC09.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/IMG_9453.JPG", alt: "Lacee with Groom" },
     { src: "/images/portfolio/laceeWGroom.jpg", alt: "Lacee with Groom" },
-    { src: "/images/portfolio/shelBridesmaids.jpg", alt: "Lacee with Groom" },
-    { src: "/images/portfolio/BrideAndGroomClose.JPG", alt: "Bride and Groom Close-up" },
-    { src: "/images/portfolio/cakeCrop.jpg", alt: "Kenzie" },
-    { src: "/images/portfolio/carterAndKenzie.JPG", alt: "Carter and Kenzie" },
+    { src: "/images/portfolio/IMG_2952.JPG", alt: "Lacee with Groom" },
+    { src: "/images/portfolio/closeUpGirl.JPG", alt: "Lacee with Groom" },
+
+
+
+
 ];
 
 function PortfolioFull() {

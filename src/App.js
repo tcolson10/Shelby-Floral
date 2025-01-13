@@ -67,7 +67,7 @@ function App() {
         <nav className={isMenuOpen ? 'nav-active' : ''}>
           <ul>
             <li onClick={() => handleNavigation('home')}>Home</li>
-            <li onClick={() => handleNavigation('about')}>About</li>
+            {/* <li onClick={() => handleNavigation('about')}>About</li> */}
             <li onClick={() => handleNavigation('pricing')}>Pricing</li>
             <li onClick={() => handleNavigation('portfolio')}>Portfolio</li>
             <li onClick={() => handleNavigation('testimonials')}>Testimonials</li>

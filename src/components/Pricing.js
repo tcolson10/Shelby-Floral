@@ -5,17 +5,17 @@ const pricingData = [
     {
         src: "/images/portfolio/Kylie2.JPG",
         alt: "Bridal Party",
-        description: ["Bridal Bouquet $175-250+", "Bridesmaid Bouquet $65+", "Boutonniere $18", "Corsage $20", "", "For other contact me for price"]
+        description: ["Bridal Bouquet $250+", "Bridesmaid Bouquet $95+", "Boutonniere $25", "Corsage $45"]
     },
     {
         src: "/images/portfolio/treeCrop2.jpg",
         alt: "Installations",
-        description: ["Arch Piece $350+", "Full Arch $1,000+", "Broken Arch $1,000+", "Aisle Florals $75+", "", "For other contact me for price"]
+        description: ["Arch Piece $375+", "Full Arch $1,500+", "Broken Arch $1,300+", "Aisle Florals $125+"]
     },
     {
         src: "/images/portfolio/cakeCrop.jpg",
         alt: "Reception",
-        description: ["Centerpieces $50+", "Welcome Sign Florals $40+", "Cake florals $25+", "Cake meadow $75+", "Bud Vases $7 with rented vases $5 without vase", "", "For other please contact me"]
+        description: ["Centerpieces $80+", "Welcome Sign Florals $95+", "Cake meadow $165+", "Bud Vases $10 with rented vases $12 without vases"]
     }
 ];
 
@@ -24,7 +24,7 @@ function Pricing() {
         <div className="pricing-page-container">
             <div className="pricing-header" style={{ textAlign: 'center' }}>
                 <h1 className='page-title'>Pricing</h1>
-                <p>Pricing varies based upon the types of flowers <br />To get an exact quote please contact me</p>
+                <p>To get a personalized quote please fill out the submission form</p>
             </div>
 
             <div className="pricing-container">

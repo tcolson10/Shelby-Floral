@@ -716,7 +716,7 @@ nav li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/public/images/portfolio/rosesCloseUp.JPG'); /* Adjust as necessary */
+  background-image: url('/public/images/portfolio/IMG_4164.JPG'); /* Adjust as necessary */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -728,7 +728,7 @@ nav li a:hover {
   .content-container {
     background-size: 200% auto; /* Zooms in the background image on mobile */
     background-position: center 50%;
-    background-image: url('/public/images/portfolio/rosesCloseUp.JPG');
+    background-image: url('/public/images/portfolio/IMG_4164.JPG');
     background-attachment: scroll;
   }
 }
