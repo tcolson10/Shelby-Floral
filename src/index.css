@@ -435,7 +435,7 @@ nav li a:hover {
   font-size: clamp(2.5rem, 5vw, 45px); /* Responsive font size using clamp */
   color: #78866B;
   font-weight: 350;
-  margin-top: 30px;
+  margin-top: 70px;
 }
 
 .portfolio-header p {
@@ -448,7 +448,7 @@ nav li a:hover {
   grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
   gap: 20px;
   width: 100%;
-  padding: 0 20px; /* Adjusted padding for consistency */
+  padding: 5px; /* Adjusted padding for consistency */
 }
 
 .portfolio-image {

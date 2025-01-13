@@ -32,14 +32,16 @@ function Portfolio() {
             <div className="portfolio-header">
                 <h1 className='page-title'>Portfolio</h1>
                 <p>A collection of our latest work</p>
-                <Link to="/full-portfolio" className="portfolio-button">See More Portfolio</Link>
+
             </div>
             <div className="portfolio-container">
                 {imageData.map((image, index) => (
                     <img key={index} src={image.src} alt={image.alt} className="portfolio-image" />
                 ))}
             </div>
+            <Link to="/full-portfolio" className="portfolio-button">See More Portfolio</Link>
         </div>
+
     );
 }
 
