@@ -15,7 +15,7 @@ const pricingData = [
     {
         src: "/images/portfolio/cakeCrop.jpg",
         alt: "Reception",
-        description: ["Centerpieces $80+", "Welcome Sign Florals $95+", "Cake meadow $165+", "Bud Vases $10 with rented vases $12 without vases"]
+        description: ["Centerpieces $80+", "Welcome Sign Florals $95+", "Cake meadow $165+", "Bud Vases $12 with rented vases $10 without vases"]
     }
 ];
 
