@@ -24,7 +24,7 @@ function Contact() {
                 <label htmlFor="eventType">Type of Event (Wedding, Shower, etc.)</label>
                 <input type="text" id="eventType" name="eventType" />
 
-                <label htmlFor="budget">Your Floral Budget ($3000 minimum)</label>
+                <label htmlFor="budget">Your Floral Budget</label>
                 <input type="text" id="budget" name="budget" />
 
                 <label htmlFor="budget">What are your colors?</label>
