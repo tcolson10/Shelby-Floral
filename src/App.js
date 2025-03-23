@@ -34,30 +34,71 @@ function App() {
 		});
 	}, [location]); // Dependency on location ensures effect runs on route changes
 
-	// Improved scroll function with precise positioning
+	// Debugging log to check section existence
+	useEffect(() => {
+		const sections = [
+			"home",
+			"pricing",
+			"portfolio",
+			"testimonials",
+			"contact",
+		];
+		sections.forEach((section) => {
+			const element = document.getElementById(section);
+			console.log(`Section '${section}' exists: ${!!element}`);
+		});
+	}, []);
+
+	// Enhanced scroll function with more reliability
 	const scrollIfNeeded = (sectionId) => {
-		const section = document.getElementById(sectionId);
-		if (section) {
-			// Get the exact header height
-			const headerHeight = document.querySelector("header").offsetHeight;
+		console.log(`Attempting to scroll to section: ${sectionId}`);
 
-			// Calculate the exact position
-			const sectionTop =
-				section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+		// Ensure DOM is fully loaded
+		if (document.readyState === "complete") {
+			scrollToSection(sectionId);
+		} else {
+			// Wait for DOM to be fully loaded
+			window.addEventListener("load", () => scrollToSection(sectionId));
+		}
+	};
 
-			// Scroll with a very short delay to ensure accuracy
-			setTimeout(() => {
+	const scrollToSection = (sectionId) => {
+		// Try multiple times with increasing delay to ensure section is rendered
+		const tryScroll = (attempt = 1) => {
+			const section = document.getElementById(sectionId);
+			console.log(
+				`Scroll attempt ${attempt} for ${sectionId}. Found: ${!!section}`
+			);
+
+			if (section) {
+				// Get the exact header height
+				const headerHeight = document.querySelector("header").offsetHeight;
+				console.log(`Header height: ${headerHeight}px`);
+
+				// Calculate the exact position
+				const sectionTop =
+					section.getBoundingClientRect().top +
+					window.pageYOffset -
+					headerHeight;
+				console.log(`Scrolling to position: ${sectionTop}`);
+
 				window.scrollTo({
 					top: sectionTop,
 					behavior: "smooth",
 				});
-			}, 50);
-		}
+			} else if (attempt < 5) {
+				// Try again with increasing delay
+				setTimeout(() => tryScroll(attempt + 1), attempt * 100);
+			}
+		};
+
+		tryScroll();
 	};
 
 	// Updated navigation handler to use clean URLs
 	const handleNavigation = (path) => {
 		setIsMenuOpen(false);
+
 		if (
 			[
 				"home",
@@ -74,17 +115,12 @@ function App() {
 			} else {
 				navigate("/" + path);
 			}
-
-			// Still scroll to the section if we're already on the landing page
-			if (location.pathname === "/" || path === "home") {
-				setTimeout(() => scrollIfNeeded(path), 50);
-			}
 		} else {
 			navigate("/" + path);
 		}
 	};
 
-	// Scroll to section based on URL path when the page loads
+	// Scroll to section based on URL path when the component mounts or URL changes
 	useEffect(() => {
 		// Get the path without the leading slash
 		const path = location.pathname.replace(/^\//, "");
@@ -96,7 +132,9 @@ function App() {
 		) {
 			// For home route, path is empty string
 			const sectionId = path === "" ? "home" : path;
-			setTimeout(() => scrollIfNeeded(sectionId), 100);
+
+			// Give time for the component to fully render
+			setTimeout(() => scrollIfNeeded(sectionId), 300);
 		}
 	}, [location.pathname]);
 
