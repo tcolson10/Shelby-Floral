@@ -55,7 +55,7 @@ function App() {
 		}
 	};
 
-	// Updated navigation handler
+	// Updated navigation handler to use clean URLs
 	const handleNavigation = (path) => {
 		setIsMenuOpen(false);
 		if (
@@ -68,18 +68,37 @@ function App() {
 				"contact",
 			].includes(path)
 		) {
-			if (window.location.pathname !== "/") {
+			// For same-page navigation sections, use the pathname without hash
+			if (path === "home") {
 				navigate("/");
-				// Wait for navigation to complete before scrolling
-				setTimeout(() => scrollIfNeeded(path), 100);
 			} else {
-				// Immediate scroll if already on the page
-				scrollIfNeeded(path);
+				navigate("/" + path);
+			}
+
+			// Still scroll to the section if we're already on the landing page
+			if (location.pathname === "/" || path === "home") {
+				setTimeout(() => scrollIfNeeded(path), 50);
 			}
 		} else {
 			navigate("/" + path);
 		}
 	};
+
+	// Scroll to section based on URL path when the page loads
+	useEffect(() => {
+		// Get the path without the leading slash
+		const path = location.pathname.replace(/^\//, "");
+
+		if (
+			["", "home", "pricing", "portfolio", "testimonials", "contact"].includes(
+				path
+			)
+		) {
+			// For home route, path is empty string
+			const sectionId = path === "" ? "home" : path;
+			setTimeout(() => scrollIfNeeded(sectionId), 100);
+		}
+	}, [location.pathname]);
 
 	return (
 		<div className="app-container">
@@ -102,35 +121,35 @@ function App() {
 				<nav className={isMenuOpen ? "nav-active" : ""}>
 					<ul>
 						<li>
-							<a href="#home" onClick={() => handleNavigation("home")}>
+							<Link to="/" onClick={() => handleNavigation("home")}>
 								Home
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="#pricing" onClick={() => handleNavigation("pricing")}>
+							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
 								Pricing
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="#portfolio"
+							<Link
+								to="/portfolio"
 								onClick={() => handleNavigation("portfolio")}
 							>
 								Portfolio
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="#testimonials"
+							<Link
+								to="/testimonials"
 								onClick={() => handleNavigation("testimonials")}
 							>
 								Testimonials
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="#contact" onClick={() => handleNavigation("contact")}>
+							<Link to="/contact" onClick={() => handleNavigation("contact")}>
 								Contact
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>
@@ -139,9 +158,12 @@ function App() {
 				<Routes>
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/pricing" element={<LandingPage />} />
+					<Route path="/portfolio" element={<LandingPage />} />
+					<Route path="/testimonials" element={<LandingPage />} />
+					<Route path="/contact" element={<LandingPage />} />
 					<Route path="/full-portfolio" element={<PortfolioFull />} />
 					<Route path="/full-testimonials" element={<TestimonialsFull />} />
-					<Route path="/contact" element={<Contact />} />
 				</Routes>
 			</main>
 			<footer className="site-footer">
