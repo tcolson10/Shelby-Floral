@@ -1,42 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Home from './Home';  // Update these paths if necessary
-import About from './About';
-import Portfolio from './Portfolio';
-import Pricing from './Pricing';
-import Testimonials from './Testimonials';
-import Contact from './Contact';
-import { useEffect } from 'react';
+import React from "react";
+import Pricing from "./Pricing";
+import Portfolio from "./Portfolio";
+import Testimonials from "./Testimonials";
+import Contact from "./Contact";
 
 const LandingPage = () => {
+	return (
+		<div>
+			<div className="content-container" id="home">
+				<img
+					src="/images/portfolio/shelby-floral-logo-white.png"
+					className="OverlayImage"
+					alt="Shelby Floral overlay"
+				/>
+			</div>
 
+			<div id="pricing">
+				<Pricing />
+			</div>
 
-    useEffect(() => {
-        window.scrollTo(0, 0); // Scroll to the top of the window on component mount
-    }, []); // Empty dependency array ensures it runs only once after the initial render
+			<div id="portfolio">
+				<Portfolio />
+			</div>
 
-    return (
-        <div>
-            <section id="home">
-                <Home />
-            </section>
-            {/* <section id="about">
-                <About />
-            </section> */}
-            <section id="pricing">
-                <Pricing />
-            </section>
-            <section id="portfolio">
-                <Portfolio />
-            </section>
-            <section id="testimonials">
-                <Testimonials />
-            </section>
-            <section id="contact">
-                <Contact />
-            </section>
-        </div>
-    );
+			<div id="testimonials">
+				<Testimonials />
+			</div>
+
+			<div id="contact">
+				<Contact />
+			</div>
+		</div>
+	);
 };
 
 export default LandingPage;
