@@ -1,9 +1,9 @@
 /* ======== CSS VARIABLES ======== */
 :root {
-	/* Color palette */
-	--primary-color: #9cad86;
-	--primary-dark: #78866b;
-	--primary-light: #b8c7a3;
+	/* Color palette - swapped main and dark colors */
+	--primary-color: #78866b; /* Was previously #9cad86 */
+	--primary-dark: #5e6a54; /* New darker shade for hover states */
+	--primary-light: #9cad86; /* Was previously the main color, now light */
 	--text-color: #333;
 	--white: #fff;
 	--light-gray: #f9f9f9;
@@ -295,7 +295,7 @@ header {
 .hamburger-line {
 	width: 30px;
 	height: 3px;
-	background-color: var(--primary-dark);
+	background-color: var(--primary-color); /* Updated to darker shade */
 	transition: transform var(--transition-speed) ease,
 		opacity var(--transition-speed) ease;
 }
@@ -596,7 +596,7 @@ nav li a:focus {
 .section__title {
 	font-weight: 350;
 	font-size: var(--h1-size);
-	color: var(--primary-dark);
+	color: var(--primary-color); /* Updated to darker shade */
 	margin: 20px 0 10px 0;
 }
 
@@ -616,7 +616,7 @@ nav li a:focus {
 .about-text-container h1 {
 	font-weight: 350;
 	font-size: var(--h1-size);
-	color: var(--primary-dark);
+	color: var(--primary-color); /* Updated to darker shade */
 	margin: 20px 0 10px 0;
 }
 
@@ -782,7 +782,7 @@ nav li a:focus {
 }
 
 .pricing-text-content h3 {
-	color: var(--primary-dark);
+	color: var(--primary-color); /* Updated to darker shade */
 }
 
 @media (max-width: 768px) {
@@ -851,7 +851,7 @@ nav li a:focus {
 .contact-form textarea:focus {
 	outline: none;
 	border-color: var(--primary-color);
-	box-shadow: 0 0 0 2px rgba(156, 173, 134, 0.3);
+	box-shadow: 0 0 0 2px rgba(120, 134, 107, 0.3); /* Updated rgba value for darker green */
 }
 
 @media screen and (max-width: 768px) {
@@ -920,7 +920,7 @@ nav li a:focus {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	background-color: var(--primary-color);
+	background-color: var(--primary-color); /* Updated to darker shade */
 	padding-top: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
