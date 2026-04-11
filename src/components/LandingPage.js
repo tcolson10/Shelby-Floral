@@ -14,12 +14,12 @@ const LandingPage = () => {
 				/>
 			</div>
 
-			<div id="pricing">
-				<Pricing />
-			</div>
-
 			<div id="portfolio">
 				<Portfolio />
+			</div>
+
+			<div id="pricing">
+				<Pricing />
 			</div>
 
 			<div id="testimonials">

@@ -90,16 +90,16 @@ function App() {
 							</Link>
 						</li>
 						<li>
-							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
-								Pricing
-							</Link>
-						</li>
-						<li>
 							<Link
 								to="/portfolio"
 								onClick={() => handleNavigation("portfolio")}
 							>
 								Portfolio
+							</Link>
+						</li>
+						<li>
+							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
+								Pricing
 							</Link>
 						</li>
 						<li>
