@@ -1,6 +1,3 @@
-import React from "react";
-
-// Updated array of pricing details
 const pricingData = [
 	{
 		src: "/images/portfolio/Kylie2.JPG",
@@ -32,7 +29,7 @@ const pricingData = [
 function Pricing() {
 	return (
 		<div className="pricing-page-container">
-			<div className="pricing-header" style={{ textAlign: "center" }}>
+			<div className="pricing-header">
 				<h1 className="page-title">Pricing</h1>
 				<p>To get a personalized quote please fill out the submission form</p>
 			</div>
@@ -40,17 +37,19 @@ function Pricing() {
 			<div className="pricing-container">
 				{pricingData.map((item, index) => (
 					<div key={index} className="pricing-photo-container">
-						<img src={item.src} alt={item.alt} className="pricing-photo" />
+						<img
+							src={item.src}
+							alt={item.alt}
+							className="pricing-photo"
+							loading="lazy"
+						/>
 						<div className="pricing-text-content">
-							{" "}
-							{/* Additional div for text content if needed */}
 							<h3>{item.alt}</h3>
-							{item.description.map((line, lineIndex) => (
-								<React.Fragment key={lineIndex}>
-									{lineIndex > 0 && <br />} {/* Adds breaks between lines */}
-									{line}
-								</React.Fragment>
-							))}
+							<ul className="pricing-service-list">
+								{item.description.map((line, lineIndex) => (
+									<li key={lineIndex}>{line}</li>
+								))}
+							</ul>
 						</div>
 					</div>
 				))}

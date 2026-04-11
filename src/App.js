@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
-	BrowserRouter as Router,
 	Routes,
 	Route,
 	Link,
@@ -13,130 +12,57 @@ import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import PortfolioFull from "./components/PortfolioFull";
 import TestimonialsFull from "./components/TestimonialsFull";
-import Contact from "./components/Contact";
 
 function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const navigate = useNavigate();
 	const location = useLocation();
+	const gaInitialized = useRef(false);
 
-	// Initialize Google Analytics 4 and track page views
+	// Initialize GA4 once on mount
 	useEffect(() => {
-		// Initialize GA4 with your Measurement ID
-		ReactGA4.initialize("G-9P0D4PPB65"); // Replace with your actual GA4 Measurement ID
+		if (!gaInitialized.current) {
+			ReactGA4.initialize("G-9P0D4PPB65");
+			gaInitialized.current = true;
+		}
+	}, []);
 
-		// Send page view whenever the location changes
+	// Track page views on route change
+	useEffect(() => {
 		ReactGA4.send({
 			hitType: "pageview",
 			page_title: document.title,
 			page_location: window.location.href,
 			page_path: location.pathname + location.search,
 		});
-	}, [location]); // Dependency on location ensures effect runs on route changes
-
-	// Debugging log to check section existence
-	useEffect(() => {
-		const sections = [
-			"home",
-			"pricing",
-			"portfolio",
-			"testimonials",
-			"contact",
-		];
-		sections.forEach((section) => {
-			const element = document.getElementById(section);
-			console.log(`Section '${section}' exists: ${!!element}`);
-		});
-	}, []);
-
-	// Enhanced scroll function with more reliability
-	const scrollIfNeeded = (sectionId) => {
-		console.log(`Attempting to scroll to section: ${sectionId}`);
-
-		// Ensure DOM is fully loaded
-		if (document.readyState === "complete") {
-			scrollToSection(sectionId);
-		} else {
-			// Wait for DOM to be fully loaded
-			window.addEventListener("load", () => scrollToSection(sectionId));
-		}
-	};
+	}, [location]);
 
 	const scrollToSection = (sectionId) => {
-		// Try multiple times with increasing delay to ensure section is rendered
-		const tryScroll = (attempt = 1) => {
-			const section = document.getElementById(sectionId);
-			console.log(
-				`Scroll attempt ${attempt} for ${sectionId}. Found: ${!!section}`
-			);
-
-			if (section) {
-				// Get the exact header height
-				const headerHeight = document.querySelector("header").offsetHeight;
-				console.log(`Header height: ${headerHeight}px`);
-
-				// Calculate the exact position
-				const sectionTop =
-					section.getBoundingClientRect().top +
-					window.pageYOffset -
-					headerHeight;
-				console.log(`Scrolling to position: ${sectionTop}`);
-
-				window.scrollTo({
-					top: sectionTop,
-					behavior: "smooth",
-				});
-			} else if (attempt < 5) {
-				// Try again with increasing delay
-				setTimeout(() => tryScroll(attempt + 1), attempt * 100);
-			}
-		};
-
-		tryScroll();
+		const section = document.getElementById(sectionId);
+		if (!section) return;
+		const headerHeight = document.querySelector("header")?.offsetHeight ?? 80;
+		const top =
+			section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+		window.scrollTo({ top, behavior: "smooth" });
 	};
 
-	// Updated navigation handler to use clean URLs
-	const handleNavigation = (path) => {
-		setIsMenuOpen(false);
-
-		if (
-			[
-				"home",
-				"about",
-				"portfolio",
-				"pricing",
-				"testimonials",
-				"contact",
-			].includes(path)
-		) {
-			// For same-page navigation sections, use the pathname without hash
-			if (path === "home") {
-				navigate("/");
-			} else {
-				navigate("/" + path);
-			}
-		} else {
-			navigate("/" + path);
-		}
-	};
-
-	// Scroll to section based on URL path when the component mounts or URL changes
+	// Scroll to section based on URL path when location changes
 	useEffect(() => {
-		// Get the path without the leading slash
 		const path = location.pathname.replace(/^\//, "");
-
 		if (
 			["", "home", "pricing", "portfolio", "testimonials", "contact"].includes(
 				path
 			)
 		) {
-			// For home route, path is empty string
 			const sectionId = path === "" ? "home" : path;
-
-			// Give time for the component to fully render
-			setTimeout(() => scrollIfNeeded(sectionId), 300);
+			setTimeout(() => scrollToSection(sectionId), 100);
 		}
 	}, [location.pathname]);
+
+	const handleNavigation = (path) => {
+		setIsMenuOpen(false);
+		navigate(path === "home" ? "/" : `/${path}`);
+	};
 
 	return (
 		<div className="app-container">

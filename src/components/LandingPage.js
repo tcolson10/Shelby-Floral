@@ -1,4 +1,3 @@
-import React from "react";
 import Pricing from "./Pricing";
 import Portfolio from "./Portfolio";
 import Testimonials from "./Testimonials";
@@ -7,7 +6,7 @@ import Contact from "./Contact";
 const LandingPage = () => {
 	return (
 		<div>
-			<div className="content-container" id="home">
+			<div className="content-container" id="home" style={{ backgroundImage: 'url(/images/portfolio/IMG_4164.JPG)' }}>
 				<img
 					src="/images/portfolio/shelby-floral-logo-white.png"
 					className="OverlayImage"

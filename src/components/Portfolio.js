@@ -40,6 +40,7 @@ function Portfolio() {
 						src={image.src}
 						alt={image.alt}
 						className="portfolio-image"
+						loading="lazy"
 					/>
 				))}
 			</div>

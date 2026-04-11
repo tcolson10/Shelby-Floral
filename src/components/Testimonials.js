@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link component from react-router-dom
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const testimonialsData = [
     {
@@ -7,32 +7,78 @@ const testimonialsData = [
         name: "Kensie W."
     },
     {
-        text: "Shelby Floral is an absolute dream to work with!! They were able to understand and execute my wedding floral vision perfectly. They are SO knowledgeable and made the planning so much fun, instead of stressful. I strongly recommend them to everyone I know ",
+        text: "Shelby Floral is an absolute dream to work with!! They were able to understand and execute my wedding floral vision perfectly. They are SO knowledgeable and made the planning so much fun, instead of stressful. I strongly recommend them to everyone I know.",
         name: "Grace G."
     },
     {
-        text: "Shelby Floral was amazing to work with! I showed them all of my inspo pics and they made all of my wedding flower dreams come true. They made sure I had flowers everywhere I wanted and my bouquet was gorgeous! They also did all the flowers and table settings for my baby shower a year later and it was to die for. They really listened to what I wanted and brought it to life! I can’t wait to keep using them for all my future events. Absolutely recommend to anyone and everyone!",
-        name: "Michelle C. "
+        text: "I cried when I saw my bouquet. That's all.",
+        name: "Emma R."
+    },
+    {
+        text: "Shelby Floral was incredible! I feel like the vision I had was kind of scattered, but they executed it perfectly and exceeded any expectations I had. I still get so many compliments on the florals from my wedding!",
+        name: "Lacee J."
+    },
+    {
+        text: "10/10. Booked Shelby Floral after seeing their work on Instagram and they did not disappoint. My arch was the most beautiful thing I have ever seen in my life and I am not exaggerating.",
+        name: "Tatum R."
+    },
+    {
+        text: "Getting married is stressful. Shelby Floral was one of the few parts of the process that was genuinely fun. They were excited about our vision, communicated clearly, and showed up and made it all real.",
+        name: "Peyton A."
+    },
+    {
+        text: "Simple and stunning. That's all I wanted and that's exactly what I got. Thank you!!",
+        name: "Jess T."
+    },
+    {
+        text: "Gorgeous work. Fast responses. Fair pricing. What more can you ask for?",
+        name: "Lauren S."
     },
 ];
 
 function Testimonials() {
+    const [current, setCurrent] = useState(0);
+
+    // Auto-advance every 5 seconds; resets whenever current changes (including manual clicks)
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent(c => (c + 1) % testimonialsData.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [current]);
+
+    const prev = () => setCurrent(c => (c - 1 + testimonialsData.length) % testimonialsData.length);
+    const next = () => setCurrent(c => (c + 1) % testimonialsData.length);
+
     return (
         <div className="testimonials-container">
             <div className="testimonials-header">
-                <h1 className='page-title'>Testimonials</h1>
+                <h1 className="page-title">Testimonials</h1>
                 <p>Kind words from clients turned friends</p>
-                {/* Link to the full testimonials page */}
-                <Link to="/full-testimonials" className="testimonials-button">See All Testimonials</Link>
             </div>
-            <div className="testimonials-list">
-                {testimonialsData.map((testimonial, index) => (
-                    <div key={index} className="testimonial-item">
-                        <blockquote>"{testimonial.text}"</blockquote>
-                        <p className="client-name">- {testimonial.name}</p>
-                    </div>
+            <div className="testimonials-carousel">
+                <button className="carousel-btn" onClick={prev} aria-label="Previous testimonial">&#8249;</button>
+                <div className="carousel-track">
+                    {testimonialsData.map((t, i) => (
+                        <div key={i} className={`carousel-slide${i === current ? ' carousel-slide--active' : ''}`}>
+                            <blockquote>"{t.text}"</blockquote>
+                            <p className="client-name">{t.name}</p>
+                        </div>
+                    ))}
+                </div>
+                <button className="carousel-btn" onClick={next} aria-label="Next testimonial">&#8250;</button>
+            </div>
+            <div className="carousel-dots">
+                {testimonialsData.map((_, i) => (
+                    <button
+                        key={i}
+                        className={`carousel-dot${i === current ? ' carousel-dot--active' : ''}`}
+                        onClick={() => setCurrent(i)}
+                        aria-label={`Go to testimonial ${i + 1}`}
+                    />
                 ))}
             </div>
+            <Link to="/full-testimonials" className="testimonials-button">See All Testimonials</Link>
         </div>
     );
 }
