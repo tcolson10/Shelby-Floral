@@ -14,7 +14,11 @@ const LandingPage = () => {
 
 	return (
 		<div>
-			<div className="content-container" id="home" style={{ backgroundImage: 'url(/images/portfolio/IMG_4164.JPG)' }}>
+			<div
+				className="content-container"
+				id="home"
+				style={{ backgroundImage: "url(/images/portfolio/IMG_0597.JPG)" }}
+			>
 				<div className="hero-content">
 					<img
 						src="/images/portfolio/shelby-floral-logo-white.png"

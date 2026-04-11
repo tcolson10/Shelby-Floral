@@ -2,6 +2,30 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const imageData = [
+	{ src: "/images/portfolio/IMG_0597.jpeg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_1708.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_4485.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_4486.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_8790.jpg", alt: "Wedding florals" },
+	{
+		src: "/images/portfolio/69E94533-5E79-4BEE-8264-76315704CB4E.jpeg",
+		alt: "Wedding florals",
+	},
+	{
+		src: "/images/portfolio/D089FC39-EF2A-42EA-B9C0-B025D0066451.jpeg",
+		alt: "Wedding florals",
+	},
+	{ src: "/images/portfolio/IMG_0413.jpeg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_1325.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6008.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6141.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6162.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6428.jpeg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6515.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6981.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6983.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_7216.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_8071.jpeg", alt: "Wedding florals" },
 	{
 		src: "/images/portfolio/Kiana Corri Photography- Brooke and Jackson Wedding Day-792_Original.jpg",
 		alt: "Brooke and Jackson wedding florals",
