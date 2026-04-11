@@ -37,6 +37,7 @@ body {
 	max-width: 100vw;
 	overflow-x: hidden;
 	color: var(--text-color);
+	-webkit-tap-highlight-color: transparent;
 }
 
 *,
@@ -456,7 +457,7 @@ nav li a:focus {
 	.content-container {
 		height: auto;
 		min-height: 65vh;
-		background-size: 120% auto;
+		background-size: cover;
 		background-position: center 50%;
 		background-attachment: scroll;
 	}
@@ -519,6 +520,12 @@ nav li a:focus {
 /* ======== FULL-PAGE SUBPAGES ======== */
 .full-page {
 	padding-top: calc(var(--header-height) + 40px);
+}
+
+@media (max-width: 768px) {
+	.full-page {
+		padding-top: calc(var(--mobile-header-height) + 30px);
+	}
 }
 
 .page-nav {
@@ -615,6 +622,10 @@ nav li a:focus {
 @media (max-width: 768px) {
 	.pricing-photo-container {
 		width: 100%;
+	}
+
+	.pricing-photo {
+		max-height: 300px;
 	}
 }
 
@@ -849,13 +860,19 @@ nav li a:focus {
 	}
 
 	.carousel-btn {
-		width: 38px;
-		height: 38px;
+		width: 44px;
+		height: 44px;
 		font-size: 22px;
 	}
 
 	.carousel-slide blockquote {
 		font-size: 1.1rem;
+	}
+
+	.carousel-dot {
+		box-sizing: content-box;
+		padding: 18px;
+		background-clip: content-box;
 	}
 }
 
