@@ -34,7 +34,7 @@ const imageData = [
 	"/images/portfolio/sneak-1.jpeg",
 	"/images/portfolio/IMG_8252.JPG",
 	"/images/portfolio/IMG_9441.JPG",
-	"/images/portfolio/IMG_4006.jpg",
+	"/images/portfolio/IMG_4006.JPG",
 	"/images/portfolio/IMG_4007.JPG",
 	"/images/portfolio/IMG_1362.JPG",
 	"/images/portfolio/treeFarAway.jpg",
