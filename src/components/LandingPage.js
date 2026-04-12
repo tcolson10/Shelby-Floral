@@ -5,11 +5,12 @@ import Contact from "./Contact";
 
 const LandingPage = () => {
 	const scrollToContact = () => {
-		const section = document.getElementById('contact');
+		const section = document.getElementById("contact");
 		if (!section) return;
-		const headerHeight = document.querySelector('header')?.offsetHeight ?? 60;
-		const top = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-		window.scrollTo({ top, behavior: 'smooth' });
+		const headerHeight = document.querySelector("header")?.offsetHeight ?? 60;
+		const top =
+			section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+		window.scrollTo({ top, behavior: "smooth" });
 	};
 
 	return (
@@ -25,7 +26,9 @@ const LandingPage = () => {
 						className="OverlayImage"
 						alt="Shelby Floral overlay"
 					/>
-					<button className="hero-contact-btn" onClick={scrollToContact}>Contact Us</button>
+					<button className="hero-contact-btn" onClick={scrollToContact}>
+						Contact Us
+					</button>
 				</div>
 			</div>
 

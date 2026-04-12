@@ -188,9 +188,15 @@ header {
 }
 
 .navLogo {
-	height: 70px;
-	margin: 5px 0;
+	height: 52px;
+	width: auto;
+	margin-left: 16px;
 	cursor: pointer;
+	transition: opacity var(--transition-speed) ease;
+}
+
+.navLogo:hover {
+	opacity: 0.75;
 }
 
 .hamburger {
@@ -396,9 +402,11 @@ nav li a:focus {
 	transform: translateY(-2px);
 }
 
-.instagram-logo {
-	width: 44px;
-	height: 44px;
+.instagram-logo,
+.email-icon {
+	width: 32px;
+	height: 32px;
+	flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -488,6 +496,11 @@ nav li a:focus {
 }
 
 @media (max-width: 768px) {
+	.hero-contact-btn {
+		padding: 8px 20px;
+		font-size: 0.8rem;
+	}
+
 	.content-container {
 		height: auto;
 		min-height: 65vh;

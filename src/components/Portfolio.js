@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom"; // Import Link component from react-router-dom
 
 const imageData = [
-	{ src: "/images/portfolio/IMG_4164.JPG", alt: "Wedding florals" },
-	{ src: "/images/portfolio/IMG_4485.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_4486.jpg", alt: "Wedding florals" },
 	{ src: "/images/portfolio/IMG_8790.jpg", alt: "Wedding florals" },
+	{ src: "/images/portfolio/IMG_6645.JPG", alt: "Wedding florals" },
 
 	// { src: "/images/portfolio/brideLooking.JPG", alt: "Bride image" },
 	// { src: "/images/portfolio/ceremony.JPG", alt: "Ceremony image" },

@@ -68,11 +68,7 @@ function App() {
 		<div className="app-container">
 			<header>
 				<Link to="/" className="webTitle" onClick={() => setIsMenuOpen(false)}>
-					<img
-						src="/images/portfolio/flower-logo.png"
-						alt="Shelby Floral Logo"
-						className="navLogo"
-					/>
+					<img src="/images/portfolio/shelby-floral-logo-crop.jpg" alt="Shelby Floral" className="navLogo" />
 				</Link>
 				<button
 					className={`hamburger ${isMenuOpen ? "active" : ""}`}
@@ -137,22 +133,25 @@ function App() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<img
-							src="/images/portfolio/IG.png"
-							alt="Instagram"
-							className="instagram-logo"
-						/>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="instagram-logo">
+							<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+							<circle cx="12" cy="12" r="4"/>
+							<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+						</svg>
 						<span>Instagram</span>
 					</a>
 				</div>
 				<div className="footer-email">
-					Email:{" "}
 					<a
 						href="mailto:shelbyfloralcompany@gmail.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						shelbyfloralcompany@gmail.com
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="email-icon">
+							<rect x="2" y="4" width="20" height="16" rx="2"/>
+							<polyline points="2,4 12,13 22,4"/>
+						</svg>
+						<span>shelbyfloralcompany@gmail.com</span>
 					</a>
 				</div>
 			</footer>
