@@ -1,48 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link component from react-router-dom
+import { Link } from "react-router-dom";
 
 const imageData = [
-	{ src: "/images/portfolio/IMG_4486.jpg", alt: "Wedding florals" },
-	{ src: "/images/portfolio/IMG_8790.jpg", alt: "Wedding florals" },
-	{ src: "/images/portfolio/IMG_6645.JPG", alt: "Wedding florals" },
-
-	// { src: "/images/portfolio/brideLooking.JPG", alt: "Bride image" },
-	// { src: "/images/portfolio/ceremony.JPG", alt: "Ceremony image" },
-	// { src: "/images/portfolio/Kylie2.JPG", alt: "Image of Kylie 2" },
-	// { src: "/images/portfolio/kylieFlowers.JPG", alt: "Image of Kylie 1" },
-	// { src: "/images/portfolio/treeNew.JPG" },
-	// { src: "/images/portfolio/treeFarAway.jpg", alt: "Kenzie" },
-	// { src: "/images/portfolio/kenzie.jpg", alt: "Kenzie" },
-	// { src: "/images/portfolio/brideWBridesmaids.JPG", alt: "Kenzie" },
-	// { src: "/images/portfolio/sandCouple.JPG", alt: "Kenzie" },
-	// { src: "/images/portfolio/archCody.jpg", alt: "Kenzie" },
-	// { src: "/images/portfolio/laceeWGroom.jpg", alt: "Lacee with Groom" },
-	// { src: "/images/portfolio/shelBridesmaids.jpg", alt: "Lacee with Groom" },
-	// { src: "/images/portfolio/BrideAndGroomClose.JPG", alt: "Bride and Groom Close-up" },
-	// { src: "/images/portfolio/cakeCrop.jpg", alt: "Kenzie" },
-	// { src: "/images/portfolio/carterAndKenzie.JPG", alt: "Carter and Kenzie" },
+	"/images/portfolio/IMG_1325.jpg",
+	"/images/portfolio/IMG_4485.jpg",
+	"/images/portfolio/IMG_8790.jpg",
+	"/images/portfolio/IMG_0413.jpeg",
+	"/images/portfolio/IMG_6162.jpg",
+	"/images/portfolio/IMG_1708.jpg",
+	"/images/portfolio/IMG_6983.jpg",
+	"/images/portfolio/IMG_6645.JPG",
+	"/images/portfolio/IMG_6008.jpg",
 ];
 
 function Portfolio() {
 	return (
 		<div className="portfolio-page-container">
-			<div className="portfolio-header">
-				<h1 className="page-title">Portfolio</h1>
-				<p>A collection of our latest work</p>
+			<div className="portfolio-header reveal">
+				<span className="section-eyebrow">Our Work</span>
+				<h2 className="section-heading">
+					A glimpse of <em>our craft</em>
+				</h2>
+				<p>From intimate ceremonies to grand celebrations</p>
 			</div>
-			<div className="portfolio-container">
-				{imageData.map((image, index) => (
-					<img
-						key={index}
-						src={image.src}
-						alt={image.alt}
-						className="portfolio-image"
-						loading="lazy"
-					/>
+			<div className="masonry-grid">
+				{imageData.map((src, i) => (
+					<div className="masonry-item" key={i}>
+						<img src={src} alt="" loading="lazy" />
+					</div>
 				))}
 			</div>
 			<Link to="/full-portfolio" className="portfolio-button">
-				See More Portfolio
+				View Full Portfolio
 			</Link>
 		</div>
 	);

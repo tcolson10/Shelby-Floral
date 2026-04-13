@@ -52,23 +52,22 @@ function PortfolioFull() {
 	return (
 		<div className="portfolio-page-container full-page">
 			<div className="page-nav">
-				<Link to="/portfolio" className="back-link">
+				<Link to="/" className="back-link" style={{ color: "var(--sage)" }}>
 					← Back to Home
 				</Link>
 			</div>
-			<div className="portfolio-header">
-				<h1 className="page-title">Portfolio</h1>
-				<p>A collection of our latest work</p>
+			<div className="portfolio-header reveal">
+				<span className="section-eyebrow">Our Work</span>
+				<h1 className="section-heading">
+					The Full <em>Collection</em>
+				</h1>
+				<p>Every arrangement, every moment, every bloom</p>
 			</div>
-			<div className="portfolio-container">
+			<div className="masonry-grid">
 				{imageData.map((src, index) => (
-					<img
-						key={index}
-						src={src}
-						alt=""
-						className="portfolio-image"
-						loading="lazy"
-					/>
+					<div className="masonry-item" key={index}>
+						<img src={src} alt="" loading="lazy" />
+					</div>
 				))}
 			</div>
 		</div>

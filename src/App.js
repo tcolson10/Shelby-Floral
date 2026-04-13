@@ -15,6 +15,7 @@ import TestimonialsFull from "./components/TestimonialsFull";
 
 function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 	const navigate = useNavigate();
 	const location = useLocation();
 	const gaInitialized = useRef(false);
@@ -36,6 +37,32 @@ function App() {
 			page_path: location.pathname + location.search,
 		});
 	}, [location]);
+
+	// Transparent nav: track scroll position
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 60);
+		window.addEventListener("scroll", onScroll, { passive: true });
+		onScroll();
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+
+	// Scroll reveal: observe .reveal elements on each route
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((e) => {
+					if (e.isIntersecting) {
+						e.target.classList.add("is-visible");
+						observer.unobserve(e.target);
+					}
+				});
+			},
+			{ threshold: 0.12 }
+		);
+		const els = document.querySelectorAll(".reveal");
+		els.forEach((el) => observer.observe(el));
+		return () => observer.disconnect();
+	}, [location.pathname]);
 
 	const scrollToSection = (sectionId) => {
 		const section = document.getElementById(sectionId);
@@ -64,11 +91,14 @@ function App() {
 		navigate(path === "home" ? "/" : `/${path}`);
 	};
 
+	const isHome = location.pathname === "/";
+	const navTransparent = isHome && !scrolled && !isMenuOpen;
+
 	return (
 		<div className="app-container">
-			<header>
+			<header className={navTransparent ? "nav-transparent" : "nav-scrolled"}>
 				<Link to="/" className="webTitle" onClick={() => setIsMenuOpen(false)}>
-					<img src="/images/portfolio/shelby-floral-logo-crop.jpg" alt="Shelby Floral" className="navLogo" />
+					<span className="navMonogram">SF</span>
 				</Link>
 				<button
 					className={`hamburger ${isMenuOpen ? "active" : ""}`}
@@ -94,16 +124,16 @@ function App() {
 							</Link>
 						</li>
 						<li>
-							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
-								Pricing
-							</Link>
-						</li>
-						<li>
 							<Link
 								to="/testimonials"
 								onClick={() => handleNavigation("testimonials")}
 							>
 								Testimonials
+							</Link>
+						</li>
+						<li>
+							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
+								Pricing
 							</Link>
 						</li>
 						<li>

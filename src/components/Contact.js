@@ -1,77 +1,96 @@
-import React from 'react';
-
 function Contact() {
-    return (
-        <div className='contact-container'>
-            <h1 className='page-title'>Let's Chat!</h1>
-            <h3>Fill out the form and we will get back to you ASAP</h3>
-            <form className='contact-form' action="https://formspree.io/f/mwkgrzrd" method="POST">
-                <div className="form-group">
-                    <label className="form-label" htmlFor="fullName">Your name & your partner's name (if applicable)</label>
-                    <input type="text" id="fullName" name="fullName" />
-                </div>
+	return (
+		<div className="contact-container">
+			<div className="contact-header reveal">
+				<span className="section-eyebrow">Let's Connect</span>
+				<h2 className="section-heading">
+					Start your <em>floral story</em>
+				</h2>
+				<p>Fill out the form below and we'll be in touch within 24 hours</p>
+			</div>
+			<form
+				className="contact-form"
+				action="https://formspree.io/f/mwkgrzrd"
+				method="POST"
+			>
+				<div className="form-row">
+					<div className="form-group">
+						<label className="form-label" htmlFor="fullName">Names</label>
+						<input type="text" id="fullName" name="fullName" placeholder="Your name & partner's name" />
+					</div>
+					<div className="form-group">
+						<label className="form-label" htmlFor="phone">Phone</label>
+						<input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+					</div>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" />
-                </div>
+				<div className="form-row">
+					<div className="form-group">
+						<label className="form-label" htmlFor="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="Your email address" />
+					</div>
+					<div className="form-group">
+						<label className="form-label" htmlFor="date">Event Date</label>
+						<input type="date" id="date" name="date" />
+					</div>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="email">Email Address</label>
-                    <input type="email" id="email" name="email" />
-                </div>
+				<div className="form-row">
+					<div className="form-group">
+						<label className="form-label" htmlFor="location">Event Location</label>
+						<input type="text" id="location" name="location" placeholder="City, venue" />
+					</div>
+					<div className="form-group">
+						<label className="form-label" htmlFor="eventType">Event Type</label>
+						<input type="text" id="eventType" name="eventType" placeholder="Wedding, shower, etc." />
+					</div>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="location">Location of Event</label>
-                    <input type="text" id="location" name="location" />
-                </div>
+				<div className="form-row">
+					<div className="form-group">
+						<label className="form-label" htmlFor="budget">Floral Budget</label>
+						<input type="text" id="budget" name="budget" placeholder="Approximate budget" />
+					</div>
+					<div className="form-group">
+						<label className="form-label" htmlFor="colors">Color Palette</label>
+						<input type="text" id="colors" name="colors" placeholder="Your colors" />
+					</div>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="date">Date of Event</label>
-                    <input type="date" id="date" name="date" />
-                </div>
+				<div className="form-group">
+					<label className="form-label" htmlFor="flowers">Specific Flowers (if any)</label>
+					<input type="text" id="flowers" name="flowers" placeholder="Any must-have blooms" />
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="eventType">Type of Event (Wedding, Shower, etc.)</label>
-                    <input type="text" id="eventType" name="eventType" />
-                </div>
+				<div className="form-group">
+					<label className="form-label" htmlFor="description">Tell Us More</label>
+					<textarea
+						id="description"
+						name="description"
+						rows="4"
+						placeholder="Share your vision, quantities, and any other details..."
+					></textarea>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="budget">Your Floral Budget</label>
-                    <input type="text" id="budget" name="budget" />
-                </div>
+				<div className="form-row">
+					<div className="form-group">
+						<label className="form-label" htmlFor="instagramHandle">Instagram Handle</label>
+						<input type="text" id="instagramHandle" name="instagramHandle" placeholder="@handle" />
+					</div>
+					<div className="form-group">
+						<label className="form-label" htmlFor="pinterestLink">Pinterest Board</label>
+						<input type="url" id="pinterestLink" name="pinterestLink" placeholder="Link to your inspo board" />
+					</div>
+				</div>
 
-                <div className="form-group">
-                    <label className="form-label" htmlFor="colors">What are your colors?</label>
-                    <input type="text" id="colors" name="colors" />
-                </div>
-
-                <div className="form-group">
-                    <label className="form-label" htmlFor="flowers">Specific flowers you want included (if applicable)</label>
-                    <input type="text" id="flowers" name="flowers" />
-                </div>
-
-                <div className="form-group">
-                    <label className="form-label" htmlFor="description">Tell us a little bit more about what you are wanting (include quantities)</label>
-                    <textarea id="description" name="description" rows="5"></textarea>
-                </div>
-
-                <div className="form-group">
-                    <label className="form-label" htmlFor="instagramHandle">Instagram Handle</label>
-                    <input type="text" id="instagramHandle" name="instagramHandle" />
-                </div>
-
-                <div className="form-group">
-                    <label className="form-label" htmlFor="pinterestLink">Link to Pinterest Board/Inspiration</label>
-                    <input type="url" id="pinterestLink" name="pinterestLink" />
-                </div>
-
-                <div className="submit-button-container">
-                    <button type="submit" className="submit-button">Send</button>
-                </div>
-            </form>
-        </div>
-    );
+				<div className="submit-button-container">
+					<button type="submit" className="submit-button">
+						Send Inquiry
+					</button>
+				</div>
+			</form>
+		</div>
+	);
 }
 
 export default Contact;
