@@ -1,4 +1,3 @@
-import Pricing from "./Pricing";
 import Portfolio from "./Portfolio";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
@@ -108,11 +107,6 @@ const LandingPage = () => {
 			{/* Testimonials */}
 			<div id="testimonials">
 				<Testimonials />
-			</div>
-
-			{/* Pricing */}
-			<div id="pricing">
-				<Pricing />
 			</div>
 
 			{/* Contact */}

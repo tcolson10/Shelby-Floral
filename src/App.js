@@ -132,11 +132,6 @@ function App() {
 							</Link>
 						</li>
 						<li>
-							<Link to="/pricing" onClick={() => handleNavigation("pricing")}>
-								Pricing
-							</Link>
-						</li>
-						<li>
 							<Link to="/contact" onClick={() => handleNavigation("contact")}>
 								Contact
 							</Link>
@@ -148,7 +143,6 @@ function App() {
 				<Routes>
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/pricing" element={<LandingPage />} />
 					<Route path="/portfolio" element={<LandingPage />} />
 					<Route path="/testimonials" element={<LandingPage />} />
 					<Route path="/contact" element={<LandingPage />} />

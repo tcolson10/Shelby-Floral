@@ -42,6 +42,9 @@ const imageData = [
 	"/images/portfolio/IMG_8955.JPG",
 	"/images/portfolio/laceeWGroom.jpg",
 	"/images/portfolio/IMG_2952.JPG",
+	"/images/portfolio/Kylie2.JPG",
+	"/images/portfolio/treeCrop2.jpg",
+	"/images/portfolio/cakeCrop.jpg",
 ];
 
 function PortfolioFull() {
