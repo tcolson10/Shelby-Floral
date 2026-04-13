@@ -30,6 +30,7 @@
 	--transition-speed: 0.32s;
 }
 
+
 /* ======== BASE ======== */
 html {
 	scroll-behavior: smooth;
@@ -505,7 +506,7 @@ nav li a:focus {
 	display: block;
 }
 
-.hero-headline span {
+.hero-headline-sub {
 	font-family: var(--font-body);
 	font-size: 0.17em;
 	letter-spacing: 0.5em;
@@ -515,6 +516,37 @@ nav li a:focus {
 	color: rgba(255, 255, 255, 0.72);
 	display: block;
 	margin-top: 28px;
+}
+
+/* Hero spell-out animation */
+.hero-letter {
+	display: inline-block;
+	opacity: 0;
+	animation: heroLetterIn 0.5s ease forwards;
+}
+
+.hero-letter--sub {
+	animation: heroLetterInSub 0.5s ease forwards;
+}
+
+.hero-fade-in {
+	opacity: 0;
+	animation: heroFadeIn 0.8s ease forwards;
+}
+
+@keyframes heroLetterIn {
+	from { opacity: 0; transform: translateY(10px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroLetterInSub {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@keyframes heroFadeIn {
+	from { opacity: 0; transform: translateY(6px); }
+	to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-tagline {

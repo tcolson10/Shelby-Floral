@@ -23,13 +23,25 @@ const LandingPage = () => {
 			>
 				<div className="hero-overlay" />
 				<div className="hero-content">
-					<span className="hero-eyebrow">Wedding Floral Design</span>
+					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "200ms" }}>Wedding Floral Design</span>
 					<h1 className="hero-headline">
-						<em>Shelby Floral</em>
-						<span>Company</span>
+						<em>
+							{"Shelby Floral".split("").map((char, i) => (
+								<span key={i} className="hero-letter" style={{ animationDelay: `${400 + i * 80}ms` }}>
+									{char === " " ? "\u00A0" : char}
+								</span>
+							))}
+						</em>
+						<span className="hero-headline-sub">
+							{"Company".split("").map((char, i) => (
+								<span key={i} className="hero-letter hero-letter--sub" style={{ animationDelay: `${400 + 13 * 80 + 200 + i * 80}ms` }}>
+									{char}
+								</span>
+							))}
+						</span>
 					</h1>
-					<p className="hero-tagline">Where every bloom tells your story</p>
-					<div className="hero-actions">
+					<p className="hero-tagline hero-fade-in" style={{ animationDelay: "2400ms" }}>Where every bloom tells your story</p>
+					<div className="hero-actions hero-fade-in" style={{ animationDelay: "2600ms" }}>
 						<button
 							className="hero-btn-primary"
 							onClick={() => scrollTo("portfolio")}
