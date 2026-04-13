@@ -17,16 +17,6 @@ const pricingData = [
 ];
 
 function Pricing() {
-	const scrollToContact = () => {
-		const el = document.getElementById("contact");
-		if (!el) return;
-		const h = document.querySelector("header")?.offsetHeight ?? 60;
-		window.scrollTo({
-			top: el.getBoundingClientRect().top + window.pageYOffset - h,
-			behavior: "smooth",
-		});
-	};
-
 	return (
 		<div className="pricing-page-container">
 			<div className="pricing-header reveal">
