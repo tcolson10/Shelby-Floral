@@ -455,6 +455,7 @@ nav li a:focus {
 	justify-content: center;
 	text-align: center;
 	overflow: hidden;
+	background-position: center 40%;
 }
 
 .hero-overlay {
@@ -644,7 +645,7 @@ nav li a:focus {
 	.hero {
 		background-attachment: scroll;
 		background-size: cover;
-		background-position: center 20%;
+		background-position: center 12%;
 		min-height: 100svh;
 	}
 
