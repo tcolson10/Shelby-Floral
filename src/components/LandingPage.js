@@ -16,11 +16,8 @@ const LandingPage = () => {
 	return (
 		<div>
 			{/* Hero */}
-			<div
-				className="hero"
-				id="home"
-				style={{ backgroundImage: "url(/images/portfolio/IMG_0597.jpeg)" }}
-			>
+			<div className="hero" id="home">
+				<img src="/images/portfolio/IMG_0597.jpeg" className="hero-bg" alt="" />
 				<div className="hero-overlay" />
 				<div className="hero-content">
 					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "200ms" }}>Wedding Floral Design</span>
