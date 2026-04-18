@@ -65,7 +65,7 @@ const LandingPage = () => {
 					<span className="stat-label">Events Designed</span>
 				</div>
 				<div className="stat-item">
-					<span className="stat-number">5★</span>
+					<span className="stat-number">5&#9733;</span>
 					<span className="stat-label">Client Rating</span>
 				</div>
 				<div className="stat-item">
@@ -73,7 +73,7 @@ const LandingPage = () => {
 					<span className="stat-label">Custom Designs</span>
 				</div>
 				<div className="stat-item">
-					<span className="stat-number">∞</span>
+					<span className="stat-number">&#8734;</span>
 					<span className="stat-label">Love for Flowers</span>
 				</div>
 			</div>
@@ -98,9 +98,7 @@ const LandingPage = () => {
 						Florals that feel like <em>you</em>
 					</h2>
 					<p>
-						We believe flowers aren't just decoration — they're the emotion of a
-						room. The arch you walk under. The bouquet your family notices first.
-						The detail that makes your day feel uniquely yours.
+						Every arrangement we create starts with you, your story, your vision, your day.
 					</p>
 					<p>
 						Shelby Floral Company creates custom, thoughtfully designed
