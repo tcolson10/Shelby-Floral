@@ -61,16 +61,16 @@ const LandingPage = () => {
 			{/* Stats Bar */}
 			<div className="stats-bar">
 				<div className="stat-item">
-					<span className="stat-number">100+</span>
-					<span className="stat-label">Events Designed</span>
-				</div>
-				<div className="stat-item">
 					<span className="stat-number">Utah</span>
 					<span className="stat-label">Florist</span>
 				</div>
 				<div className="stat-item">
 					<span className="stat-number">Est.</span>
 					<span className="stat-label">2022</span>
+				</div>
+				<div className="stat-item">
+					<span className="stat-number">100+</span>
+					<span className="stat-label">Events Designed</span>
 				</div>
 				<div className="stat-item">
 					<span className="stat-number">&#8734;</span>
