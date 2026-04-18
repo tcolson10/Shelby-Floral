@@ -27,59 +27,59 @@ const testimonialsData = [
         name: "Tatum R."
     },
     {
-        text: "I was so nervous about finding a florist because flowers are expensive and I really wanted them to be perfect. From our very first consultation I felt completely at ease. They took my very vague Pinterest board and turned it into something so cohesive and stunning that I actually teared up when I saw my bouquet for the first time. My mom is still talking about the centerpieces three months later. Worth every single penny and then some.",
+        text: "I was so nervous going into it because I had no idea what I wanted and flowers are so expensive. But they made me feel completely at ease from the first conversation and somehow took my scattered Pinterest board and made it into something so beautiful I actually started crying when I saw my bouquet. My mom still brings it up every time I see her!!",
         name: "Audrey M."
     },
     {
-        text: "Simple and stunning. That's all I wanted and that's exactly what I got. Thank you!!",
+        text: "I told them I wanted simple and romantic and they nailed it completely. My bouquet was exactly what I had been picturing and I couldn't stop staring at it all night!!",
         name: "Jess T."
     },
     {
-        text: "We used Shelby Floral for our daughter's wedding and I cannot say enough good things. The ceremony arch was breathtaking — it looked like something out of a magazine. They were so professional and responsive throughout the entire planning process. Several guests asked us for their contact info before we even left the reception. Highly, highly recommend.",
+        text: "We hired Shelby Floral for our daughter's wedding and they were absolutely wonderful. So easy to work with and so responsive the whole time. The ceremony arch stopped people in their tracks and we had multiple guests asking for their info before the night was even over!!",
         name: "Diane H."
     },
     {
-        text: "Honestly did not think I was a flower person until I saw what Shelby Floral put together. Changed my mind completely. The whole venue felt so warm and romantic and intentional. My husband and I keep saying it was the best decision we made for our wedding.",
+        text: "I honestly had no idea how much the florals would change the whole feel of a wedding until I saw ours. The venue looked like an absolute dream and my husband and I are still talking about how perfect everything was. So happy we went with them!!",
         name: "Rylee N."
     },
     {
-        text: "They did the florals for my bridal shower and bachelorette and both were absolutely gorgeous. So versatile! Whether it's a big formal wedding or a fun girls' brunch, they can do it all.",
+        text: "They did my bridal shower AND my bachelorette and both were so gorgeous!! I love that they can do it all, not just weddings. Every single thing they put together was exactly what I had in mind.",
         name: "Savannah K."
     },
     {
-        text: "I reached out to Shelby Floral about six months before my wedding not really knowing what I wanted. Over the course of several conversations they helped me figure out a vision I didn't even know I had. On the day itself, everything was set up perfectly and exactly on schedule. I didn't have to think about a single thing. For a bride who was pretty stressed about logistics, that meant the world to me. The flowers were absolutely gorgeous, but honestly the peace of mind was the real gift.",
+        text: "I reached out not really knowing what I wanted and they helped me figure out my whole vision from scratch. By the wedding day everything was set up perfectly and I didn't have to stress about a single thing. The flowers were stunning but honestly knowing it was all handled was everything to me.",
         name: "Chloe W."
     },
     {
-        text: "The bouquets were fresh, full, and exactly the right shades. Looked incredible in photos.",
+        text: "My bouquet showed up fresh and full and exactly the right colors. Every photo from that day I am obsessed with and the flowers are a huge reason why!!",
         name: "Mia F."
     },
     {
-        text: "We booked Shelby Floral for a corporate gala and I was blown away. I had assumed they mostly did weddings but they completely nailed a more modern, sleek aesthetic for our event. The arrangements were the first thing every single attendee mentioned. We will absolutely be calling them again.",
+        text: "We used Shelby Floral for a work event and I was honestly shocked by how incredible everything looked. I wasn't sure if they did non-wedding stuff but they totally nailed the vibe. The arrangements were the most talked about thing there and we are already planning to use them again.",
         name: "Rachel D."
     },
     {
-        text: "Getting married is stressful. Shelby Floral was one of the very few parts of the process that was genuinely fun. They were excited about our vision, they communicated clearly, and they showed up and made it all real. I felt like they actually cared about our day which is more than I can say for some other vendors we worked with.",
+        text: "Getting married is stressful and most vendors made it more stressful. Shelby Floral was genuinely one of the most fun parts of the whole planning process. They got our vision, they communicated, and they showed up and made it real. Loved working with them so much.",
         name: "Peyton A."
     },
     {
-        text: "Gorgeous work. Fast responses. Fair pricing. What more can you ask for?",
+        text: "I could not recommend them more!! Everything was so beautiful and they were so easy to work with the whole time. Fast responses, gorgeous results, just an amazing experience overall.",
         name: "Lauren S."
     },
     {
-        text: "I had a very specific vision — dried florals mixed with fresh, very earthy and neutral tones, nothing too traditional. I was a little worried it might be hard to pull off but they got it immediately. The final result was even better than the inspiration photos I sent. So many people told me our wedding felt different and special and I truly believe the florals had a lot to do with that.",
+        text: "I wanted something really different, dried and fresh mixed together with earthy tones, nothing traditional at all. I was honestly nervous no one would get it but they understood immediately. The final result was even better than my inspo pics and so many people told us our wedding felt totally unique.",
         name: "Natalie B."
     },
     {
-        text: "They did our ceremony flowers and our rehearsal dinner arrangements and both were stunning. Loved working with them so much. Will be recommending to every engaged friend I have!",
+        text: "They did our ceremony flowers and our rehearsal dinner and both were absolutely stunning!! I have already recommended them to like four friends who are engaged. Cannot say enough good things.",
         name: "Harper C."
     },
     {
-        text: "We had a pretty tight budget for florals and I was upfront about that from the start. Rather than making me feel bad about it, they worked creatively within our budget and the results were stunning. I never once felt like we were getting a lesser experience because we spent less. That kind of thoughtfulness really stood out to us.",
+        text: "I was upfront that we were working with a tighter budget and they never made me feel weird about it at all. They worked with what we had and the flowers were so gorgeous. I was genuinely shocked by how beautiful everything turned out!!",
         name: "Brooke V."
     },
     {
-        text: "From the welcome sign florals to the last bud vase on the reception tables, everything was perfect. The attention to detail was unreal. You could tell so much care went into every single arrangement. Our photographer actually said our florals were some of the best she had ever shot. That says it all.",
+        text: "Every single thing was perfect, from the welcome sign all the way down to the little bud vases on the tables. You could tell so much care went into every arrangement. Our photographer was obsessed with the florals and honestly so were we!!",
         name: "Olivia T."
     },
 ];
