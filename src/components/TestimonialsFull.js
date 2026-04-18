@@ -75,10 +75,6 @@ const testimonialsData = [
         name: "Harper C."
     },
     {
-        text: "I cried when I saw my bouquet. That's all.",
-        name: "Emma R."
-    },
-    {
         text: "We had a pretty tight budget for florals and I was upfront about that from the start. Rather than making me feel bad about it, they worked creatively within our budget and the results were stunning. I never once felt like we were getting a lesser experience because we spent less. That kind of thoughtfulness really stood out to us.",
         name: "Brooke V."
     },
