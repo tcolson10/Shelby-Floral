@@ -20,7 +20,7 @@ const LandingPage = () => {
 				<img src="/images/portfolio/IMG_0597.jpeg" className="hero-bg" alt="" />
 				<div className="hero-overlay" />
 				<div className="hero-content">
-					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "200ms" }}>Wedding Floral Design</span>
+					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "200ms" }}>Utah Wedding Florist</span>
 					<h1 className="hero-headline">
 						<em>
 							{"Shelby Floral".split("").map((char, i) => (
@@ -52,29 +52,6 @@ const LandingPage = () => {
 							Get In Touch
 						</button>
 					</div>
-				</div>
-				<div className="hero-scroll-hint">
-					<div className="hero-scroll-line" />
-				</div>
-			</div>
-
-			{/* Stats Bar */}
-			<div className="stats-bar">
-				<div className="stat-item">
-					<span className="stat-number">Utah</span>
-					<span className="stat-label">Florist</span>
-				</div>
-				<div className="stat-item">
-					<span className="stat-number">Est.</span>
-					<span className="stat-label">2022</span>
-				</div>
-				<div className="stat-item">
-					<span className="stat-number">100+</span>
-					<span className="stat-label">Events Designed</span>
-				</div>
-				<div className="stat-item">
-					<span className="stat-number">&#8734;</span>
-					<span className="stat-label">Love for Flowers</span>
 				</div>
 			</div>
 
