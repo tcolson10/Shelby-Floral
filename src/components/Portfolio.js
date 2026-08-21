@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 
 const imageData = [
-	"/images/portfolio/IMG_1325.jpg",
-	"/images/portfolio/IMG_4485.jpg",
-	"/images/portfolio/IMG_8790.jpg",
-	"/images/portfolio/IMG_0413.jpeg",
-	"/images/portfolio/IMG_6162.jpg",
-	"/images/portfolio/IMG_1708.jpg",
-	"/images/portfolio/IMG_6983.jpg",
-	"/images/portfolio/IMG_6645.JPG",
-	"/images/portfolio/IMG_6008.jpg",
+	{ src: "/images/portfolio/IMG_1325.jpg", w: 1600, h: 1090 },
+	{ src: "/images/portfolio/IMG_4485.jpg", w: 1106, h: 1600 },
+	{ src: "/images/portfolio/IMG_8790.jpg", w: 1067, h: 1600 },
+	{ src: "/images/portfolio/IMG_0413.jpeg", w: 1204, h: 1600 },
+	{ src: "/images/portfolio/IMG_6162.jpg", w: 1067, h: 1600 },
+	{ src: "/images/portfolio/IMG_1708.jpg", w: 1067, h: 1600 },
+	{ src: "/images/portfolio/IMG_6983.jpg", w: 1067, h: 1600 },
+	{ src: "/images/portfolio/IMG_6645.JPG", w: 1067, h: 1600 },
+	{ src: "/images/portfolio/IMG_6008.jpg", w: 1067, h: 1600 },
 ];
+
+const EAGER_COUNT = 6;
 
 function Portfolio() {
 	return (
@@ -23,9 +25,17 @@ function Portfolio() {
 				<p>From intimate ceremonies to grand celebrations</p>
 			</div>
 			<div className="masonry-grid">
-				{imageData.map((src, i) => (
+				{imageData.map(({ src, w, h }, i) => (
 					<div className="masonry-item" key={i}>
-						<img src={src} alt="" loading="lazy" onLoad={e => e.target.classList.add('loaded')} />
+						<img
+							src={src}
+							alt=""
+							width={w}
+							height={h}
+							loading={i < EAGER_COUNT ? "eager" : "lazy"}
+							fetchpriority={i < EAGER_COUNT ? "high" : "auto"}
+							onLoad={e => e.target.classList.add('loaded')}
+						/>
 					</div>
 				))}
 			</div>
