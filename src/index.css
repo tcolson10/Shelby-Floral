@@ -1541,6 +1541,15 @@ nav li a:focus {
 	text-align: left;
 }
 
+.partnerships-page .page-nav {
+	padding: 20px 5% 0;
+	box-sizing: border-box;
+}
+
+.partnerships-page .back-link {
+	font-size: 0.95rem;
+}
+
 .partnerships-masthead {
 	display: grid;
 	grid-template-columns: 1.1fr 1fr;
@@ -1959,7 +1968,7 @@ nav li a:focus {
 		max-width: 100% !important;
 		width: 100% !important;
 		padding: 0 !important;
-		gap: 13pt !important;
+		gap: 10pt !important;
 	}
 
 	.partnerships-masthead {
@@ -2000,8 +2009,8 @@ nav li a:focus {
 	}
 
 	.stats-bar.partnerships-stats {
-		padding: 9pt 0;
-		margin: 9pt 0;
+		padding: 7pt 0;
+		margin: 7pt 0;
 		background: var(--warm-charcoal) !important;
 	}
 
@@ -2020,12 +2029,12 @@ nav li a:focus {
 	.partnerships-featured {
 		background: var(--cream) !important;
 		border-color: var(--border) !important;
-		padding: 9pt 14pt;
+		padding: 7pt 14pt;
 	}
 
 	.partnerships-featured-outlet {
-		font-size: 13pt;
-		margin-bottom: 4pt;
+		font-size: 12.5pt;
+		margin-bottom: 3pt;
 	}
 
 	.partnerships-why {
@@ -2034,8 +2043,8 @@ nav li a:focus {
 	}
 
 	.partnerships-why-headline {
-		font-size: 13.5pt;
-		margin-bottom: 6pt;
+		font-size: 13pt;
+		margin-bottom: 4pt;
 	}
 
 	.partnerships-columns {
@@ -2043,12 +2052,12 @@ nav li a:focus {
 	}
 
 	.partnerships-column-title {
-		font-size: 11pt;
-		margin-bottom: 7pt;
+		font-size: 10.5pt;
+		margin-bottom: 5pt;
 	}
 
 	.partnerships-list {
-		gap: 4pt;
+		gap: 3pt;
 	}
 
 	.partnerships-tag {
@@ -2059,12 +2068,12 @@ nav li a:focus {
 
 	.partnerships-closer {
 		border-top-color: var(--border) !important;
-		padding: 13pt 0 0;
-		gap: 5pt;
+		padding: 10pt 0 0;
+		gap: 4pt;
 	}
 
 	.partnerships-closer-headline {
-		font-size: 15pt;
+		font-size: 14pt;
 	}
 
 	.partnerships-btn.partnerships-closer-email {
