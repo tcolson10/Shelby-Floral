@@ -17,28 +17,28 @@ const LandingPage = () => {
 		<div>
 			{/* Hero */}
 			<div className="hero" id="home">
-				<img src="/images/portfolio/IMG_0597.jpeg" className="hero-bg" alt="" />
+				<img src="/images/portfolio/hero-bg.jpg" className="hero-bg" alt="" />
 				<div className="hero-overlay" />
 				<div className="hero-content">
-					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "200ms" }}>Utah Wedding Florist</span>
+					<span className="hero-eyebrow hero-fade-in" style={{ animationDelay: "150ms" }}>Utah Wedding Florist</span>
 					<h1 className="hero-headline">
 						<em>
 							{"Shelby Floral".split("").map((char, i) => (
-								<span key={i} className="hero-letter" style={{ animationDelay: `${400 + i * 80}ms` }}>
+								<span key={i} className="hero-letter" style={{ animationDelay: `${275 + i * 55}ms` }}>
 									{char === " " ? "\u00A0" : char}
 								</span>
 							))}
 						</em>
 						<span className="hero-headline-sub">
 							{"Company".split("").map((char, i) => (
-								<span key={i} className="hero-letter hero-letter--sub" style={{ animationDelay: `${400 + 13 * 80 + 200 + i * 80}ms` }}>
+								<span key={i} className="hero-letter hero-letter--sub" style={{ animationDelay: `${275 + 13 * 55 + 140 + i * 55}ms` }}>
 									{char}
 								</span>
 							))}
 						</span>
 					</h1>
-					<p className="hero-tagline hero-fade-in" style={{ animationDelay: "2400ms" }}>Where every bloom tells your story</p>
-					<div className="hero-actions hero-fade-in" style={{ animationDelay: "2600ms" }}>
+					<p className="hero-tagline hero-fade-in" style={{ animationDelay: "1650ms" }}>Where every bloom tells your story</p>
+					<div className="hero-actions hero-fade-in" style={{ animationDelay: "1825ms" }}>
 						<button
 							className="hero-btn-primary"
 							onClick={() => scrollTo("portfolio")}

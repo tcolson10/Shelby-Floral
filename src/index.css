@@ -529,16 +529,16 @@ nav li a:focus {
 .hero-letter {
 	display: inline-block;
 	opacity: 0;
-	animation: heroLetterIn 0.5s ease forwards;
+	animation: heroLetterIn 0.425s ease forwards;
 }
 
 .hero-letter--sub {
-	animation: heroLetterInSub 0.5s ease forwards;
+	animation: heroLetterInSub 0.425s ease forwards;
 }
 
 .hero-fade-in {
 	opacity: 0;
-	animation: heroFadeIn 0.8s ease forwards;
+	animation: heroFadeIn 0.65s ease forwards;
 }
 
 @keyframes heroLetterIn {
