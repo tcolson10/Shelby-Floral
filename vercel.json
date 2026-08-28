@@ -1,5 +1,8 @@
 {
-	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
+	"rewrites": [
+		{ "source": "/partnerships", "destination": "/partnerships.html" },
+		{ "source": "/(.*)", "destination": "/" }
+	],
 	"headers": [
 		{
 			"source": "/images/(.*)",

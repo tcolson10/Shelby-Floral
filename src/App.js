@@ -12,6 +12,7 @@ import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import PortfolioFull from "./components/PortfolioFull";
 import TestimonialsFull from "./components/TestimonialsFull";
+import Partnerships from "./components/Partnerships";
 
 function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -148,6 +149,7 @@ function App() {
 					<Route path="/contact" element={<LandingPage />} />
 					<Route path="/full-portfolio" element={<PortfolioFull />} />
 					<Route path="/full-testimonials" element={<TestimonialsFull />} />
+					<Route path="/partnerships" element={<Partnerships />} />
 				</Routes>
 			</main>
 			<footer className="site-footer">
