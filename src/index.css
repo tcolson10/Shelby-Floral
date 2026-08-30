@@ -529,11 +529,7 @@ nav li a:focus {
 .hero-letter {
 	display: inline-block;
 	opacity: 0;
-	animation: heroLetterIn 0.425s ease forwards;
-}
-
-.hero-letter--sub {
-	animation: heroLetterInSub 0.425s ease forwards;
+	animation: heroLetterIn 0.38s ease forwards;
 }
 
 .hero-fade-in {
@@ -544,11 +540,6 @@ nav li a:focus {
 @keyframes heroLetterIn {
 	from { opacity: 0; transform: translateY(10px); }
 	to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroLetterInSub {
-	from { opacity: 0; }
-	to   { opacity: 1; }
 }
 
 @keyframes heroFadeIn {

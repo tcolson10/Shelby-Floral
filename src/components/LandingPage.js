@@ -24,21 +24,15 @@ const LandingPage = () => {
 					<h1 className="hero-headline">
 						<em>
 							{"Shelby Floral".split("").map((char, i) => (
-								<span key={i} className="hero-letter" style={{ animationDelay: `${275 + i * 55}ms` }}>
+								<span key={i} className="hero-letter" style={{ animationDelay: `${275 + i * 45}ms` }}>
 									{char === " " ? "\u00A0" : char}
 								</span>
 							))}
 						</em>
-						<span className="hero-headline-sub">
-							{"Company".split("").map((char, i) => (
-								<span key={i} className="hero-letter hero-letter--sub" style={{ animationDelay: `${275 + 13 * 55 + 140 + i * 55}ms` }}>
-									{char}
-								</span>
-							))}
-						</span>
+						<span className="hero-headline-sub hero-fade-in" style={{ animationDelay: "1150ms" }}>Company</span>
 					</h1>
-					<p className="hero-tagline hero-fade-in" style={{ animationDelay: "1650ms" }}>Where every bloom tells your story</p>
-					<div className="hero-actions hero-fade-in" style={{ animationDelay: "1825ms" }}>
+					<p className="hero-tagline hero-fade-in" style={{ animationDelay: "1150ms" }}>Where every bloom tells your story</p>
+					<div className="hero-actions hero-fade-in" style={{ animationDelay: "1150ms" }}>
 						<button
 							className="hero-btn-primary"
 							onClick={() => scrollTo("portfolio")}
