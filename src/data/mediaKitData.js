@@ -64,7 +64,7 @@ const mediaKitData = {
 	],
 	closer: {
 		headline: "Let's collaborate.",
-		email: "shelbyfloralcompany@gmail.com",
+		email: "shelby@shelbyfloral.com",
 		website: "www.shelbyfloral.com",
 	},
 };

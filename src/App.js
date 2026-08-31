@@ -169,7 +169,7 @@ function App() {
 				</div>
 				<div className="footer-email">
 					<a
-						href="mailto:shelbyfloralcompany@gmail.com"
+						href="mailto:shelby@shelbyfloral.com"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -177,7 +177,7 @@ function App() {
 							<rect x="2" y="4" width="20" height="16" rx="2"/>
 							<polyline points="2,4 12,13 22,4"/>
 						</svg>
-						<span>shelbyfloralcompany@gmail.com</span>
+						<span>shelby@shelbyfloral.com</span>
 					</a>
 				</div>
 			</footer>
