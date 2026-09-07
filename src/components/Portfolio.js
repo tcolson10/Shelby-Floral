@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Lightbox from "./Lightbox";
 
 const imageData = [
 	{ src: "/images/portfolio/IMG_1325.jpg", w: 1600, h: 1090 },
@@ -15,6 +17,8 @@ const imageData = [
 const EAGER_COUNT = 6;
 
 function Portfolio() {
+	const [lightboxIndex, setLightboxIndex] = useState(null);
+
 	return (
 		<div className="portfolio-page-container">
 			<div className="portfolio-header reveal">
@@ -26,7 +30,13 @@ function Portfolio() {
 			</div>
 			<div className="masonry-grid">
 				{imageData.map(({ src, w, h }, i) => (
-					<div className="masonry-item" key={i}>
+					<button
+						type="button"
+						className="masonry-item"
+						key={i}
+						onClick={() => setLightboxIndex(i)}
+						aria-label="View full image"
+					>
 						<img
 							src={src}
 							alt=""
@@ -36,12 +46,19 @@ function Portfolio() {
 							fetchpriority={i < EAGER_COUNT ? "high" : "auto"}
 							onLoad={e => e.target.classList.add('loaded')}
 						/>
-					</div>
+					</button>
 				))}
 			</div>
 			<Link to="/full-portfolio" className="portfolio-button">
 				View Full Portfolio
 			</Link>
+			{lightboxIndex !== null && (
+				<Lightbox
+					images={imageData}
+					startIndex={lightboxIndex}
+					onClose={() => setLightboxIndex(null)}
+				/>
+			)}
 		</div>
 	);
 }

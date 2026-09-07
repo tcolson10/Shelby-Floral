@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Lightbox from "./Lightbox";
 
 const imageData = [
 	{ src: "/images/portfolio/IMG_1325.jpg", w: 1600, h: 1090 },
@@ -50,6 +51,8 @@ const imageData = [
 const EAGER_COUNT = 9;
 
 function PortfolioFull() {
+	const [lightboxIndex, setLightboxIndex] = useState(null);
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -70,7 +73,13 @@ function PortfolioFull() {
 			</div>
 			<div className="masonry-grid">
 				{imageData.map(({ src, w, h }, index) => (
-					<div className="masonry-item" key={index}>
+					<button
+						type="button"
+						className="masonry-item"
+						key={index}
+						onClick={() => setLightboxIndex(index)}
+						aria-label="View full image"
+					>
 						<img
 							src={src}
 							alt=""
@@ -80,9 +89,16 @@ function PortfolioFull() {
 							fetchpriority={index < EAGER_COUNT ? "high" : "auto"}
 							onLoad={e => e.target.classList.add('loaded')}
 						/>
-					</div>
+					</button>
 				))}
 			</div>
+			{lightboxIndex !== null && (
+				<Lightbox
+					images={imageData}
+					startIndex={lightboxIndex}
+					onClose={() => setLightboxIndex(null)}
+				/>
+			)}
 		</div>
 	);
 }
